@@ -1,0 +1,58 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>代理类型列表</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div  class="col-sm-2" style="width: 100px">
+                        <div class="input-group" >
+                            <a href="{:url('add')}"><button class="btn btn-outline btn-primary" type="button">添加代理类型</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="example-wrap">
+                <div class="example">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="long-tr">
+                            <th>ID</th>
+                            <th>代理类型名称</th>
+                            <th style="text-align: right;">费用(￥)</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {foreach name="datas" item="val"}
+                            <tr class="long-td">
+                                <td>{$key + 1}</td>
+                                <td>{$val['name']}</td>
+                                <td style="text-align: right;">{$val['money']}</td>
+                                <td>
+                                    <a href="javascript:;" onclick="modify({$val['id']})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i> 编辑
+                                    </a>
+                                </td>
+                            </tr>
+                            {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    function modify(id) {
+        window.location.href = 'edit.html?id=' + id;
+    }
+
+
+</script>
+</body>
+</html>

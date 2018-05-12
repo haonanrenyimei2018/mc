@@ -1,0 +1,79 @@
+{include file="public/header" /}
+<link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>编辑公告</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="edit">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">标题</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="title" id="title" class="form-control" value="{$data['title']}">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                            <div class="input-group col-sm-8">
+                                <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
+                                <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
+                                <textarea name="content" id="content">{$data['content']}</textarea>
+                                <script type="text/javascript">
+                                    var editor = new UE.ui.Editor();
+                                    editor.render("content");
+                                </script>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="{$data['id']}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    $(function () {
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+
+    function checkForm() {
+        var title = $('#title').val(),
+            content = UE.getEditor('content').getContent();
+
+        if(title == '') {
+            otcms.error('标题不能为空!');
+            return false;
+        }
+        if(content == ''){
+            otcms.error('内容不能为空!');
+            return false;
+        }
+    }
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>行政区域列表</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div  class="col-sm-2" style="width: 100px">
+                        <div class="input-group" >
+                            <button class="btn btn-outline btn-primary" onclick="add()" type="button">添加行政区域</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="example-wrap">
+                <div class="example">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="long-tr">
+                            <th>ID</th>
+                            <th style="text-align: left;">区域名称</th>
+                            <th>区域编码</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="datas" item="val"}
+                        <tr class="long-td">
+                            <td>{$key+1}</td>
+                            <td style="text-align: left;">
+                                <span onclick="index({$val['code']})">{$val['name']}</span>
+                            </td>
+                            <td>{$val['code']}</td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="province" id="province" value="{$province}">
+<input type="hidden" name="city" id="city" value="{$city}">
+<input type="hidden" name="area" id="area">
+{include file="public/footer" /}
+<script>
+    function index(code) {
+        var province = $('#province').val(),
+            city = $('#city').val(),
+            area = $('#area').val();
+        if(province == 0) {
+            province = code;
+        }else {
+            if(city == 0) {
+                city = code;
+            }else {
+                if(area == 0) {
+                    area = code;
+                }
+            }
+        }
+        window.location.href = 'index.html?province=' + province + '&city=' + city + '&county=' + area;
+    }
+    function add() {
+        var province = $('#province').val(),
+            city = $('#city').val(),
+            area = $('#area').val();
+        window.location.href = 'add.html?province=' + province + '&city=' + city + '&county=' + area;
+    }
+</script>
+
+
+
+</body>
+</html>

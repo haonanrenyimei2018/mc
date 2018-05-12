@@ -30,7 +30,7 @@ class Base extends Controller
                 }
             }
         }
-        
+
         $node = new Node();
         $this->assign([
             'username' => session('username'),
@@ -38,15 +38,13 @@ class Base extends Controller
             'rolename' => session('rolename'),
             'menu' => $node->getMenu(session('rule'))
         ]);
-        
-        $config = cache('db_config_data');
 
-        if(!$config){            
+        $config = cache('db_config_data');
+        if(!$config){
             $config = api('Config/lists');                          
             cache('db_config_data',$config);
         }
-        config($config); 
-
+        config($config);
         if(config('web_site_close') == 0 && session('uid') !=1 ){
             $this->error('站点已经关闭，请稍后访问~');
         }

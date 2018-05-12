@@ -1,0 +1,137 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加行政区域</h5>
+                </div>
+                <div class="ibox-content">
+                    <form name="add" class="form-horizontal" id="add" method="post" action="add">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">省</label>
+                            <div class="input-group col-sm-4">
+                                <select name="provinceCode" id="province" class="form-control" onchange="provinceChange(this)">
+                                    <option value="0">请选择</option>
+                                    {foreach name="provinceData" item="val"}
+                                        <option value="{$key}">{$val}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">市</label>
+                            <div class="input-group col-sm-4">
+                                <select name="cityCode" id="city" class="form-control" onchange="cityChange()" ></select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">区县</label>
+                            <div class="input-group col-sm-4">
+                                <select name="areaCode" id="area" class="form-control" onchange="areaChange()"></select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">编码</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="code" id="code" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">名称</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="name" id="name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    $(function () {
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+
+    function checkForm() {
+        var province = $('#province').val(),
+            code = $('#code').val(),
+            name = $('#name').val();
+        if(province == 0) {
+            otcms.error('请选择省份!');
+            return false;
+        }
+        if(code == '') {
+            otcms.error('编码必须填写!');
+            return false;
+        }
+        if(name == ''){
+            otcms.error('名称不能为空!');
+            return false;
+        }
+    }
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+    //获取城市
+    function provinceChange(obj) {
+        var data = {
+            'province' : $(obj).val()
+        }
+        $('#code').val($(obj).val());
+        $.post('getRegion.html',data,function (res) {
+            var html = '<option value="">--请选择--</option>';
+            for(var c in res) {
+                html += '<option value="'+c+'">'+res[c]+'</option>';
+            }
+            $('#city').html(html);
+        },'JSON');
+    }
+    //获取区县
+    function cityChange() {
+        var province = $('#province').val(),
+            city = $('#city').val();
+        var data = {
+            'province' : province,
+            'city' : city
+        }
+        $('#code').val(city);
+        $.post('getRegion.html',data,function (res) {
+            var html = '<option value="">--请选择--</option>';
+            for(var c in res) {
+                html += '<option value="'+c+'">'+res[c]+'</option>';
+            }
+            $('#area').html(html);
+        },'JSON');
+    }
+    function areaChange() {
+        var area = $('#area').val();
+        $('#code').val(area);
+    }
+
+
+</script>
+</body>
+</html>

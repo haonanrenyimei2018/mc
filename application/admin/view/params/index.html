@@ -1,0 +1,33 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>参数设置</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="index">
+                        {foreach name="data" item="val"}
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">{$val['name']}</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" name="{$val['key']}" id="{$val['key']}" class="form-control" value="{$val['value']}">
+                                {$val['intro']}
+                            </div>
+                        </div>
+                        {/foreach}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\user\index.html";i:1508205842;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1508205842;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1508205842;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\user\index.html";i:1525921605;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +33,11 @@
             <!--搜索框开始-->           
             <div class="row">
                 <div class="col-sm-12">   
-                <div  class="col-sm-2" style="width: 100px">
-                    <div class="input-group" >  
-                        <a href="<?php echo url('userAdd'); ?>"><button class="btn btn-outline btn-primary" type="button">添加用户</button></a> 
+                    <div  class="col-sm-2" style="width: 100px">
+                        <div class="input-group" >
+                            <a href="<?php echo url('userAdd'); ?>"><button class="btn btn-outline btn-primary" type="button">添加用户</button></a>
+                        </div>
                     </div>
-                </div>                                            
                     <form name="admin_list_sea" class="form-search" method="post" action="<?php echo url('index'); ?>">
                         <div class="col-sm-3">
                             <div class="input-group">
