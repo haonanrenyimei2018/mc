@@ -13,11 +13,17 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">{$val['name']}</label>
                             <div class="input-group col-sm-3">
-                                <input type="text" name="{$val['key']}" id="{$val['key']}" class="form-control" value="{$val['value']}">
+                                <input type="text" name="{$val['key']}" required id="{$val['key']}" class="form-control params" value="{$val['value']}">
                                 {$val['intro']}
                             </div>
                         </div>
                         {/foreach}
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -26,9 +32,33 @@
 </div>
 {include file="public/footer" /}
 <script>
-    
+$(function () {
+    $('#add').ajaxForm({
+        beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+        success: complete, // 这是提交后的方法
+        dataType: 'json'
+    });
+});
 
+function checkForm() {
+    var params = $('.params');
+    $('.params').each(function () {
+        console.log(this);
+        var val = $(this).val();
+        if(val == '' || val == 0) {
+            otcms.error('参数必须大于0!');
+            return false;
+        }
+    });
+}
 
+function complete(res) {
+    if(res.code == 1){
+        otcms.success(res.msg,res.url);
+    }else {
+        otcms.error(res.msg);
+    }
+}
 </script>
 </body>
 </html>

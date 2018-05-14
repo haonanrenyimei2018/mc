@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\params\index.html";i:1526264287;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1526279328;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,29 +22,42 @@
     }
     </style>
 </head>
+<link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>参数设置</h5>
+                    <h5>添加培训课程</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="add" id="add" method="post" action="index">
-                        <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): if( count($data)==0 ) : echo "" ;else: foreach($data as $key=>$val): ?>
+                    <form class="form-horizontal" name="add" id="add" method="post" action="add">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label" style="text-align: right"><?php echo $val['name']; ?></label>
-                            <div class="input-group col-sm-3">
-                                <input type="text" name="<?php echo $val['key']; ?>" required id="<?php echo $val['key']; ?>" class="form-control params" value="<?php echo $val['value']; ?>">
-                                <?php echo $val['intro']; ?>
+                            <label class="col-sm-3 control-label" style="text-align: right">标题</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="title" id="title" class="form-control">
                             </div>
                         </div>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                            <div class="input-group col-sm-8">
+                            <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
+                            <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
+                            <textarea name="content" id="content"></textarea>
+                            <script type="text/javascript">
+                                var editor = new UE.ui.Editor();
+                                editor.render("content");
+                            </script>
+                        </div>
+                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-3">
                                 <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                             </div>
                         </div>
                     </form>
@@ -69,37 +82,34 @@
     $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
 </script>
 <script>
-$(function () {
-    $('#add').ajaxForm({
-        beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
-        success: complete, // 这是提交后的方法
-        dataType: 'json'
+    $(function () {
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
     });
-});
 
-function checkForm() {
-    var params = $('.params');
-    $('.params').each(function () {
-        console.log(this);
-        var val = $(this).val();
-        if(val == '' || val == 0) {
-            otcms.error('参数必须大于0!');
+    function checkForm() {
+        var title = $('#title').val(),
+            content = UE.getEditor('content').getContent();
+
+        if(title == '') {
+            otcms.error('标题不能为空!');
             return false;
         }
-    });
-
-
-
-}
-
-function complete(res) {
-
-}
-
-
-
-
-
+        if(content == ''){
+            otcms.error('内容不能为空!');
+            return false;
+        }
+    }
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
 </script>
 </body>
 </html>

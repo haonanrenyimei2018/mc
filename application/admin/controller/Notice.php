@@ -85,9 +85,7 @@ class Notice extends Base
             return json(['code' => 1,'msg' => '删除成功']);
         }catch (Exception $e) {
             return json(['code' => -99,'msg' => $e->getMessage()]);
-
         }
-
     }
 
 }

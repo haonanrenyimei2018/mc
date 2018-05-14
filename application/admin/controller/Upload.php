@@ -9,7 +9,7 @@ class Upload extends Base
        $file = request()->file('file');
        $info = $file->move(ROOT_PATH  . DS . 'uploads/images');
        if($info){
-            echo 'http://'.$_SERVER['HTTP_HOST'].'/uploads/images/'.$info->getSaveName();
+            echo '/uploads/images/'.$info->getSaveName();
         }else{
             echo $file->getError();
         }
@@ -20,7 +20,7 @@ class Upload extends Base
        $file = request()->file('file');
        $info = $file->move(ROOT_PATH  . DS . 'uploads/face');
        if($info){
-           echo 'http://'.$_SERVER['HTTP_HOST'].'/uploads/face/'.$info->getSaveName();
+           echo '/uploads/face/'.$info->getSaveName();
         }else{
             echo $file->getError();
         }

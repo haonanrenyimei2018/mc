@@ -1,0 +1,65 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加广告类型</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="add">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">广告类型</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="name" id="name" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    $(function (){
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+    function checkForm() {
+        var name = $('#name').val();
+        if(name == '') {
+            otcms.error('广告类型不能为空!');
+            return false;
+        }
+    }
+
+    function complete(res) {
+        if(res.code == 1){
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+
+
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>
