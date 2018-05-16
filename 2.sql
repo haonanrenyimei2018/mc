@@ -17122,7 +17122,7 @@ CREATE TABLE IF NOT EXISTS `mc_course` (
   `date` int(11) DEFAULT '0',
   `user` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='培训课程表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='培训课程表';
 
 -- 正在导出表  db_mc.mc_course 的数据：~0 rows (大约)
 DELETE FROM `mc_course`;
@@ -17244,7 +17244,7 @@ CREATE TABLE IF NOT EXISTS `mc_params` (
   `value` varchar(50) DEFAULT '0',
   `intro` varchar(50) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='奖金佣金配置';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='奖金佣金配置';
 
 -- 正在导出表  db_mc.mc_params 的数据：~9 rows (大约)
 DELETE FROM `mc_params`;
