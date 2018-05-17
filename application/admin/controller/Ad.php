@@ -39,4 +39,14 @@ class Ad extends Base
         $this->assign('val',$val);
         return $this->fetch();
     }
+
+    /**
+     * 测试上传
+     */
+    public function upload() {
+        return $this->fetch();
+    }
+
+
+
 }

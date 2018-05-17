@@ -88,12 +88,16 @@ class Area extends Base
     public function getRegion() {
         $province = input('province');
         $city = input('city');
+        $county = input('county');
         $where = [];
         if(isset($province)) {
             $where['provinceCode'] = $province;
         }
         if(isset($city)) {
             $where['cityCode'] = $city;
+        }
+        if(isset($county)) {
+            $where['areaCode'] = $county;
         }
         $data = Db::name('area')->where($where)->column('code,name');
         return json($data);

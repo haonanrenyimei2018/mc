@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 280, '127.0.0.1', 1526302950, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 281, '127.0.0.1', 1526541663, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='广告类型';
 
--- 正在导出表  db_mc.mc_ad_type 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_ad_type 的数据：~1 rows (大约)
 DELETE FROM `mc_ad_type`;
 /*!40000 ALTER TABLE `mc_ad_type` DISABLE KEYS */;
 INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency` (
   `province` varchar(50) DEFAULT '0' COMMENT '省',
   `city` varchar(50) DEFAULT '0' COMMENT '市',
   `county` varchar(50) DEFAULT '0' COMMENT '区县',
+  `area` varchar(50) DEFAULT '0' COMMENT '城镇',
   `date_end` varchar(50) DEFAULT '0' COMMENT '有效期截止时间',
   `date` varchar(50) DEFAULT '0' COMMENT '添加时间',
   `status` tinyint(4) DEFAULT '0' COMMENT '审核状态',
@@ -95,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `mc_agency` (
 -- 正在导出表  db_mc.mc_agency 的数据：~1 rows (大约)
 DELETE FROM `mc_agency`;
 /*!40000 ALTER TABLE `mc_agency` DISABLE KEYS */;
-INSERT INTO `mc_agency` (`id`, `user_name`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `date_end`, `date`, `status`) VALUES
-	(1, 'user_1', '0', '张三', '0', '12345678901', '12345678901', 1, 0, 0, '0', '0', '0', '0', '0', 0);
+INSERT INTO `mc_agency` (`id`, `user_name`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
+	(1, 'user_1', '0', '张三', '0', '12345678901', '12345678901', 1, 0, 0, '37', '3703', '0', '0', '0', '0', 0);
 /*!40000 ALTER TABLE `mc_agency` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_type 结构
@@ -17016,9 +17017,9 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=150 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：43 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：45 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17064,7 +17065,9 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(145, 'admin/params/index', '参数配置', 1, 1, '', '', 1, 50, 1526032978, 1526032978),
 	(147, 'admin/product/index', '积分商城', 1, 1, '', '', 137, 50, 1526280804, 1526280804),
 	(148, 'admin/ad_type/index', '广告类型', 1, 1, '', '', 138, 50, 1526289683, 1526289683),
-	(149, 'admin/ad/index', '广告管理', 1, 1, '', '', 138, 50, 1526308023, 1526308023);
+	(149, 'admin/ad/index', '广告管理', 1, 1, '', '', 138, 50, 1526308023, 1526308023),
+	(150, 'admin/member/index', '所有代理', 1, 1, '', '', 134, 50, 1526541699, 1526541765),
+	(151, 'admin/member/uncheck', '待审核代理', 1, 1, '', '', 134, 50, 1526541728, 1526541779);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17154,9 +17157,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3826 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3831 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：25 rows
+-- 正在导出表  db_mc.mc_log 的数据：30 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17184,7 +17187,12 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3822, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526280804),
 	(3823, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526289683),
 	(3824, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526302950),
-	(3825, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526308023);
+	(3825, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526308023),
+	(3826, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526541663),
+	(3827, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526541699),
+	(3828, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526541728),
+	(3829, 1, 'admins', '用户【admins】编辑菜单成功', '127.0.0.1', 1, 1526541765),
+	(3830, 1, 'admins', '用户【admins】编辑菜单成功', '127.0.0.1', 1, 1526541779);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17277,7 +17285,7 @@ CREATE TABLE IF NOT EXISTS `mc_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
 
--- 正在导出表  db_mc.mc_product 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_product 的数据：~1 rows (大约)
 DELETE FROM `mc_product`;
 /*!40000 ALTER TABLE `mc_product` DISABLE KEYS */;
 INSERT INTO `mc_product` (`id`, `name`, `intro`, `images`, `content`, `sources`, `amount`, `state`, `date`, `user`) VALUES

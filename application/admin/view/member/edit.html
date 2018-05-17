@@ -1,0 +1,220 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>编辑会员信息</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="edit.html">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">姓名</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="name" id="name" class="form-control" value="{$member['name']}">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">手机号</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="phone" id="phone" class="form-control" value="{$member['phone']}">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">身份证号</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="idn" id="idn" class="form-control" value="{$member['idn']}">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">微信号</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="wechat" id="wechat" class="form-control" value="{$member['wechat']}">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">代理类型</label>
+                            <div class="input-group col-sm-4">
+                                <select name="type" id="type" class="form-control">
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="agencyType" item="val"}
+                                        <option value="{$key}" {eq name="member['type']" value="$key"} selected {/eq}>{$val}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">所属区域</label>
+                            <div class="input-group col-sm-6">
+                                <select name="province" id="province" class="form-control" style="width: auto;">
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="provinceData" item="val"}
+                                        <option value="{$key}" {eq name="member['province']" value="$key"} selected {/eq}>{$val}</option>
+                                    {/foreach}
+                                </select>
+                                <select name="city" id="city" class="form-control" style="width: auto;">
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="cityData" item="val"}
+                                        <option value="{$key}" {eq name="member['city']" value="$key"} selected {/eq}>{$val}</option>
+                                    {/foreach}
+                                </select>
+                                <select name="county" id="county" class="form-control" style="width: auto;">
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="countyData" item="val"}
+                                    <option value="{$key}" {eq name="member['county']" value="$key"} selected {/eq}>{$val}</option>
+                                    {/foreach}
+                                </select>
+                                <select name="area" id="area" class="form-control" style="width: auto;">
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="areaData" item="val"}
+                                    <option value="{$key}" {eq name="member['area']" value="$key"} selected {/eq}>{$val}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="{$member['id']}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+<script>
+    $(function (){
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+        $('#province').change(function () {
+            var data = {
+                province : $(this).val()
+            }
+            $.post('/admin/area/getRegion.html',data,function (res) {
+                $('#city').html('');
+                $('#county').html('<option value="0">--请选择--</option>');
+                $('#area').html('<option value="0">--请选择--</option>');
+                var html = '<option value="0">--请选择--</option>';
+                for(var c in res) {
+                    html += '<option value="'+c+'">'+res[c]+'</option>';
+                }
+                $('#city').html(html);
+            },'JSON');
+        });
+        $('#city').change(function () {
+            var data = {
+                province : $('#province').val(),
+                city : $(this).val()
+            }
+            $('#county').html('<option value="0">--请选择--</option>');
+            $('#area').html('<option value="0">--请选择--</option>');
+            $.post('/admin/area/getRegion.html',data,function (res) {
+                $('#county').html('');
+                var html = '<option value="0">--请选择--</option>';
+                for(var c in res) {
+                    html += '<option value="'+c+'">'+res[c]+'</option>';
+                }
+                $('#county').html(html);
+            },'JSON');
+
+        });
+
+        $('#county').change(function () {
+            var data = {
+                province : $('#province').val(),
+                city : $('#city').val(),
+                county : $(this).val()
+            }
+            $('#area').html('<option value="0">--请选择--</option>');
+            $.post('/admin/area/getRegion.html',data,function (res) {
+                $('#area').html('');
+                var html = '<option value="0">--请选择--</option>';
+                for(var c in res) {
+                    html += '<option value="'+c+'">'+res[c]+'</option>';
+                }
+                $('#area').html(html);
+            },'JSON');
+        });
+    });
+    function checkForm() {
+        var name = $('#name').val(),
+            phone = $('#phone').val(),
+            idn = $('#idn').val(),
+            wechat = $('#wechat').val(),
+            type = $('#type').val(),
+            province = $('#province').val(),
+            city = $('#city').val(),
+            county = $('#county').val(),
+            area = $('#area').val();
+        if(name == '') {
+            otcms.error('姓名不能为空!');
+            return false;
+        }
+        if(phone == '' || phone.length < 11){
+            otcms.error('请输入正确的手机号!');
+            return false;
+        }
+        if(idn == '' || idn.length < 18) {
+            otcms.error('请输入正确的身份证号!');
+            return false;
+        }
+        if(wechat == ''){
+            otcms.error('请输入微信号!');
+            return false;
+        }
+        if(type == 0) {
+            otcms.error('请选择代理的代理类型!');
+            return false;
+        }
+        if(province == 0) {
+            otcms.error('请选择代理所属省份');
+            return false;
+        }
+        if(city == 0) {
+            otcms.error('请选择代理所属市!');
+            return false;
+        }
+        
+        switch (type) {
+            case '3' :
+                if(county == 0) {
+                    otcms.error('请选择代理所属区县!');
+                    return false;
+                }
+                break;
+            case '4' :
+                if(county == 0) {
+                    otcms.error('请选择代理所属区县!');
+                    return false;
+                }
+                if(area == 0){
+                    otcms.error('请选择代理所在城镇!');
+                    return false;
+                }
+                break;
+        }
+    }
+    function complete(res) {
+        if(res.code == 1){
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+</script>
+</body>
+</html>
