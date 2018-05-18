@@ -9,6 +9,9 @@
 namespace app\admin\controller;
 
 
+use app\admin\logic\LMember;
+use app\admin\model\MemberInfoModel;
+use app\wap\logic\LMembers;
 use think\Db;
 use Think\Exception;
 
@@ -73,7 +76,24 @@ class Member extends Base
      */
     public function check() {
         if($this->request->isAjax()) {
-
+            $params = input('post.');
+            try {
+                $score = $params['score'];
+                unset($params['score']);
+                $params['status'] = 1;
+                $params['date_end'] = strtotime("+1 year");
+                Db::name('agency')->where('id',$params['id'])->update($params);
+                Db::startTrans();
+                $lm = new LMember();
+                $lm->check($params['id']);
+                $memberInfo = new MemberInfoModel();
+                $memberInfo->_add($params['id'],$score);
+                Db::commit();
+                return json(['code' => 1,'msg' => '操作成功!','url' => url('uncheck')]);
+            }catch (Exception $e) {
+                Db::rollback();
+                return json(['code' => -99,'msg' => $e->getMessage()]);
+            }
         }
         $id = input('id');
         $member = Db::name('agency')->where('id',$id)->find();
@@ -163,8 +183,6 @@ class Member extends Base
         }
 
         $agencyType = Db::name('agencyType')->column('id,name');
-
-
         $this->assign([
             'member' => $member,
             'provinceData' => $provinceData,
@@ -175,4 +193,13 @@ class Member extends Base
         ]);
         return $this->fetch();
     }
+    //
+    public function aa() {
+        $res = date('Y-m-d H:i:s',strtotime("+1 year"));
+        dump($res);
+
+    }
+
+
+
 }

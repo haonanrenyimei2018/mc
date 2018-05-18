@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\member\edit.html";i:1526548079;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\member\edit.html";i:1526548285;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,6 +108,7 @@
                                 <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                             </div>
                         </div>
+                        <input type="hidden" name="id" value="<?php echo $member['id']; ?>">
                     </form>
                 </div>
             </div>
@@ -193,7 +194,9 @@
             wechat = $('#wechat').val(),
             type = $('#type').val(),
             province = $('#province').val(),
-            city = $('#city').val();
+            city = $('#city').val(),
+            county = $('#county').val(),
+            area = $('#area').val();
         if(name == '') {
             otcms.error('姓名不能为空!');
             return false;
@@ -221,6 +224,25 @@
         if(city == 0) {
             otcms.error('请选择代理所属市!');
             return false;
+        }
+        
+        switch (type) {
+            case '3' :
+                if(county == 0) {
+                    otcms.error('请选择代理所属区县!');
+                    return false;
+                }
+                break;
+            case '4' :
+                if(county == 0) {
+                    otcms.error('请选择代理所属区县!');
+                    return false;
+                }
+                if(area == 0){
+                    otcms.error('请选择代理所在城镇!');
+                    return false;
+                }
+                break;
         }
     }
     function complete(res) {

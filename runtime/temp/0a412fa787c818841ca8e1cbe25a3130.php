@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\member\check.html";i:1526550502;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\member\check.html";i:1526636997;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,7 @@
                     <h5>编辑会员信息</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="add" id="add" method="post" action="edit.html">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="check.html">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">姓名</label>
                             <div class="input-group col-sm-4">
@@ -120,6 +120,13 @@
                                     <option value="<?php echo $key; ?>" <?php if($member['area'] == $key): ?> selected <?php endif; ?>><?php echo $val; ?></option>
                                     <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">积分</label>
+                            <div class="input-group col-sm-4">
+                                <input type="number" name="score" id="score" value="" class="form-control">
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -218,31 +225,11 @@
         });
     });
     function checkForm() {
-        var name = $('#name').val(),
-            phone = $('#phone').val(),
-            idn = $('#idn').val(),
-            wechat = $('#wechat').val(),
-            type = $('#type').val(),
+        var type = $('#type').val(),
             province = $('#province').val(),
             city = $('#city').val(),
             county = $('#county').val(),
             area = $('#area').val();
-        if(name == '') {
-            otcms.error('姓名不能为空!');
-            return false;
-        }
-        if(phone == '' || phone.length < 11){
-            otcms.error('请输入正确的手机号!');
-            return false;
-        }
-        if(idn == '' || idn.length < 18) {
-            otcms.error('请输入正确的身份证号!');
-            return false;
-        }
-        if(wechat == ''){
-            otcms.error('请输入微信号!');
-            return false;
-        }
         if(type == 0) {
             otcms.error('请选择代理的代理类型!');
             return false;

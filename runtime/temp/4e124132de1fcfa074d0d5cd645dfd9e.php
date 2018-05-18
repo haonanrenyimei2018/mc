@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\member\index.html";i:1526548594;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\member\index.html";i:1526612149;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,11 +78,6 @@
                                 <td>
                                     <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
                                         <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
-                                    {{# if(d[i].status == 0) { }}
-                                    <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i> 审核</a>&nbsp;&nbsp;
-
-                                    {{# } }}
                                     <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-danger btn-xs">
                                         <i class="fa fa-trash-o"></i> 删除</a>
                                 </td>
