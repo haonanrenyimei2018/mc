@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 282, '127.0.0.1', 1526607420, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 283, '127.0.0.1', 1526884287, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -17034,9 +17034,9 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：45 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：47 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17084,7 +17084,9 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(148, 'admin/ad_type/index', '广告类型', 1, 1, '', '', 138, 50, 1526289683, 1526289683),
 	(149, 'admin/ad/index', '广告管理', 1, 1, '', '', 138, 50, 1526308023, 1526308023),
 	(150, 'admin/member/index', '所有代理', 1, 1, '', '', 134, 50, 1526541699, 1526541765),
-	(151, 'admin/member/uncheck', '待审核代理', 1, 1, '', '', 134, 50, 1526541728, 1526541779);
+	(151, 'admin/member/uncheck', '待审核代理', 1, 1, '', '', 134, 50, 1526541728, 1526541779),
+	(152, 'admin/moeny/index', '奖金管理', 1, 1, '', '', 136, 50, 1526887339, 1526887339),
+	(153, 'admin/score/index', '积分管理', 1, 1, '', '', 136, 50, 1526887376, 1526887376);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17174,9 +17176,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3832 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3835 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：31 rows
+-- 正在导出表  db_mc.mc_log 的数据：34 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17210,7 +17212,10 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3828, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526541728),
 	(3829, 1, 'admins', '用户【admins】编辑菜单成功', '127.0.0.1', 1, 1526541765),
 	(3830, 1, 'admins', '用户【admins】编辑菜单成功', '127.0.0.1', 1, 1526541779),
-	(3831, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526607420);
+	(3831, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526607420),
+	(3832, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526884287),
+	(3833, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526887339),
+	(3834, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1526887377);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17242,7 +17247,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
--- 正在导出表  db_mc.mc_member_moneylog 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_member_moneylog 的数据：~0 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
