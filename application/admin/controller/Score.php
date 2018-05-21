@@ -9,21 +9,25 @@
 namespace app\admin\controller;
 
 
+use app\admin\model\AgencyInfoModel;
 use app\admin\model\AgencyModel;
 use app\admin\model\AgencyTypeModel;
 use app\admin\model\SourceInfoModel;
 use think\Db;
+use think\Exception;
 
 class Score extends Base
 {
-    private $agencyModel;
-    private $scoreInfoModel;
-    private $agencyTypeModel;
+    public $agencyModel;
+    public $scoreInfoModel;
+    public $agencyTypeModel;
+    public $agencyInfoModel;
     public function _initialize() {
         parent::_initialize();
         $this->agencyModel = new AgencyModel();
         $this->scoreInfoModel = new SourceInfoModel();
         $this->agencyTypeModel = new AgencyTypeModel();
+        $this->agencyInfoModel = new AgencyInfoModel();
     }
     /**
      * 检索所有的客户已审核
@@ -66,14 +70,53 @@ class Score extends Base
         if(input('get.page')){
             $lists = $this->scoreInfoModel->where($where)->page($Nowpage, $limits)->select();
             foreach ($lists as &$val) {
-                $val['date'] = date($val['date'],'Y-m-d H:i:s');
+                $val['date'] = date('Y-m-d H:i:s',$val['date']);
             }
             return json($lists);
         }
         $this->assign('Nowpage', $Nowpage); //当前页
         $this->assign('allpage', $allpage); //总页数
+        $this->assign('id',$id);
         return $this->fetch();
     }
+
+    /**
+     * 添加
+     */
+    public function add() {
+        if($this->request->isAjax()) {
+            $params = input('post.');
+            $params['user'] = $this->user['id'];
+            $params['date'] = time();
+            try {
+                $where = [
+                    'member' => $params['mid']
+                ];
+                $agencyInfo = $this->agencyInfoModel->where($where)->find();
+                if($agencyInfo['score'] < $params['amount']) {
+                    return json(['code' => -3,'msg' => '积分不足!']);
+                }
+                if($params['type'] == 1) {
+                    $agencyInfo['score'] += $params['amount'];
+                }else {
+                    $agencyInfo['score'] -= $params['amount'];
+                }
+                $data = [
+                    'score' => $agencyInfo['score']
+                ];
+                $this->agencyInfoModel->where($where)->update($data);
+                $this->scoreInfoModel->_add($params);
+                return json(['code' => 1,'msg' => '操作成功!','url' => url('index')]);
+            }catch (Exception $e) {
+                return json(['code' => -99,'msg' => $e->getMessage()]);
+            }
+        }
+        $id = input('id');
+        $this->assign('id',$id);
+        return $this->view->fetch();
+    }
+
+
 
 
 

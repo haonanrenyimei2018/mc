@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\member\index.html";i:1526612149;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\workplace\mc/application/admin\view\money\index.html";i:1526911453;s:57:"F:\workplace\mc/application/admin\view\public\header.html";i:1508205842;s:57:"F:\workplace\mc/application/admin\view\public\footer.html";i:1508205842;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
     }
     </style>
 </head>
-<body  class="gray-bg">
+<body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
@@ -55,7 +55,6 @@
                             <th style="text-align: left;">手机号</th>
                             <th style="text-align: left;">微信号</th>
                             <th style="text-align: left;">代理类型</th>
-                            <th style="text-align: left;">状态</th>
                             <th style="width: 20%;">操作</th>
                         </tr>
                         </thead>
@@ -68,18 +67,9 @@
                                 <td style="text-align: left;">{{d[i].phone}}</td>
                                 <td style="text-align: left;">{{d[i].wechat}}</td>
                                 <td style="text-align: left;">{{d[i].type_name}}</td>
-                                <td style="text-align: left;">
-                                    {{# if(d[i].status == 0) { }}
-                                    未审核
-                                    {{# }else { }}
-                                    已审核
-                                    {{# } }}
-                                </td>
                                 <td>
-                                    <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-trash-o"></i> 删除</a>
+                                    <a href="javascript:;" onclick="detail({{d[i].id}})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i> 查看详情</a>
                                 </td>
                             </tr>
                             {{# } }}
@@ -138,16 +128,8 @@
             }
         });
     }
-    function edit(id) {
-        window.location = 'edit.html?id=' + id;
-    }
-
-    function check(id) {
-        window.location = 'check.html?id=' + id;
-    }
-
-    function del(id) {
-        otcms.confirm(id,'del.html');
+    function detail(id) {
+        window.location.href = 'detail.html?id='+id;
     }
 </script>
 </body>

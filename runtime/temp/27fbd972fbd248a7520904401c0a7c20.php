@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\score\index.html";i:1526892920;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"F:\workplace\mc/application/admin\view\score\detail.html";i:1526910815;s:57:"F:\workplace\mc/application/admin\view\public\header.html";i:1508205842;s:57:"F:\workplace\mc/application/admin\view\public\footer.html";i:1508205842;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,25 +22,20 @@
     }
     </style>
 </head>
-<body  class="gray-bg">
+<body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>所有代理</h5>
+            <h5>积分记录</h5>
         </div>
         <div class="ibox-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <form name="admin_list_sea" class="form-search" method="post" action="<?php echo url('index'); ?>">
-                        <div class="col-sm-3">
-                            <div class="input-group">
-                                <input type="text" id="key" class="form-control" name="key" value="<?php echo $val; ?>" placeholder="输入需查询的用户名" />
-                                <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
-                                </span>
-                            </div>
+                    <div  class="col-sm-2" style="width: 120px">
+                        <div class="input-group" >
+                            <a class="btn btn-outline btn-primary" href="<?php echo url('add',array('id' => $id)); ?>">添加积分记录</a>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="hr-line-dashed"></div>
@@ -50,35 +45,26 @@
                         <thead>
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
-                            <th style="text-align: left;">用户名</th>
-                            <th style="text-align: left;">姓名</th>
-                            <th style="text-align: left;">手机号</th>
-                            <th style="text-align: left;">微信号</th>
-                            <th style="text-align: left;">代理类型</th>
-                            <th style="text-align: left;">状态</th>
-                            <th style="width: 20%;">操作</th>
+                            <th style="width: 10%;text-align: left;">时间</th>
+                            <th style="width: 10%;text-align: left;">类型</th>
+                            <th style="width: 10%;text-align: right;">积分</th>
+                            <th style="width: 15%;">备注</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
-                            {{# for(var i=0;i<d.length;i++){  }}
+                            {{# for(var i=0;i<d.length;i++){ }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="text-align: left;">{{d[i].user_name}}</td>
-                                <td style="text-align: left;">{{d[i].name}}</td>
-                                <td style="text-align: left;">{{d[i].phone}}</td>
-                                <td style="text-align: left;">{{d[i].wechat}}</td>
-                                <td style="text-align: left;">{{d[i].type_name}}</td>
-                                <td style="text-align: left;">
-                                    {{# if(d[i].status == 0) { }}
-                                    未审核
-                                    {{# }else { }}
-                                    已审核
-                                    {{# } }}
+                                <td style="width: 10%;text-align: left;">{{d[i].date}}</td>
+                                <td style="width: 10%;text-align: left;">
+                                {{# if(d[i].type == 1) {  }}
+                                    新增
+                                {{# }else { }}
+                                    扣除
+                                {{# }  }}
                                 </td>
-                                <td>
-                                    <a href="javascript:;" onclick="detail({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i> 查看详情</a>
-                                </td>
+                                <td style="width: 10%;text-align: right;">{{d[i].amount}}</td>
+                                <td>{{d[i].summary}}</td>
                             </tr>
                             {{# } }}
                         </script>
@@ -109,8 +95,8 @@
 <script>
     Ajaxpage();
     function Ajaxpage(curr){
-        var key=$('#key').val();
-        $.getJSON('<?php echo url("member/index"); ?>', {page: curr || 1,key:key}, function(data){
+        var key = '<?php echo $id; ?>';
+        $.getJSON('<?php echo url("score/detail"); ?>', {page: curr || 1,id : key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
@@ -136,9 +122,8 @@
             }
         });
     }
-    function detail(id) {
-        window.location.href = 'detail.html?id='+id;
-    }
+
+
 </script>
 </body>
 </html>

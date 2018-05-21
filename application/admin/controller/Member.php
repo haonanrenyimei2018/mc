@@ -87,7 +87,7 @@ class Member extends Base
                 $lm = new LMember();
                 $lm->check($params['id']);
                 $memberInfo = new MemberInfoModel();
-                $memberInfo->_add($params['id'],$score);
+                dump($memberInfo->add_store($params['id'],$score));
                 Db::commit();
                 return json(['code' => 1,'msg' => '操作成功!','url' => url('uncheck')]);
             }catch (Exception $e) {

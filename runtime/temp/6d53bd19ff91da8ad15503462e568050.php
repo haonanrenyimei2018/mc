@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\params\index.html";i:1526264786;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:53:"F:\workplace\mc/application/admin\view\score\add.html";i:1526906885;s:57:"F:\workplace\mc/application/admin\view\public\header.html";i:1508205842;s:57:"F:\workplace\mc/application/admin\view\public\footer.html";i:1508205842;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,25 +28,41 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>参数设置</h5>
+                    <h5>添加积分记录</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="add" id="add" method="post" action="index">
-                        <?php if(is_array($data) || $data instanceof \think\Collection || $data instanceof \think\Paginator): if( count($data)==0 ) : echo "" ;else: foreach($data as $key=>$val): ?>
+                    <form name="add" class="form-horizontal" id="add" method="post" action="add">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label" style="text-align: right"><?php echo $val['name']; ?></label>
-                            <div class="input-group col-sm-3">
-                                <input type="text" name="<?php echo $val['key']; ?>" required id="<?php echo $val['key']; ?>" class="form-control params" value="<?php echo $val['value']; ?>">
-                                <?php echo $val['intro']; ?>
+                            <label class="col-sm-3 control-label" style="text-align: right">类型</label>
+                            <div class="input-group col-sm-4">
+                                <select name="type" id="type" class="form-control">
+                                    <option value="1">增加</option>
+                                    <option value="2">扣除</option>
+                                </select>
                             </div>
                         </div>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">积分</label>
+                            <div class="input-group col-sm-4">
+                                <input type="number" id="amount" name="amount" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">备注</label>
+                            <div class="input-group col-sm-4">
+                                <textarea name="summary" id="summary" class="form-control"></textarea>
+                            </div>
+                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-3">
                                 <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                             </div>
                         </div>
+                        <input type="hidden" name="mid" value="<?php echo $id; ?>">
                     </form>
                 </div>
             </div>
@@ -69,33 +85,30 @@
     $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
 </script>
 <script>
-$(function () {
-    $('#add').ajaxForm({
-        beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
-        success: complete, // 这是提交后的方法
-        dataType: 'json'
+    $(function () {
+        $('#add').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
     });
-});
-
-function checkForm() {
-    var params = $('.params');
-    $('.params').each(function () {
-        console.log(this);
-        var val = $(this).val();
-        if(val == '' || val == 0) {
-            otcms.error('参数必须大于0!');
+    function checkForm() {
+        var source = $('#amount').val();
+        if(source == '' || source <= 0){
+            otcms.error('请填写正确的积分!');
             return false;
         }
-    });
-}
-
-function complete(res) {
-    if(res.code == 1){
-        otcms.success(res.msg,res.url);
-    }else {
-        otcms.error(res.msg);
     }
-}
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
 </script>
+
+
+
 </body>
 </html>

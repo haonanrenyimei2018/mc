@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"E:\workplace\mc/application/admin\view\product\index.html";i:1526286181;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\workplace\mc/application/admin\view\score\index.html";i:1526904066;s:57:"F:\workplace\mc/application/admin\view\public\header.html";i:1508205842;s:57:"F:\workplace\mc/application/admin\view\public\footer.html";i:1508205842;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,16 +26,11 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>积分商城</h5>
+            <h5>所有代理</h5>
         </div>
         <div class="ibox-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <div  class="col-sm-2" style="width: 120px">
-                        <div class="input-group" >
-                            <a class="btn btn-outline btn-primary" href="<?php echo url('add'); ?>">添加产品</a>
-                        </div>
-                    </div>
                     <form name="admin_list_sea" class="form-search" method="post" action="<?php echo url('index'); ?>">
                         <div class="col-sm-3">
                             <div class="input-group">
@@ -55,32 +50,34 @@
                         <thead>
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
-                            <th style="text-align: left;">产品名称</th>
-                            <th style="width: 10%;">图片</th>
-                            <th style="width: 10%;text-align: right;">所需积分</th>
-                            <th style="width: 10%;text-align: right;">库存量</th>
-                            <th style="width: 15%;">操作</th>
+                            <th style="text-align: left;">用户名</th>
+                            <th style="text-align: left;">姓名</th>
+                            <th style="text-align: left;">手机号</th>
+                            <th style="text-align: left;">微信号</th>
+                            <th style="text-align: left;">代理类型</th>
+                            <th style="text-align: left;">状态</th>
+                            <th style="width: 20%;">操作</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
+                                <td style="text-align: left;">{{d[i].user_name}}</td>
                                 <td style="text-align: left;">{{d[i].name}}</td>
-                                <td style="width: 10%;">
-                                    <img src="{{d[i].images}}" class="img-circle" style="width:35px;height:35px" onerror="this.src='/static/admin/images/head_default.gif'"/>
-                                </td>
-                                <td style="width: 10%;text-align: right;">
-                                    {{d[i].sources}}
-                                </td>
-                                <td style="width: 10%;text-align: right;">
-                                    {{d[i].amount}}
+                                <td style="text-align: left;">{{d[i].phone}}</td>
+                                <td style="text-align: left;">{{d[i].wechat}}</td>
+                                <td style="text-align: left;">{{d[i].type_name}}</td>
+                                <td style="text-align: left;">
+                                    {{# if(d[i].status == 0) { }}
+                                    未审核
+                                    {{# }else { }}
+                                    已审核
+                                    {{# } }}
                                 </td>
                                 <td>
-                                    <a href="javascript:;" onclick="userEdit({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="userDel({{d[i].id}})" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-trash-o"></i> 删除</a>
+                                    <a href="javascript:;" onclick="detail({{d[i].id}})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i> 查看详情</a>
                                 </td>
                             </tr>
                             {{# } }}
@@ -113,7 +110,7 @@
     Ajaxpage();
     function Ajaxpage(curr){
         var key=$('#key').val();
-        $.getJSON('<?php echo url("product/index"); ?>', {page: curr || 1,key:key}, function(data){
+        $.getJSON('<?php echo url("member/index"); ?>', {page: curr || 1,key:key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
@@ -139,16 +136,9 @@
             }
         });
     }
-
-    function userEdit(id) {
-        window.location = 'edit.html?id=' + id;
+    function detail(id) {
+        window.location.href = 'detail.html?id='+id;
     }
-
-    function userDel(id) {
-        otcms.confirm(id,'del.html');
-    }
-
-
 </script>
 </body>
 </html>

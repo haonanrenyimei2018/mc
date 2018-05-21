@@ -16,5 +16,7 @@ class SourceInfoModel extends Model
     protected $name = "sources_info";
     protected $autoWriteTimestamp = false;
 
-
+    public function _add($data) {
+        $this->insertGetId($data);
+    }
 }

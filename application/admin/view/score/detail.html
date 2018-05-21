@@ -10,7 +10,7 @@
                 <div class="col-sm-12">
                     <div  class="col-sm-2" style="width: 120px">
                         <div class="input-group" >
-                            <a class="btn btn-outline btn-primary" href="{:url('add')}">添加积分记录</a>
+                            <a class="btn btn-outline btn-primary" href="{:url('add',array('id' => $id))}">添加积分记录</a>
                         </div>
                     </div>
                 </div>
@@ -22,41 +22,71 @@
                         <thead>
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
-                            <th style="width: 60%;text-align: left;">类型</th>
+                            <th style="width: 10%;text-align: left;">时间</th>
+                            <th style="width: 10%;text-align: left;">类型</th>
                             <th style="width: 10%;text-align: right;">积分</th>
                             <th style="width: 15%;">备注</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
-                            {{# for(var i=0;i<d.length;i++){  }}
+                            {{# for(var i=0;i<d.length;i++){ }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="width: 60%;text-align: left;"></td>
-                                <td style="width: 10%;text-align: right;">
+                                <td style="width: 10%;text-align: left;">{{d[i].date}}</td>
+                                <td style="width: 10%;text-align: left;">
+                                {{# if(d[i].type == 1) {  }}
+                                    新增
+                                {{# }else { }}
+                                    扣除
+                                {{# }  }}
                                 </td>
-                                <td>
-                                </td>
+                                <td style="width: 10%;text-align: right;">{{d[i].amount}}</td>
+                                <td>{{d[i].summary}}</td>
                             </tr>
                             {{# } }}
                         </script>
                         <tbody id="list-content"></tbody>
-
-
-
                     </table>
+                    <div id="AjaxPage" style=" text-align: right;"></div>
+                    <div id="allpage" style=" text-align: right;"></div>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
 </div>
-
-
-
 {include file="public/footer" /}
+<script>
+    Ajaxpage();
+    function Ajaxpage(curr){
+        var key = '{$id}';
+        $.getJSON('{:url("score/detail")}', {page: curr || 1,id : key}, function(data){
+            $(".spiner-example").css('display','none'); //数据加载完关闭动画
+            if(data==''){
+                $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
+            }else{
+                var tpl = document.getElementById('list-template').innerHTML;
+                laytpl(tpl).render(data, function(html){
+                    document.getElementById('list-content').innerHTML = html;
+                });
+                laypage({
+                    cont: $('#AjaxPage'),//容器。值支持id名、原生dom对象，jquery对象,
+                    pages:'{$allpage}',//总页数
+                    skip: true,//是否开启跳页
+                    skin: '#1AB5B7',//分页组件颜色
+                    curr: curr || 1,
+                    groups: 3,//连续显示分页数
+                    jump: function(obj, first){
+                        if(!first){
+                            Ajaxpage(obj.curr)
+                        }
+                        $('#allpage').html('第'+ obj.curr +'页，共'+ obj.pages +'页');
+                    }
+                });
+            }
+        });
+    }
+
+
+</script>
 </body>
 </html>

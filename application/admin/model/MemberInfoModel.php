@@ -21,9 +21,9 @@ class MemberInfoModel extends Model
      * 注册
      * @return mixed|void
      */
-    public function _add($id,$score){
+    public function add_store($id,$score){
         $data = [
-            'member_id' => $id,
+            'member' => $id,
             'money' => 0,
             'commission' => 0,
             'performance' => 0,
