@@ -44,6 +44,8 @@ class Ad extends Base
      * 测试上传
      */
     public function upload() {
+        dump($_SERVER);
+        die;
         return $this->fetch();
     }
 

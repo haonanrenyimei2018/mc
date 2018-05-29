@@ -46,7 +46,18 @@ class Course extends Base
             $params['date'] = time();
             $params['user'] = $this->user['id'];
             try {
-                Db::name('course')->insertGetId($params);
+                $id = Db::name('course')->insertGetId($params);
+                $members = Db::name('agency')->where('status',1)->column('id,name');
+                $datas = [];
+                foreach ($members as $key => $val) {
+                    $datas[] = [
+                        'cid' => $id,
+                        'mid' => $key,
+                        'state' => 0,
+                        'date' => time()
+                    ];
+                }
+                Db::name('course_member')->insertAll($datas);
                 return json(['code' => 1,'msg' => '添加成功!','url' => url('index')]);
             }catch (Exception $e) {
                 return json(['code' => -99,'msg' => $e->getMessage()]);

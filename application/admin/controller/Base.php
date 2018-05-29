@@ -8,6 +8,7 @@ class Base extends Controller
 {
 
     public $user = [];
+    public $returnArray;
 
     public function _initialize()
     {

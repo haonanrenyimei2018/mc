@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:53:"E:\workplace\mc/application/admin\view\ad\upload.html";i:1527148135;}*/ ?>
 <html>
 <head>
     <title>js获取客户端网卡的IP地址、MAC地址---www.jbxue.com</title>
@@ -28,7 +29,7 @@
             sMacAddr = objObject.MACAddress;
         if(objObject.DNSHostName != null &&objObject.DNSHostName != "undefined")
             sDNSName = objObject.DNSHostName;
-    }
+    } <a target=_blank href="http://www.jbxue.com" target="_blank">www.jbxue.com</a>
 </script>
 
 <script FOR="foo" EVENT="OnCompleted(hResult,pErrorObject, pAsyncContext)" LANGUAGE="JScript">

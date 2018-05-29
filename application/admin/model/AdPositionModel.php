@@ -9,7 +9,7 @@ class AdPositionModel extends Model
     protected $name = 'ad_position';
 
     // 开启自动写入时间戳
-    protected $autoWriteTimestamp = true;
+    protected $autoWriteTimestamp = false;
 
     /**
      * [getAll 根据条件获取全部数据]
