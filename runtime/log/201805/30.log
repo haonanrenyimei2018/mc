@@ -1,0 +1,572 @@
+[ 2018-05-30T14:53:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.015000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ error ] [8]未定义数组索引: item
+
+---------------------------------------------------------------
+[ 2018-05-30T14:53:18+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T14:55:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T14:57:18+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T14:57:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T14:57:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T14:57:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:08:34+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:09:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:09:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:09:34+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:09:36+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:10:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:13:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:13:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:13:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:13:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:17:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:17:13+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:17:14+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:19:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:29:46+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:33:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T15:33:11+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:06:29+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:06:30+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:07:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:08:04+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:08:53+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:12:30+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:12:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:15:47+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:16:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:16:18+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:17:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:19:37+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:19:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:20:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:20:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:21:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:21:26+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:21:36+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:21:52+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:22:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:34+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:46+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:23:53+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:24:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:27:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:27:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:28:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:29:33+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:31:33+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:31:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:31:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:32:31+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:33:03+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:34:06+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:34:19+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:34:31+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:34:40+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:34:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:35:29+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:35:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:36:04+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:36:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:36:36+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:37:56+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:06+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:38:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:27+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:33+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:34+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:39:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:44:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:44:40+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:52:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:54:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:55:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:55:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:55:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:56:13+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:56:37+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:56:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T16:56:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T17:07:09+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T17:47:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_type` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T17:53:30+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause'
+
+---------------------------------------------------------------
+[ 2018-05-30T17:53:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `username` = 'user_1' LIMIT 1 [ RunTime:0.004000s ]
+
+---------------------------------------------------------------
+[ 2018-05-30T17:53:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `username` = 'user_2' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `mc_agency` (`username` , `password` , `name` , `phone` , `idn` , `wechat` , `type` , `status` , `date`) VALUES ('user_2' , '123456' , 'zhangsan' , '13615460020' , '37232119861030001X' , '235235' , 1 , 0 , '1527674034') [ RunTime:0.007000s ]
+
+---------------------------------------------------------------

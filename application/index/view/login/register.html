@@ -1,0 +1,27 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">注册</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        {foreach name="types" item="val"}
+            <button type="button" name="types" value="{$val['id']}" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">{$val['name']}</button>
+        {/foreach}
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    $(function () {
+        $('button[name=types]').click(function () {
+            var type = $(this).val();
+            window.location.href = '/index/login/register_1.html?type=' + type;
+        });
+    });
+</script>
+</body>
+</html>

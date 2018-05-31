@@ -1,0 +1,28 @@
+{include file="public/_header"/}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">登陆</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <button type="button" id="tongcheng" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">微同城</button>
+        <button type="button" id="quancheng" class="mui-btn mui-btn-danger mui-btn-block mui-btn-outlined">微全城</button>
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    $(document).ready(function () {
+        mui.init();
+        //微全城
+        $('#quancheng').click(function () {
+            window.location.href = '/index/login/login.html';
+        });
+        //微同城
+        $('#tongcheng').click(function () {
+            window.location.href = '';
+        });
+    });
+</script>
+
+</body>
+</html>

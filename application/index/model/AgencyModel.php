@@ -16,4 +16,5 @@ class AgencyModel extends Model
     protected $name = 'agency';
     protected $autoWriteTimestamp = false;
 
+
 }
