@@ -42,6 +42,7 @@ class Product extends Base
     public function add() {
         if($this->request->isAjax()) {
             $params = input('post.');
+            $params['state'] = 1;
             $params['date'] = time();
             $params['user'] = $this->user['id'];
             unset($params['file']);

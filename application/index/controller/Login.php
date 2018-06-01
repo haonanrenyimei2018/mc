@@ -4,13 +4,14 @@
  * User: Administrator
  * Date: 2018/5/23
  * Time: 14:22
+ * 登陆
  */
 
 namespace app\index\controller;
 
 
-use app\index\model\AgencyModel;
-use app\index\model\AgencyTypeModel;
+use app\model\AgencyModel;
+use app\model\AgencyTypeModel;
 use think\Controller;
 use Think\Exception;
 
@@ -54,6 +55,7 @@ class Login extends Controller
                 if(time() > $agency['date_end']) {
                     return json(['code' => -3,'msg' => '代理有效期已到，请联系官方!']);
                 }
+                session('member',$agency);
                 return json(['code' => '1','msg' => '登陆成功!','url' => url('/index/index/index')]);
             }else {
                 return json(['code' => -1,'msg' => '用户名或密码不正确']);

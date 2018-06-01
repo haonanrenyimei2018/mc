@@ -1,4 +1,15 @@
-{include file="public/_header" /}
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1527838258;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>微同城</title>
+    <link rel="stylesheet" href="/static/mui/css/mui.css">
+</head>
+
 <body>
 <!-- header -->
 <header class="mui-bar mui-bar-nav">
@@ -56,7 +67,11 @@
         </li>
     </ul>
 </div>
-{include file="public/_footer" /}
+<script src="/static/admin/js/jquery.min.js"></script>
+<script src="/static/mui/js/mui.min.js"></script>
+<script src="/static/admin/js/jquery.form.js"></script>
+<script src="/static/admin/js/layer/layer.js"></script>
+<script src="/static/admin/js/otcms.js"></script>
 <script>
     mui.init();
 </script>

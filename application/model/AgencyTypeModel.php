@@ -3,18 +3,14 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2018/5/23
- * Time: 14:34
+ * Time: 14:31
  */
-
-namespace app\index\model;
-
+namespace app\model;
 
 use think\Model;
 
-class AgencyModel extends Model
+class AgencyTypeModel extends Model
 {
-    protected $name = 'agency';
+    protected $name = 'agency_type';
     protected $autoWriteTimestamp = false;
-
-
 }

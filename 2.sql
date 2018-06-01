@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 287, '127.0.0.1', 1527148168, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 288, '127.0.0.1', 1527730784, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='广告类型';
 
--- 正在导出表  db_mc.mc_ad_type 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_ad_type 的数据：~0 rows (大约)
 DELETE FROM `mc_ad_type`;
 /*!40000 ALTER TABLE `mc_ad_type` DISABLE KEYS */;
 INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
 DROP TABLE IF EXISTS `mc_agency`;
 CREATE TABLE IF NOT EXISTS `mc_agency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(50) DEFAULT '0' COMMENT '用户名',
+  `username` varchar(50) DEFAULT '0' COMMENT '用户名',
   `password` varchar(300) DEFAULT '0' COMMENT '密码',
   `name` varchar(300) DEFAULT '0' COMMENT '姓名',
   `idn` varchar(300) DEFAULT '0' COMMENT '身份证号',
@@ -91,13 +91,14 @@ CREATE TABLE IF NOT EXISTS `mc_agency` (
   `date` varchar(50) DEFAULT '0' COMMENT '添加时间',
   `status` tinyint(4) DEFAULT '0' COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='代理表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='代理表';
 
--- 正在导出表  db_mc.mc_agency 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_agency 的数据：~0 rows (大约)
 DELETE FROM `mc_agency`;
 /*!40000 ALTER TABLE `mc_agency` DISABLE KEYS */;
-INSERT INTO `mc_agency` (`id`, `user_name`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
-	(1, 'user_1', '0', '张三', '37232119861030001X', '12345678901', '12345678901', 1, 1, 0, '37', '3703', '0', '0', '1558443501', '0', 1);
+INSERT INTO `mc_agency` (`id`, `username`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
+	(1, 'user_1', 'e10adc3949ba59abbe56e057f20f883e', '张三', '37232119861030001X', '12345678901', '12345678901', 1, 1, 0, '37', '3703', '0', '0', '1558443501', '0', 1),
+	(2, 'user_2', 'e10adc3949ba59abbe56e057f20f883e', 'zhangsan', '37232119861030001X', '13615460020', '235235', 1, 0, 0, '0', '0', '0', '0', '0', '1527674034', 0);
 /*!40000 ALTER TABLE `mc_agency` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_info 结构
@@ -112,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
   PRIMARY KEY (`member`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理的可提现金额，累计佣金，累计业绩，累计积分表';
 
--- 正在导出表  db_mc.mc_agency_info 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_agency_info 的数据：~0 rows (大约)
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
@@ -136,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_type` (
 DELETE FROM `mc_agency_type`;
 /*!40000 ALTER TABLE `mc_agency_type` DISABLE KEYS */;
 INSERT INTO `mc_agency_type` (`id`, `type`, `name`, `money`, `agreement`, `date`, `user`) VALUES
-	(1, '001', '市级总代理', 3200, '<p>11212121</p>', 1525936124, 1),
+	(1, '001', '市级总代理', 3200, '<p>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111212121</p>', 1525936124, 1),
 	(2, '002', '市级普通代理', 1600, '', 1525934618, 1),
 	(3, '003', '县级普通代理', 1000, '', 1525934655, 1),
 	(4, '004', '镇级普通代理', 499, '', 1525934674, 1);
@@ -17036,9 +17037,9 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：47 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：48 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17088,7 +17089,8 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(150, 'admin/member/index', '所有代理', 1, 1, '', '', 134, 50, 1526541699, 1526541765),
 	(151, 'admin/member/uncheck', '待审核代理', 1, 1, '', '', 134, 50, 1526541728, 1526541779),
 	(152, 'admin/money/index', '奖金管理', 1, 1, '', '', 136, 50, 1526887339, 1526887339),
-	(153, 'admin/score/index', '积分管理', 1, 1, '', '', 136, 50, 1526887376, 1526887376);
+	(153, 'admin/score/index', '积分管理', 1, 1, '', '', 136, 50, 1526887376, 1526887376),
+	(154, 'admin/silder/index', '图片轮播', 1, 1, '', '', 1, 50, 1527748812, 1527748812);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17180,9 +17182,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3839 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3841 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：38 rows
+-- 正在导出表  db_mc.mc_log 的数据：40 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17223,7 +17225,9 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3835, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526905833),
 	(3836, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1526972332),
 	(3837, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527040109),
-	(3838, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527148168);
+	(3838, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527148168),
+	(3839, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527730784),
+	(3840, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1527748812);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17337,11 +17341,11 @@ CREATE TABLE IF NOT EXISTS `mc_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
 
--- 正在导出表  db_mc.mc_product 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_product 的数据：~0 rows (大约)
 DELETE FROM `mc_product`;
 /*!40000 ALTER TABLE `mc_product` DISABLE KEYS */;
 INSERT INTO `mc_product` (`id`, `name`, `intro`, `images`, `content`, `sources`, `amount`, `state`, `date`, `user`) VALUES
-	(2, '产品1', '产品产品产品产品产品产品', '/uploads/images/20180514\\c080277705d54dc7bd65002b7c796cb1.jpg', '<p>产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品</p>', 500, 300, 0, 1526286867, 1);
+	(2, '产品1', '产品产品产品产品产品产品', '/uploads/images/20180514\\c080277705d54dc7bd65002b7c796cb1.jpg', '<p>产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品</p>', 500, 300, 1, 1526286867, 1);
 /*!40000 ALTER TABLE `mc_product` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_region 结构
@@ -17390,6 +17394,26 @@ INSERT INTO `mc_region` (`id`, `code`, `name`, `pid`) VALUES
 	(30, '64', '宁夏回族自治区', 0),
 	(31, '65', '新疆维吾尔自治区', 0);
 /*!40000 ALTER TABLE `mc_region` ENABLE KEYS */;
+
+-- 导出  表 db_mc.mc_silder 结构
+DROP TABLE IF EXISTS `mc_silder`;
+CREATE TABLE IF NOT EXISTS `mc_silder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL DEFAULT '0',
+  `images` varchar(200) NOT NULL DEFAULT '0',
+  `date_start` int(11) NOT NULL DEFAULT '0',
+  `date_end` int(11) NOT NULL DEFAULT '0',
+  `date` int(11) NOT NULL DEFAULT '0',
+  `user` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='图片轮播';
+
+-- 正在导出表  db_mc.mc_silder 的数据：~0 rows (大约)
+DELETE FROM `mc_silder`;
+/*!40000 ALTER TABLE `mc_silder` DISABLE KEYS */;
+INSERT INTO `mc_silder` (`id`, `title`, `images`, `date_start`, `date_end`, `date`, `user`) VALUES
+	(4, '公司高能广告', '/uploads/images/20180531\\0f0f3f02d381afb62c2abfe2a968a181.jpg', 1527696000, 1527955199, 1527749153, 1);
+/*!40000 ALTER TABLE `mc_silder` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_sources_info 结构
 DROP TABLE IF EXISTS `mc_sources_info`;

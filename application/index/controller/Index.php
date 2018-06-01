@@ -4,17 +4,31 @@
  * User: Administrator
  * Date: 2018/5/24
  * Time: 8:56
+ * 首页
  */
 
 namespace app\index\controller;
 
 
+use app\model\MSilderModel;
+
 class Index extends Base
 {
+    public $silderModel;
+    public function _initialize() {
+        parent::_initialize();
+        $this->silderModel = new MSilderModel();
+    }
     /**
      * 首页
      */
     public function index() {
+        //获取幻灯
+        $where = [
+            'date_end' => ['egt',time()]
+        ];
+        $silders = $this->silderModel->where($where)->select();
+        $this->assign('silders',$silders);
         return $this->view->fetch();
     }
     /**

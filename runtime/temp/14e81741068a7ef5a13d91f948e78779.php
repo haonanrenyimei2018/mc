@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\login\index.html";i:1527666808;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527650438;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527670571;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\login\index.html";i:1527832676;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
     <h1 class="mui-title">登陆</h1>
 </header>
 <div class="mui-content">
-    <div class="mui-content-padded">
+    <div class="mui-content-padded" style="margin-top: 1em;">
         <button type="button" id="tongcheng" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">微同城</button>
         <button type="button" id="quancheng" class="mui-btn mui-btn-danger mui-btn-block mui-btn-outlined">微全城</button>
     </div>

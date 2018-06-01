@@ -1475,13 +1475,12 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
     z-index: 10;
     right: 0;
     left: 0;
-
-    height: 44px;
+    height: 50px;
     padding-right: 10px;
     padding-left: 10px;
 
     border-bottom: 0;
-    background-color: #f7f7f7;
+    background-color: #03a9f4;
     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
             box-shadow: 0 0 1px rgba(0, 0, 0, .85);
 
@@ -1493,14 +1492,13 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 {
     right: 40px;
     left: 40px;
-
     display: inline-block;
     overflow: hidden;
-
     width: auto;
     margin: 0;
-
     text-overflow: ellipsis;
+    color: #FFFFFF;
+    font-size: 20px;
 }
 .mui-bar .mui-backdrop
 {
@@ -2752,10 +2750,9 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 {
     margin: 0;
     padding: 0;
-
     border-top: 1px solid #eee;
     border-left: 1px solid #eee;
-    background-color: #f2f2f2;
+    background-color: #FFFFFF;
 }
 .mui-grid-view.mui-grid-9:before, .mui-grid-view.mui-grid-9:after
 {
