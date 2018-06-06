@@ -1,13 +1,31 @@
 {include file="public/_header" /}
 <body>
 <header class="mui-bar mui-bar-nav">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF"></a>
     <h1 class="mui-title">财务管理</h1>
 </header>
-
-
-
-
+<div class="mui-content">
+    <div class="mui-card">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                累计业绩
+                <span class="mui-badge mui-badge-primary">{$info['performance']}</span>
+            </li>
+            <li class="mui-table-view-cell">
+                可提现金额
+                <span class="mui-badge mui-badge-primary">{$info['money']}</span>
+            </li>
+            <li class="mui-table-view-cell">
+                累计佣金
+                <span class="mui-badge mui-badge-primary">{$info['commission']}</span>
+            </li>
+            <li class="mui-table-view-cell">
+                累计积分
+                <span class="mui-badge mui-badge-primary">{$info['score']}</span>
+            </li>
+        </ul>
+    </div>
+</div>
 {include file="public/_footer" /}
 </body>
 </html>
