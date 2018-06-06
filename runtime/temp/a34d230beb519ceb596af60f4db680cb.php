@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1527838258;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528186459;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +24,7 @@
 <div class="mui-content">
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/notice/index.html">
                 <img src="/static/index/images/notice.png" width="64px" height="64px">
                 <div class="mui-media-body">公司公告</div>
             </a>
@@ -36,7 +36,7 @@
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/ad/index.html">
                 <img src="/static/index/images/ad.png" width="64px" height="64px">
                 <div class="mui-media-body">我的广告</div>
             </a>

@@ -10,13 +10,17 @@
 namespace app\index\controller;
 
 
+use app\model\AgencyInfoModel;
 use app\model\MProduct;
 
 class Shop extends Base
 {
     private $productModel;
+    private $agencyInfoModel;
     public function _initialize() {
+        parent::_initialize();
         $this->productModel = new MProduct();
+        $this->agencyInfoModel = new AgencyInfoModel();
     }
     /**
      * 获取积分商城的产品
@@ -33,6 +37,12 @@ class Shop extends Base
         $this->assign('datas',$data);
         $this->assign('pageSize',$pageSize);
         $this->assign('pageCount',$pageCount);
+        //获取我的积分
+        $where = [
+            'member' => $this->user['id']
+        ];
+        $info = $this->agencyInfoModel->where($where)->find();
+        $this->assign('score',$info['score']);
         return $this->view->fetch();
     }
     /**

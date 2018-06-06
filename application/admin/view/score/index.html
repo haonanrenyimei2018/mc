@@ -39,7 +39,7 @@
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="text-align: left;">{{d[i].user_name}}</td>
+                                <td style="text-align: left;">{{d[i].username}}</td>
                                 <td style="text-align: left;">{{d[i].name}}</td>
                                 <td style="text-align: left;">{{d[i].phone}}</td>
                                 <td style="text-align: left;">{{d[i].wechat}}</td>
@@ -65,7 +65,7 @@
     Ajaxpage();
     function Ajaxpage(curr){
         var key=$('#key').val();
-        $.getJSON('{:url("member/index")}', {page: curr || 1,key:key}, function(data){
+        $.getJSON('{:url("score/index")}', {page: curr || 1,key:key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');

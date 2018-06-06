@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1527845072;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1528163721;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +15,10 @@
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <h1 class="mui-title">积分商城</h1>
 </header>
+<nav class="mui-bar mui-bar-tab" style="background-color: white;height: 40px;padding-top: 10px;">
+    可用积分:<?php echo $score; ?>
+</nav>
+<!--<h5 style="margin-top: 50px;vertical-align:middle;height: 30px;border: solid 1px red;display: block;">可用积分:<?php echo $score; ?></h5>-->
 <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
     <div class="mui-scroll mui-table-view">
         <?php if(is_array($datas) || $datas instanceof \think\Collection || $datas instanceof \think\Paginator): if( count($datas)==0 ) : echo "" ;else: foreach($datas as $key=>$val): ?>
@@ -23,7 +27,6 @@
             <div class="mui-card-content">
                 <img src="<?php echo $val['images']; ?>" alt="" width="100%">
             </div>
-
             <div class="mui-card-content">
                 <div class="mui-card-content-inner">
                     <p>库存:<?php echo $val['amount']; ?></p>
@@ -60,12 +63,38 @@
         });
     });
     function pulldownRefresh() {
+        page = 1;
+        var data = {
+            page : page,
+            pageSize : pageSize
+        }
+        $.get('/index/shop/getdata.html',data,function (res) {
+            var html = '';
+            for(var i=0;i<res.length;++i) {
+                html += '<div class="mui-card">';
+                html += '<div class="mui-card-header">'+ res[i].name +'</div>';
+                html += '<div class="mui-card-content">';
+                html += '<img src="'+ res[i].images +'" alt="" width="100%">';
+                html += '</div>';
+                html += '<div class="mui-card-content">';
+                html += '<div class="mui-card-content-inner">';
+                html += '<p>库存:' +res[i].amount+ '</p>';
+                html += '<p style="color: #333;">'+ res[i].intro +'</p>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="mui-card-footer">';
+                html += '<a class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
+                html += '</div>';
+                html += '</div>';
+            }
+            mui('#pullrefresh').pullRefresh().endPullupToRefresh();
+            $('.mui-table-view').html(html);
+        },'JSON');
     }
     /**
      * 上拉加载具体业务实现
      */
     function pullupRefresh() {
-        alert(3);
         if(page >= pageCount) {
             mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
             return false;

@@ -1,0 +1,19 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">公司公告</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <h4>{$data['title']}</h4>
+        <h5>作者: {$members[$data['user']]}&nbsp;发布时间:{$data['date']|date='Y-m-d',###}&nbsp;</h5>
+        <div>
+            {$data['content']}
+        </div>
+        <h5>人气:{$data['times']}</h5>
+    </div>
+</div>
+{include file="public/_footer" /}
+</body>
+</html>

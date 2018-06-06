@@ -1,0 +1,29 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">广告详情</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <p>广告标题</p>
+        <h4>{$data['title']}</h4>
+        <p>广告类型</p>
+        <h4>{$data['type_name']}</h4>
+        <p>广告金额</p>
+        <h4>{$data['amount']}元</h4>
+        <p>广告时间</p>
+        <h4>{$data['months']}天</h4>
+        <p>状态</p>
+        <h4>
+            {switch name="data['status']"}
+                {case value="0"} 未审核 {/case}
+                {case value="1"} 审核通过 {/case}
+                {case value="2"} 审核驳回 {/case}
+            {/switch}
+        </h4>
+    </div>
+</div>
+{include file="public/_footer" /}
+</body>
+</html>

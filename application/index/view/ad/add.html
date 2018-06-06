@@ -1,0 +1,85 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">发布广告</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <form name="addForm" id="addForm" method="post" action="add">
+            <p>广告标题</p>
+            <div class="mui-input-row mui-password">
+                <input type="text" class="mui-input-password" id="title" name="title" data-input-password="5">
+            </div>
+            <p>广告类型</p>
+            <div class="mui-input-row mui-password">
+                <!--<input type="number" class="mui-input-password" id="type" name="type" data-input-password="3">-->
+                <select name="type" id="type" class="mui-input-password" style="text-align: center;">
+                    <option value="">--请选择--</option>
+                    {foreach name="adType" item="val"}
+                    <option value="{$key}">{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <p>广告金额</p>
+            <div class="mui-input-row mui-password">
+                <input type="number" class="mui-input-password" id="amount" style="width: 95%" name="amount" data-input-password="3">元
+            </div>
+            <p>广告时间</p>
+            <div class="mui-input-row mui-password">
+                <input type="number" class="mui-input-password" style="width: 95%" id="months" name="months" data-input-password="3">月
+            </div>
+            <div class="mui-button-row">
+                <button type="submit" class="mui-btn mui-btn-primary">确认</button>&nbsp;&nbsp;
+                <button type="button" class="mui-btn mui-action-back mui-btn-danger">取消</button>
+            </div>
+        </form>
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    $(document).ready(function () {
+        $('#addForm').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+
+    function checkForm() {
+        var title = $('#title').val(),
+            amount = $('#amount').val(),
+            type = $('#type').val(),
+            months = $('#months').val();
+
+        if(title == '') {
+            mui.toast('请输入广告标题');
+            return false;
+        }
+        if(type == '') {
+            mui.toast('请选择广告标题');
+            return false;
+        }
+        if(amount == '' || amount <= 0) {
+            mui.toast('请输入广告金额');
+            return false;
+        }
+        if(months == '') {
+            mui.toast('请输入广告投放时间');
+            return false;
+        }
+    }
+
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

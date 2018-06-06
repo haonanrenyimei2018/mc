@@ -108,6 +108,14 @@ return [
     'gee_key' => '9977de876b194d227b2209df142c92a0',
     'auth_key' => 'JUD6FCtZsqrmVXc2apev4TRn3O8gAhxbSlH9wfPN', //默认数据加密KEY
     'pages'    => '10',//分页数 
-    'salt'     => 'wZPb~yxvA!ir38&Z',//加密串 
+    'salt'     => 'wZPb~yxvA!ir38&Z',//加密串
+    'return_type' => array(
+        'return' => '推荐返还',
+        'return_1' => '绩效返还',
+        'p_add' => '新增绩效',
+        'c_add' => '新增佣金',
+        'p_reduce' => '减少绩效',
+        'c_reduce' => '减少佣金'
+    )
 
 ];

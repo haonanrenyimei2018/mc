@@ -11,6 +11,7 @@ namespace app\admin\controller;
 
 use app\admin\model\AgencyInfoModel;
 use app\admin\model\AgencyModel;
+use app\admin\model\AgencyTypeModel;
 use app\admin\model\MemberMoneyLogModel;
 use app\admin\model\ParamsModel;
 use think\Db;
@@ -21,6 +22,7 @@ class Money extends Base
     public $agencyModel;
     public $memberMoneyLogModel;
     public $agencyInfoModel;
+    public $agencyTypeModel;
     public $param;
     private $type = [
         'return' => '推荐返还',
@@ -44,11 +46,14 @@ class Money extends Base
         $this->agencyModel = new AgencyModel();
         $this->memberMoneyLogModel = new MemberMoneyLogModel();
         $this->agencyInfoModel = new AgencyInfoModel();
+        $this->agencyTypeModel = new AgencyTypeModel();
         $this->param = new ParamsModel();
     }
     public function index() {
         $key = input('key');
-        $where = [];
+        $where = [
+            'status' => 1
+        ];
         if(!empty($key)){
             $where['name'] = ['like','%'.$key.'%'];
         }

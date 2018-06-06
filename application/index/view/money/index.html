@@ -1,0 +1,73 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">资金记录</h1>
+</header>
+<div class="mui-content">
+    {notempty name="data"}
+    <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="lists">
+        {foreach name="data" item="val"}
+            <li class="mui-table-view-cell">
+                <div class="mui-table">
+                    <div class="mui-table-cell mui-col-xs-10">
+                        <h4 class="mui-ellipsis">
+                            涉及金额:￥{$val['amount']}
+                        </h4>
+                        <h5>类型:{$return_type[$val['type']]}</h5>
+                        <p class="mui-h6 mui-ellipsis">
+                            {$val['summary']}
+                            <span style="float: right;">{$val['date']|date='Y-m-d H:i',###}</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        {/foreach}
+    </ul>
+    {gt name="pageCount" value="1"}
+        <span id="more" onclick="getdata()" class="mui-btn mui-btn-link" style="width: 90%;margin-left:5%;border: solid 1px darkgray;color: #A8A297;color: black">
+            查看更多
+        </span>
+    {/gt}
+    {else }
+    <p style="text-align: center;margin-top: 20px;font-size: 1.5em;">--暂无数据--</p>
+    {/notempty}
+</div>
+{include file="public/_footer" /}
+<script>
+    var page = 1,
+        pageCount = '{$pageCount}',
+        return_type = {};
+
+    function getdata() {
+        page++;
+        if(page == pageCount) {
+            $('#more').hide();
+        }
+        var data = {
+            page : page
+        };
+        $.post('/index/money/getdata.html',data,function (res) {
+            return_type = res.return_type;
+            var datas = res.data;
+            var html = '';
+            for(var i=0;i<datas.length;++i) {
+                html += '<li class="mui-table-view-cell">';
+                html += '<div class="mui-table">';
+                html += '<div class="mui-table-cell mui-col-xs-10">';
+                html += '<h4 class="mui-ellipsis">涉及金额:￥'+datas[i].amount+'</h4>';
+                html += '<h5>类型:'+return_type[datas[i].type]+'</h5>';
+                html += '<p class="mui-h6 mui-ellipsis">'+datas[i].summary+'<span style="float: right;">'+datas[i].date+'</span></p>';
+                html += '</div>';
+                html += '</div>';
+                html += '</li>';
+            }
+            $('#lists').append(html);
+        },'JSON');
+    }
+</script>
+
+
+
+</body>
+</html>

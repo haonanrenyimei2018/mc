@@ -19,14 +19,17 @@ CREATE TABLE IF NOT EXISTS `mc_ad` (
   `title` varchar(100) DEFAULT '0' COMMENT '标题',
   `amount` decimal(10,0) DEFAULT '0' COMMENT '金额',
   `months` int(11) DEFAULT '0' COMMENT '时间',
+  `status` tinyint(4) DEFAULT '0',
   `date` int(11) DEFAULT '0' COMMENT '添加时间',
   `mid` int(11) DEFAULT '0' COMMENT '代理ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='广告表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='广告表';
 
 -- 正在导出表  db_mc.mc_ad 的数据：~0 rows (大约)
 DELETE FROM `mc_ad`;
 /*!40000 ALTER TABLE `mc_ad` DISABLE KEYS */;
+INSERT INTO `mc_ad` (`id`, `type`, `title`, `amount`, `months`, `status`, `date`, `mid`) VALUES
+	(1, 2, '淘宝推广-一个月', 300, 1, 0, 1528255418, 1);
 /*!40000 ALTER TABLE `mc_ad` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_admin 结构
@@ -49,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 288, '127.0.0.1', 1527730784, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 291, '127.0.0.1', 1528254088, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -61,13 +64,14 @@ CREATE TABLE IF NOT EXISTS `mc_ad_type` (
   `date` int(11) DEFAULT '0',
   `user` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='广告类型';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='广告类型';
 
--- 正在导出表  db_mc.mc_ad_type 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_ad_type 的数据：~1 rows (大约)
 DELETE FROM `mc_ad_type`;
 /*!40000 ALTER TABLE `mc_ad_type` DISABLE KEYS */;
 INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
-	(1, '淘宝11212', 1, 1526291240, 1);
+	(1, '淘宝11212', 1, 1526291240, 1),
+	(2, '淘宝推广', 0, 1528254108, 1);
 /*!40000 ALTER TABLE `mc_ad_type` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency 结构
@@ -117,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 0, 0, 100, 300, 1526907501);
+	(1, 100, 100, 100, 289, 1526907501);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_type 结构
@@ -17182,9 +17186,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3841 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3844 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：40 rows
+-- 正在导出表  db_mc.mc_log 的数据：43 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17227,7 +17231,10 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3837, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527040109),
 	(3838, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527148168),
 	(3839, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1527730784),
-	(3840, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1527748812);
+	(3840, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1527748812),
+	(3841, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528082575),
+	(3842, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528164868),
+	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17257,14 +17264,16 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   `summary` varchar(500) DEFAULT NULL COMMENT '备注',
   `date` int(11) DEFAULT NULL COMMENT '发生时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
 -- 正在导出表  db_mc.mc_member_moneylog 的数据：~2 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
 	(11, 1, 'return', '1', 1280, '代理返还', 1526907501),
-	(14, 1, 'p_add', '1', 100, '新增绩效', 1527046349);
+	(14, 1, 'p_add', '1', 100, '新增绩效', 1527046349),
+	(15, 1, 'c_add', '1', 200, '新增佣金', 1528274544),
+	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_source 结构
@@ -17292,11 +17301,13 @@ CREATE TABLE IF NOT EXISTS `mc_notice` (
   `date` int(11) DEFAULT NULL,
   `user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='公司公告';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='公司公告';
 
 -- 正在导出表  db_mc.mc_notice 的数据：~0 rows (大约)
 DELETE FROM `mc_notice`;
 /*!40000 ALTER TABLE `mc_notice` DISABLE KEYS */;
+INSERT INTO `mc_notice` (`id`, `title`, `content`, `times`, `date`, `user`) VALUES
+	(1, '公司公告', '<p>112121221</p>', '12', 1528164947, 1);
 /*!40000 ALTER TABLE `mc_notice` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_params 结构
@@ -17426,7 +17437,7 @@ CREATE TABLE IF NOT EXISTS `mc_sources_info` (
   `user` int(11) DEFAULT '0',
   `date` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='积分管理';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='积分管理';
 
 -- 正在导出表  db_mc.mc_sources_info 的数据：~3 rows (大约)
 DELETE FROM `mc_sources_info`;
@@ -17434,7 +17445,8 @@ DELETE FROM `mc_sources_info`;
 INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`, `date`) VALUES
 	(1, 1, '1', 100, '最近很活跃', 1, 1526910052),
 	(2, 1, '1', 100, '11121212', 1, 1526910851),
-	(3, 1, '2', 300, '', 1, 1526911242);
+	(3, 1, '2', 300, '', 1, 1526911242),
+	(4, 1, '2', 11, '2311', 1, 1528274092);
 /*!40000 ALTER TABLE `mc_sources_info` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
