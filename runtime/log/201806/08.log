@@ -1005,3 +1005,109 @@
 [ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,3)  UNION SELECT *,2 AS type from mc_course where id in (2)  order by type ASC,date desc limit 15 [ RunTime:0.001000s ]
 
 ---------------------------------------------------------------
+[ 2018-06-08T20:22:09+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `username` = 'user_1'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.010000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:22:11+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` WHERE  `date_end` >= 1528460531 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:22:19+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.002000s ]
+[ error ] [1]Call to undefined function app\index\controller\celi()
+
+---------------------------------------------------------------
+[ 2018-06-08T20:25:37+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.005001s ]
+[ error ] [0]模板文件不存在:F:\workplace\mc/application/index\view\course\index.html
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:03+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.006001s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` WHERE  `date_end` >= 1528460828 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_notice` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_notice` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_notice` ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:11+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_notice` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_notice` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_admin` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`real_name` FROM `mc_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `mc_notice`  SET `times`='13'  WHERE  `id` = 1 [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_notice` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_notice` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_notice` ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:26+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` WHERE  `date_end` >= 1528460846 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:27:28+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_notice` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_notice` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_notice` ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:28:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` WHERE  `date_end` >= 1528460929 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:28:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.005000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:29:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.005000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:29:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.005000s ]
+
+---------------------------------------------------------------
+[ 2018-06-08T20:30:26+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.006000s ]
+
+---------------------------------------------------------------

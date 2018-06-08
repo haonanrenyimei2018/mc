@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\workplace\mc/application/index\view\index\index.html";i:1528292410;s:58:"F:\workplace\mc/application/index\view\public\_header.html";i:1528290617;s:58:"F:\workplace\mc/application/index\view\public\_footer.html";i:1528290617;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"F:\workplace\mc/application/index\view\index\index.html";i:1528459316;s:58:"F:\workplace\mc/application/index\view\public\_header.html";i:1528290617;s:58:"F:\workplace\mc/application/index\view\public\_footer.html";i:1528290617;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,7 @@
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/course/index.html">
                 <img src="/static/index/images/cursor.png" width="64px" height="64px">
                 <div class="mui-media-body">培训课程</div>
             </a>
