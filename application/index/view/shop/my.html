@@ -1,0 +1,71 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav" >
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">我兑换的产品</h1>
+</header>
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="overflow: auto">
+    <div class="mui-scroll mui-table-view">
+        {foreach name="datas" item="val"}
+        <div class="mui-card" style="margin: 0;">
+            <div class="mui-card-header">{$val['product']['name']}</div>
+            <div class="mui-card-content">
+                <img src="{$val['product']['images']}" alt="" width="100%">
+            </div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+                    <p style="color: #333;">{$val['product']['intro']}</p>
+                </div>
+            </div>
+            <div class="mui-card-footer">
+                <a class="mui-card-link"></a>
+                <a href="detail.html?id={$val['product']['id']}" class="mui-card-link">查看详情</a>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+    {gt name="pageCount" value="1"}
+    <span id="more" onclick="getdata()" class="mui-btn mui-btn-link" style="width: 90%;margin-left:5%;border: solid 1px darkgray;color: #A8A297;color: black">
+        查看更多
+    </span>
+    {/gt}
+</div>
+{include file="public/_footer" /}
+<script>
+    var page = 1,
+        pageCount = '{$pageCount}';
+
+    $(function () {
+    });
+    function getdata() {
+        page++;
+        if(page == pageCount) {
+            $('#more').hide();
+        }
+        var data = {
+            page : page
+        }
+        $.get('/index/shop/getData_my.html',data,function (res) {
+            var html = '';
+            for(var i=0;i<res.length;++i) {
+                html += '<div class="mui-card">';
+                html += '<div class="mui-card-header">'+ res[i]['product'].name +'</div>';
+                html += '<div class="mui-card-content">';
+                html += '<img src="'+ res[i]['product'].images +'" alt="" width="100%">';
+                html += '</div>';
+                html += '<div class="mui-card-content">';
+                html += '<div class="mui-card-content-inner">';
+                html += '<p style="color: #333;">'+ res[i]['product'].intro +'</p>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="mui-card-footer">';
+                html += '<a href="detail.html?id='+res[i]['product'].id+'" class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
+                html += '</div>';
+                html += '</div>';
+            }
+            $('.mui-table-view').html(html);
+        },'JSON');
+    }
+</script>
+</body>
+</html>

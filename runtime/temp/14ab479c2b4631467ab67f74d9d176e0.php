@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1528163721;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1528425025;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +12,20 @@
 
 <body>
 <header class="mui-bar mui-bar-nav">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
     <h1 class="mui-title">积分商城</h1>
 </header>
-<nav class="mui-bar mui-bar-tab" style="background-color: white;height: 40px;padding-top: 10px;">
-    可用积分:<?php echo $score; ?>
+<nav class="mui-bar mui-bar-tab" style="background-color: white;height: 40px;">
+    <span style="float: left;margin: 10px 10px;">可用积分:<?php echo $score; ?></span>
+    <span style="float:right;margin-right: 10px">
+        <a href="my.html" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="">兑换记录</a>
+    </span>
 </nav>
 <!--<h5 style="margin-top: 50px;vertical-align:middle;height: 30px;border: solid 1px red;display: block;">可用积分:<?php echo $score; ?></h5>-->
-<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="overflow: auto">
     <div class="mui-scroll mui-table-view">
         <?php if(is_array($datas) || $datas instanceof \think\Collection || $datas instanceof \think\Paginator): if( count($datas)==0 ) : echo "" ;else: foreach($datas as $key=>$val): ?>
-        <div class="mui-card">
+        <div class="mui-card" style="margin: 0;">
             <div class="mui-card-header"><?php echo $val['name']; ?></div>
             <div class="mui-card-content">
                 <img src="<?php echo $val['images']; ?>" alt="" width="100%">
@@ -34,12 +37,17 @@
                 </div>
             </div>
             <div class="mui-card-footer">
-                <a class="mui-card-link"></a>
-                <a class="mui-card-link">查看详情</a>
+                <a class="mui-card-link" onclick="doAction(<?php echo $val['id']; ?>)">立即兑换</a>
+                <a href="detail.html?id=<?php echo $val['id']; ?>" class="mui-card-link">查看详情</a>
             </div>
         </div>
         <?php endforeach; endif; else: echo "" ;endif; ?>
     </div>
+    <?php if($pageCount > '1'): ?>
+    <span id="more" onclick="getdata()" class="mui-btn mui-btn-link" style="width: 90%;margin-left:5%;border: solid 1px darkgray;color: #A8A297;color: black">
+        查看更多
+    </span>
+    <?php endif; ?>
 </div>
 <script src="/static/admin/js/jquery.min.js"></script>
 <script src="/static/mui/js/mui.min.js"></script>
@@ -48,25 +56,17 @@
 <script src="/static/admin/js/otcms.js"></script>
 <script>
     var page = 1,
-        pageSize = 15,
         pageCount = '<?php echo $pageCount; ?>';
-
+    mui.init();
     $(function () {
-        mui.init({
-            pullRefresh: {
-                container: '#pullrefresh',
-                up: {
-                    contentrefresh: '正在加载...',
-                    callback: pullupRefresh
-                }
-            }
-        });
     });
-    function pulldownRefresh() {
-        page = 1;
+    function getdata() {
+        page++;
+        if(page == pageCount) {
+            $('#more').hide();
+        }
         var data = {
-            page : page,
-            pageSize : pageSize
+            page : page
         }
         $.get('/index/shop/getdata.html',data,function (res) {
             var html = '';
@@ -83,63 +83,26 @@
                 html += '</div>';
                 html += '</div>';
                 html += '<div class="mui-card-footer">';
-                html += '<a class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
+                html += '<a href="detail.html?id='+res[i].id+'" class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
                 html += '</div>';
                 html += '</div>';
             }
-            mui('#pullrefresh').pullRefresh().endPullupToRefresh();
             $('.mui-table-view').html(html);
         },'JSON');
     }
-    /**
-     * 上拉加载具体业务实现
-     */
-    function pullupRefresh() {
-        if(page >= pageCount) {
-            mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
-            return false;
-        }
-        page++;
+    //立即兑换
+    function doAction(id) {
         var data = {
-            page : page,
-            pageSize : pageSize
-        }
-        $.get('/index/shop/getdata.html',data,function (res) {
-            var html = '';
-            for(var i=0;i<res.length;++i) {
-                html += '<div class="mui-card">';
-                html += '<div class="mui-card-header">'+ res[i].name +'</div>';
-                html += '<div class="mui-card-content">';
-                html += '<img src="'+ res[i].images +'" alt="" width="100%">';
-                html += '</div>';
-                html += '<div class="mui-card-content">';
-                html += '<div class="mui-card-content-inner">';
-                html += '<p>库存:' +res[i].amount+ '</p>';
-                html += '<p style="color: #333;">'+ res[i].intro +'</p>';
-                html += '</div>';
-                html += '</div>';
-                html += '<div class="mui-card-footer">';
-                html += '<a class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
-                html += '</div>';
-                html += '</div>';
+            id : id
+        };
+        $.post('/index/shop/buy.html',data,function (res) {
+            if(res.code == 1) {
+                //otcms.success(res.msg,res.url);
+            }else {
+                otcms.error(res.msg);
             }
-            mui('#pullrefresh').pullRefresh().endPullupToRefresh();
-            $('.mui-table-view').append(html);
         },'JSON');
-        // setTimeout(function() {
-        //     mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-        //     var table = document.body.querySelector('.mui-table-view');
-        //     var cells = document.body.querySelectorAll('.mui-table-view-cell');
-        //     for (var i = cells.length, len = i + 5; i < len; i++) {
-        //         var li = document.createElement('li');
-        //         li.className = 'mui-table-view-cell';
-        //         li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-        //         table.appendChild(li);
-        //     }
-        // }, 1500);
     }
-
-
 </script>
 </body>
 </html>

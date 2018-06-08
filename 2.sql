@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 291, '127.0.0.1', 1528254088, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 292, '127.0.0.1', 1528423390, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='广告类型';
 
--- 正在导出表  db_mc.mc_ad_type 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_ad_type 的数据：~0 rows (大约)
 DELETE FROM `mc_ad_type`;
 /*!40000 ALTER TABLE `mc_ad_type` DISABLE KEYS */;
 INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 100, 100, 100, 289, 1526907501);
+	(1, 100, 100, 100, 0, 1526907501);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_type 结构
@@ -17152,11 +17152,15 @@ CREATE TABLE IF NOT EXISTS `mc_course` (
   `date` int(11) DEFAULT '0',
   `user` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='培训课程表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程表';
 
 -- 正在导出表  db_mc.mc_course 的数据：~0 rows (大约)
 DELETE FROM `mc_course`;
 /*!40000 ALTER TABLE `mc_course` DISABLE KEYS */;
+INSERT INTO `mc_course` (`id`, `title`, `content`, `times`, `date`, `user`) VALUES
+	(1, '第一次培训课程', '<p>第一期培训课程：培训内容主要包括。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p><p style="line-height: 16px;"><img src="http://www.mc.cc/static/admin/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif"/><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/20180608/1528426239101636.jpg" title="QQ图片20180309093211.jpg">QQ图片20180309093211.jpg</a></p><p><br/></p>', 0, 1528426244, 1),
+	(2, '第一次培训课程的补充版', '<p>1111222222222222222222222222第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版</p>', 0, 1528426277, 1),
+	(3, '第二期培训课程', '<p>第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程</p>', 0, 1528446775, 1);
 /*!40000 ALTER TABLE `mc_course` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_course_member 结构
@@ -17168,11 +17172,15 @@ CREATE TABLE IF NOT EXISTS `mc_course_member` (
   `state` tinyint(4) DEFAULT '0',
   `date` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='培训课程分配表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程分配表';
 
 -- 正在导出表  db_mc.mc_course_member 的数据：~0 rows (大约)
 DELETE FROM `mc_course_member`;
 /*!40000 ALTER TABLE `mc_course_member` DISABLE KEYS */;
+INSERT INTO `mc_course_member` (`id`, `cid`, `mid`, `state`, `date`) VALUES
+	(1, 1, 1, 0, 1528426244),
+	(2, 2, 1, 1, 1528426277),
+	(3, 3, 1, 0, 1528446775);
 /*!40000 ALTER TABLE `mc_course_member` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_log 结构
@@ -17186,9 +17194,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3844 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3845 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：43 rows
+-- 正在导出表  db_mc.mc_log 的数据：44 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17234,7 +17242,8 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3840, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1527748812),
 	(3841, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528082575),
 	(3842, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528164868),
-	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088);
+	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088),
+	(3844, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528423390);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17266,7 +17275,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
--- 正在导出表  db_mc.mc_member_moneylog 的数据：~2 rows (大约)
+-- 正在导出表  db_mc.mc_member_moneylog 的数据：~4 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
@@ -17275,6 +17284,27 @@ INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, 
 	(15, 1, 'c_add', '1', 200, '新增佣金', 1528274544),
 	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
+
+-- 导出  表 db_mc.mc_member_product 结构
+DROP TABLE IF EXISTS `mc_member_product`;
+CREATE TABLE IF NOT EXISTS `mc_member_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member` int(11) NOT NULL DEFAULT '0',
+  `product` int(11) NOT NULL DEFAULT '0',
+  `date` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='代理兑换产品的记录表';
+
+-- 正在导出表  db_mc.mc_member_product 的数据：~3 rows (大约)
+DELETE FROM `mc_member_product`;
+/*!40000 ALTER TABLE `mc_member_product` DISABLE KEYS */;
+INSERT INTO `mc_member_product` (`id`, `member`, `product`, `date`) VALUES
+	(5, 1, 2, 1528363669),
+	(6, 1, 2, 1528364584),
+	(7, 1, 2, 1528424883),
+	(8, 1, 3, 1528425004),
+	(9, 1, 3, 1528425029);
+/*!40000 ALTER TABLE `mc_member_product` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_source 结构
 DROP TABLE IF EXISTS `mc_member_source`;
@@ -17350,13 +17380,14 @@ CREATE TABLE IF NOT EXISTS `mc_product` (
   `date` int(11) DEFAULT '0',
   `user` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
 
--- 正在导出表  db_mc.mc_product 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_product 的数据：~1 rows (大约)
 DELETE FROM `mc_product`;
 /*!40000 ALTER TABLE `mc_product` DISABLE KEYS */;
 INSERT INTO `mc_product` (`id`, `name`, `intro`, `images`, `content`, `sources`, `amount`, `state`, `date`, `user`) VALUES
-	(2, '产品1', '产品产品产品产品产品产品', '/uploads/images/20180514\\c080277705d54dc7bd65002b7c796cb1.jpg', '<p>产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品</p>', 500, 300, 1, 1526286867, 1);
+	(2, '产品1', '产品产品产品产品产品产品', '/uploads/images/20180514\\c080277705d54dc7bd65002b7c796cb1.jpg', '<p>产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品产品</p>', 500, 299, 1, 1526286867, 1),
+	(3, '卫生巾', 'SOFY苏菲，日本尤妮佳集团旗下女性护理事业部卫生巾品牌，以高性能的夜用卫生巾和护垫广受女性的喜爱，苏菲口袋魔法系列被誉为“卫生巾时尚先锋”', '/uploads/images/20180608\\a7ef9ca98a0713f9130e67d47a3a33ba.jpg', '<p class="b" style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; font-weight: bold; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">SOFY苏菲，日本尤妮佳集团旗下女性护理事业部卫生巾品牌，以高性能的夜用卫生巾和护垫广受女性的喜爱，苏菲口袋魔法系列被誉为“卫生巾时尚先锋”</p><p><br/></p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">苏菲为日本尤妮佳集团旗下女性护理事业部卫生巾品牌。</p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">卫生巾品牌“苏菲”，为了适应现代女性需求的多样化・高端化，为不同场合准备了厚薄不同、材质不同、长短各异的产品。您可以自由选择适合自己的卫生巾，相信有了我们的产品，即使是烦恼的那几天也与平时同样舒适自在。<span style="line-height: 2em;">近年来，由于护垫能帮助内裤保持清洁，其爱用者逐年增加。“苏菲”品牌的护垫根据不同的使用场合为您准备了经期和非经期的护垫产品。</span></p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">生理用品“sofy”品牌作为国际品牌以东亚、东南亚为中心销售。（一部分地区除外）以高性能的夜用卫生巾和护垫为基础，获得了亚洲众多女性的支持。</p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">日本尤妮佳集团创立于1961年的尤妮佳株式会社（UnicharmCorporation）是在无纺布和吸收体材料成型及加工领域处于领先地位的跨国集团公司。它的经营范围包括婴儿用品、妇女用品、成人护理用品、日用清洁用品、宠物用品等五大支柱事业，同时还涉及幼儿教育、建材等广泛领域。尤妮佳在亚洲、欧洲、北美的多个国家、地区设有生产基地和销售公司，业务遍及全球。公司自创立以来，始终奉行“NOLA&amp;DOLA”（意即“全力创造您身边一流的产品，助您实现生活的梦想”）的企业理念，为消费者提供一流的商品和服务，创造舒适、便利的生活而不懈努力。</p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">1995年12月，尤妮佳株式会社与国内知名企业上海家化（集团）有限公司、日本著名的伊藤忠商事株式会社及伊藤忠（中国）集团有限公司四方合资成立了上海尤妮佳有限公司，从此开始了在中国的事业。</p><p style="margin-top: 0px; margin-bottom: 0px; text-indent: 2em; line-height: 2em; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Arial, 微软雅黑; font-size: 14px; white-space: normal;">2001年11月，为了不断满足消费者的需求，扩大在中国的事业，尤妮佳株式会社与日本伊藤忠商事株式会社共同投资成立了尤妮佳生活用品（中国）有限公司，专门生产纸尿裤系列产品，把中国事业推向新的高点。</p><p><br/></p>', 250, 998, 1, 1528423513, 1);
 /*!40000 ALTER TABLE `mc_product` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_region 结构
@@ -17437,16 +17468,21 @@ CREATE TABLE IF NOT EXISTS `mc_sources_info` (
   `user` int(11) DEFAULT '0',
   `date` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='积分管理';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='积分管理';
 
--- 正在导出表  db_mc.mc_sources_info 的数据：~3 rows (大约)
+-- 正在导出表  db_mc.mc_sources_info 的数据：~7 rows (大约)
 DELETE FROM `mc_sources_info`;
 /*!40000 ALTER TABLE `mc_sources_info` DISABLE KEYS */;
 INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`, `date`) VALUES
 	(1, 1, '1', 100, '最近很活跃', 1, 1526910052),
 	(2, 1, '1', 100, '11121212', 1, 1526910851),
 	(3, 1, '2', 300, '', 1, 1526911242),
-	(4, 1, '2', 11, '2311', 1, 1528274092);
+	(4, 1, '2', 11, '2311', 1, 1528274092),
+	(9, 1, '2', 500, '兑换产品:产品1', 0, 1528363669),
+	(10, 1, '2', 500, '兑换产品:产品1', 0, 1528364584),
+	(11, 1, '2', 500, '兑换产品:产品1', 0, 1528424883),
+	(12, 1, '2', 250, '兑换产品:卫生巾', 0, 1528425004),
+	(13, 1, '2', 250, '兑换产品:卫生巾', 0, 1528425029);
 /*!40000 ALTER TABLE `mc_sources_info` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

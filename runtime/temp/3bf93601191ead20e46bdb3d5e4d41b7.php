@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\money\index.html";i:1528277127;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\money\index.html";i:1528335089;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +12,7 @@
 
 <body>
 <header class="mui-bar mui-bar-nav">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
     <h1 class="mui-title">资金记录</h1>
 </header>
 <div class="mui-content">
@@ -23,7 +23,11 @@
                 <div class="mui-table">
                     <div class="mui-table-cell mui-col-xs-10">
                         <h4 class="mui-ellipsis">
-                            涉及金额:￥<?php echo $val['amount']; ?>
+                            <?php if($val['model'] == '1'): ?>
+                                <?php echo $val['amount']; ?>元
+                            <?php else: ?>
+                                -<?php echo $val['amount']; ?>元
+                            <?php endif; ?>
                         </h4>
                         <h5>类型:<?php echo $return_type[$val['type']]; ?></h5>
                         <p class="mui-h6 mui-ellipsis">

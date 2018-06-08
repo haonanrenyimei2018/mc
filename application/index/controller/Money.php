@@ -21,7 +21,6 @@ class Money extends Base
         parent::_initialize();
         $this->memberMoneyLogModel = new MemberMoneyLogModel();
     }
-
     /**
      *
      */
@@ -43,7 +42,7 @@ class Money extends Base
      * 获取分页
      */
     public function getdata() {
-        $page = 1;
+        $page = input('page') ? input('page') : 1;
         $where = array(
             'member_id' => $this->user['id']
         );
@@ -53,6 +52,4 @@ class Money extends Base
         }
         return json(['data' => $data,'return_type' => config('return_type')]);
     }
-
-
 }

@@ -12,7 +12,11 @@
                 <div class="mui-table">
                     <div class="mui-table-cell mui-col-xs-10">
                         <h4 class="mui-ellipsis">
-                            涉及金额:￥{$val['amount']}
+                            {eq name="val['model']" value="1"}
+                                {$val['amount']}元
+                            {else}
+                                -{$val['amount']}元
+                            {/eq}
                         </h4>
                         <h5>类型:{$return_type[$val['type']]}</h5>
                         <p class="mui-h6 mui-ellipsis">

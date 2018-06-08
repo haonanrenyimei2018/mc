@@ -1,0 +1,73 @@
+{include file="public/_header" /}
+<style>
+    body {
+    }
+    h4 {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+    .label {
+        width: 100%;
+        margin-top: 10px;
+        /*background-color: #FFFFFF;*/
+        text-align: center;
+        color: #A8A297;
+    }
+    .content {
+        background-color: #FFFFFF;
+        margin-top: 5px;
+        padding: 5px 10px;
+    }
+</style>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF"></a>
+    <h1 class="mui-title">商品详情</h1>
+</header>
+<nav class="mui-bar mui-bar-tab" style="background-color: #FFFFFF;line-height: 40px;">
+    <span style="float: left;margin-left: 10px;">所需积分:{$info['sources']}</span>
+    <span style="float: right;margin-right: 10px;">
+        {gt name="user_score" value="$info['sources']"}
+            <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="doAction()">立即兑换</button>
+        {else}
+            <button type="button" class="mui-btn mui-btn-outlined">立即兑换</button>
+        {/gt}
+    </span>
+</nav>
+<div class="mui-content" style="padding-bottom: 10px;">
+    <div id="slider" class="mui-slider" style="margin: 10px 10px 10px 0px;" >
+        <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{$info['images']}">
+                </a>
+            </div>
+        </div>
+    </div>
+    <h4>
+        {$info['name']}
+    </h4>
+</div>
+<div class="label">--产品详情--</div>
+<div class="content">
+    {$info['content']}
+</div>
+<input type="hidden" id="id" value="{$info['id']}">
+{include file="public/_footer" /}
+<script>
+    //立即兑换
+    function doAction() {
+        var data = {
+            id : $('#id').val()
+        };
+        $.post('/index/shop/buy.html',data,function (res) {
+            if(res.code == 1) {
+                otcms.success(res.msg,res.url);
+            }else {
+                otcms.error(res.msg);
+            }
+        },'JSON');
+    }
+</script>
+</body>
+</html>

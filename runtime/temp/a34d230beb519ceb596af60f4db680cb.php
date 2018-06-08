@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528186459;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528440717;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,7 @@
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/course/index.html">
                 <img src="/static/index/images/cursor.png" width="64px" height="64px">
                 <div class="mui-media-body">培训课程</div>
             </a>
@@ -42,13 +42,13 @@
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/finance/index.html">
                 <img src="/static/index/images/caiwu.png" width="64px" height="64px">
                 <div class="mui-media-body">财务管理</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-            <a href="#">
+            <a href="/index/money/index.html">
                 <img src="/static/index/images/zijin2.png" width="64px" height="64px">
                 <div class="mui-media-body">资金记录</div>
             </a>
