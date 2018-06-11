@@ -1,0 +1,30 @@
+{include file="public/_header" /}
+<style>
+    .content {
+        /*word-break: break-all;*/
+        word-wrap: break-word;
+        /*white-space: pre-wrap;*/
+    }
+</style>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">培训资料详情</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <h4>{$info['title']}</h4>
+        <h5>作者: {$members[$info['user']]}&nbsp;发布时间:{$info['date']|date='Y-m-d',###}&nbsp;</h5>
+        <div class="content">
+            {$info['content']}
+        </div>
+        <h5>人气:{$info['times']}</h5>
+    </div>
+</div>
+
+
+
+
+{include file="public/_footer" /}
+</body>
+</html>

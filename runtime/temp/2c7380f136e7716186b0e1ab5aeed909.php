@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\score\index.html";i:1528274079;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\score\index.html";i:1528274310;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,7 +102,7 @@
     Ajaxpage();
     function Ajaxpage(curr){
         var key=$('#key').val();
-        $.getJSON('<?php echo url("member/index"); ?>', {page: curr || 1,key:key}, function(data){
+        $.getJSON('<?php echo url("score/index"); ?>', {page: curr || 1,key:key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');

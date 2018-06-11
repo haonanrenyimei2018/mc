@@ -112,6 +112,8 @@ return [
     'return_type' => array(
         'return' => '推荐返还',
         'return_1' => '绩效返还',
+        'return_2' => '接单绩效',
+        'return_3' => '接单绩效佣金',
         'p_add' => '新增绩效',
         'c_add' => '新增佣金',
         'p_reduce' => '减少绩效',

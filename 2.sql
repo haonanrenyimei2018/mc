@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad` (
 DELETE FROM `mc_ad`;
 /*!40000 ALTER TABLE `mc_ad` DISABLE KEYS */;
 INSERT INTO `mc_ad` (`id`, `type`, `title`, `amount`, `months`, `status`, `date`, `mid`) VALUES
-	(1, 2, '淘宝推广-一个月', 300, 1, 0, 1528255418, 1);
+	(1, 2, '淘宝推广-一个月', 300, 1, 1, 1528255418, 1);
 /*!40000 ALTER TABLE `mc_ad` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_admin 结构
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 292, '127.0.0.1', 1528423390, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 293, '127.0.0.1', 1528684384, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 100, 100, 100, 0, 1526907501);
+	(1, 340, 340, 60, 0, 1526907501);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_type 结构
@@ -17154,13 +17154,13 @@ CREATE TABLE IF NOT EXISTS `mc_course` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程表';
 
--- 正在导出表  db_mc.mc_course 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_course 的数据：~2 rows (大约)
 DELETE FROM `mc_course`;
 /*!40000 ALTER TABLE `mc_course` DISABLE KEYS */;
 INSERT INTO `mc_course` (`id`, `title`, `content`, `times`, `date`, `user`) VALUES
-	(1, '第一次培训课程', '<p>第一期培训课程：培训内容主要包括。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p><p style="line-height: 16px;"><img src="http://www.mc.cc/static/admin/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif"/><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/20180608/1528426239101636.jpg" title="QQ图片20180309093211.jpg">QQ图片20180309093211.jpg</a></p><p><br/></p>', 0, 1528426244, 1),
-	(2, '第一次培训课程的补充版', '<p>1111222222222222222222222222第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版</p>', 0, 1528426277, 1),
-	(3, '第二期培训课程', '<p>第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程</p>', 0, 1528446775, 1);
+	(1, '第一次培训课程', '<p>第一期培训课程：培训内容主要包括。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p><p style="line-height: 16px;"><img src="http://www.mc.cc/static/admin/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif"/><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/20180608/1528426239101636.jpg" title="QQ图片20180309093211.jpg">QQ图片20180309093211.jpg</a></p><p style="line-height: 16px;"><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/20180608/1528426239101636.jpg" title="QQ图片20180309093211.jpg"></a></p><p><img width="391" height="290" src="http://api.map.baidu.com/staticimage?center=118.061455,36.819085&zoom=13&width=530&height=340&markers=118.061455,36.819085"/></p>', 14, 1528685265, 1),
+	(2, '第一次培训课程的补充版', '<p>1111222222222222222222222222第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版第一次培训课程的补充版</p>', 1, 1528426277, 1),
+	(3, '第二期培训课程', '<p>第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程第二期培训课程</p>', 9, 1528446775, 1);
 /*!40000 ALTER TABLE `mc_course` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_course_member 结构
@@ -17174,13 +17174,13 @@ CREATE TABLE IF NOT EXISTS `mc_course_member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程分配表';
 
--- 正在导出表  db_mc.mc_course_member 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_course_member 的数据：~2 rows (大约)
 DELETE FROM `mc_course_member`;
 /*!40000 ALTER TABLE `mc_course_member` DISABLE KEYS */;
 INSERT INTO `mc_course_member` (`id`, `cid`, `mid`, `state`, `date`) VALUES
-	(1, 1, 1, 0, 1528426244),
-	(2, 2, 1, 1, 1528426277),
-	(3, 3, 1, 0, 1528446775);
+	(1, 1, 1, 1, 1528685322),
+	(2, 2, 1, 1, 1528685356),
+	(3, 3, 1, 1, 1528685342);
 /*!40000 ALTER TABLE `mc_course_member` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_log 结构
@@ -17194,9 +17194,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3845 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3846 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：44 rows
+-- 正在导出表  db_mc.mc_log 的数据：45 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17243,7 +17243,8 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3841, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528082575),
 	(3842, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528164868),
 	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088),
-	(3844, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528423390);
+	(3844, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528423390),
+	(3845, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528684384);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17273,16 +17274,18 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   `summary` varchar(500) DEFAULT NULL COMMENT '备注',
   `date` int(11) DEFAULT NULL COMMENT '发生时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
--- 正在导出表  db_mc.mc_member_moneylog 的数据：~4 rows (大约)
+-- 正在导出表  db_mc.mc_member_moneylog 的数据：~6 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
 	(11, 1, 'return', '1', 1280, '代理返还', 1526907501),
 	(14, 1, 'p_add', '1', 100, '新增绩效', 1527046349),
 	(15, 1, 'c_add', '1', 200, '新增佣金', 1528274544),
-	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560);
+	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560),
+	(26, 1, 'return_1', '1', 240, '广告接单返还', 1528711021),
+	(27, 1, 'return_2', '1', 60, '广告接单绩效', 1528711021);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_product 结构
@@ -17295,7 +17298,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='代理兑换产品的记录表';
 
--- 正在导出表  db_mc.mc_member_product 的数据：~3 rows (大约)
+-- 正在导出表  db_mc.mc_member_product 的数据：~4 rows (大约)
 DELETE FROM `mc_member_product`;
 /*!40000 ALTER TABLE `mc_member_product` DISABLE KEYS */;
 INSERT INTO `mc_member_product` (`id`, `member`, `product`, `date`) VALUES
@@ -17382,7 +17385,7 @@ CREATE TABLE IF NOT EXISTS `mc_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
 
--- 正在导出表  db_mc.mc_product 的数据：~1 rows (大约)
+-- 正在导出表  db_mc.mc_product 的数据：~0 rows (大约)
 DELETE FROM `mc_product`;
 /*!40000 ALTER TABLE `mc_product` DISABLE KEYS */;
 INSERT INTO `mc_product` (`id`, `name`, `intro`, `images`, `content`, `sources`, `amount`, `state`, `date`, `user`) VALUES
@@ -17470,7 +17473,7 @@ CREATE TABLE IF NOT EXISTS `mc_sources_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='积分管理';
 
--- 正在导出表  db_mc.mc_sources_info 的数据：~7 rows (大约)
+-- 正在导出表  db_mc.mc_sources_info 的数据：~8 rows (大约)
 DELETE FROM `mc_sources_info`;
 /*!40000 ALTER TABLE `mc_sources_info` DISABLE KEYS */;
 INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`, `date`) VALUES
