@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:50:"E:\workplace\mc/application/index\view\ad\add.html";i:1528255042;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:50:"E:\workplace\mc/application/index\view\ad\add.html";i:1528701565;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +38,7 @@
             </div>
             <p>广告时间</p>
             <div class="mui-input-row mui-password">
-                <input type="number" class="mui-input-password" style="width: 95%" id="months" name="months" data-input-password="3">月
+                <input type="number" class="mui-input-password" style="width: 95%" id="months" name="months" data-input-password="3">天
             </div>
             <div class="mui-button-row">
                 <button type="submit" class="mui-btn mui-btn-primary">确认</button>&nbsp;&nbsp;

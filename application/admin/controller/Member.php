@@ -78,16 +78,31 @@ class Member extends Base
         if($this->request->isAjax()) {
             $params = input('post.');
             try {
+                Db::startTrans();
+                //如果当前客户选的是市总代理，首先要检测当前城市是否已经有市总代了
+                if($params['type'] == 1){
+                    $where = [
+                        'type' => 1,
+                        'province' => $params['province'],
+                        'city' => $params['city'],
+                        'date_end' => ['gt',time()],
+                        'status' => 1
+                    ];
+                    $count = Db::name('agency')->where($where)->count();
+                    if($count > 0) {
+                        return json(['code' => '-2','msg' => '市总代理已经存在!']);
+                    }
+                }
                 $score = $params['score'];
                 unset($params['score']);
+                $memberInfo = new MemberInfoModel();
+                $memberInfo->add_store($params['id'],$score);
+                $lm = new LMember();
+                $lm->check($params['id']);
+                //最后修改代理的状态
                 $params['status'] = 1;
                 $params['date_end'] = strtotime("+1 year");
                 Db::name('agency')->where('id',$params['id'])->update($params);
-                Db::startTrans();
-                $lm = new LMember();
-                $lm->check($params['id']);
-                $memberInfo = new MemberInfoModel();
-                dump($memberInfo->add_store($params['id'],$score));
                 Db::commit();
                 return json(['code' => 1,'msg' => '操作成功!','url' => url('uncheck')]);
             }catch (Exception $e) {

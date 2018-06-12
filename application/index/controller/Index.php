@@ -25,10 +25,11 @@ class Index extends Base
     public function index() {
         //获取幻灯
         $where = [
-            'date_end' => ['egt',time()]
+//            'date_end' => ['egt',time()]
         ];
         $silders = $this->silderModel->where($where)->select();
         $this->assign('silders',$silders);
+        $this->assign('count',count($silders) - 1);
         return $this->view->fetch();
     }
     /**

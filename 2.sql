@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 293, '127.0.0.1', 1528684384, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 294, '127.0.0.1', 1528766447, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -102,7 +102,7 @@ DELETE FROM `mc_agency`;
 /*!40000 ALTER TABLE `mc_agency` DISABLE KEYS */;
 INSERT INTO `mc_agency` (`id`, `username`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
 	(1, 'user_1', 'e10adc3949ba59abbe56e057f20f883e', '张三', '37232119861030001X', '12345678901', '12345678901', 1, 1, 0, '37', '3703', '0', '0', '1558443501', '0', 1),
-	(2, 'user_2', 'e10adc3949ba59abbe56e057f20f883e', 'zhangsan', '37232119861030001X', '13615460020', '235235', 1, 0, 0, '0', '0', '0', '0', '0', '1527674034', 0);
+	(2, 'user_2', 'e10adc3949ba59abbe56e057f20f883e', 'zhangsan', '37232119861030001X', '13615460020', '235235', 2, 0, 0, '37', '3703', '370302', '0', '1560332432', '1527674034', 1);
 /*!40000 ALTER TABLE `mc_agency` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_info 结构
@@ -121,7 +121,8 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 340, 340, 60, 0, 1526907501);
+	(1, 740, 740, 60, 0, 1526907501),
+	(2, 400, 400, 0, 0, 1528795163);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_agency_type 结构
@@ -17194,9 +17195,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3846 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3847 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：45 rows
+-- 正在导出表  db_mc.mc_log 的数据：46 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17244,7 +17245,8 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3842, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528164868),
 	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088),
 	(3844, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528423390),
-	(3845, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528684384);
+	(3845, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528684384),
+	(3846, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528766447);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17274,7 +17276,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   `summary` varchar(500) DEFAULT NULL COMMENT '备注',
   `date` int(11) DEFAULT NULL COMMENT '发生时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
 -- 正在导出表  db_mc.mc_member_moneylog 的数据：~6 rows (大约)
 DELETE FROM `mc_member_moneylog`;
@@ -17285,7 +17287,9 @@ INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, 
 	(15, 1, 'c_add', '1', 200, '新增佣金', 1528274544),
 	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560),
 	(26, 1, 'return_1', '1', 240, '广告接单返还', 1528711021),
-	(27, 1, 'return_2', '1', 60, '广告接单绩效', 1528711021);
+	(27, 1, 'return_2', '1', 60, '广告接单绩效', 1528711021),
+	(37, 2, 'return', '1', 400, '代理返还', 1528796432),
+	(38, 1, 'return', '1', 240, '代理返还,来自代理zhangsan', 1528796432);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_product 结构
@@ -17294,19 +17298,20 @@ CREATE TABLE IF NOT EXISTS `mc_member_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `member` int(11) NOT NULL DEFAULT '0',
   `product` int(11) NOT NULL DEFAULT '0',
+  `state` tinyint(4) NOT NULL DEFAULT '0' COMMENT '状态',
   `date` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='代理兑换产品的记录表';
 
--- 正在导出表  db_mc.mc_member_product 的数据：~4 rows (大约)
+-- 正在导出表  db_mc.mc_member_product 的数据：~5 rows (大约)
 DELETE FROM `mc_member_product`;
 /*!40000 ALTER TABLE `mc_member_product` DISABLE KEYS */;
-INSERT INTO `mc_member_product` (`id`, `member`, `product`, `date`) VALUES
-	(5, 1, 2, 1528363669),
-	(6, 1, 2, 1528364584),
-	(7, 1, 2, 1528424883),
-	(8, 1, 3, 1528425004),
-	(9, 1, 3, 1528425029);
+INSERT INTO `mc_member_product` (`id`, `member`, `product`, `state`, `date`) VALUES
+	(5, 1, 2, 0, 1528363669),
+	(6, 1, 2, 0, 1528364584),
+	(7, 1, 2, 0, 1528424883),
+	(8, 1, 3, 0, 1528425004),
+	(9, 1, 3, 1, 1528789228);
 /*!40000 ALTER TABLE `mc_member_product` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_source 结构
@@ -17451,13 +17456,15 @@ CREATE TABLE IF NOT EXISTS `mc_silder` (
   `date` int(11) NOT NULL DEFAULT '0',
   `user` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='图片轮播';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='图片轮播';
 
 -- 正在导出表  db_mc.mc_silder 的数据：~0 rows (大约)
 DELETE FROM `mc_silder`;
 /*!40000 ALTER TABLE `mc_silder` DISABLE KEYS */;
 INSERT INTO `mc_silder` (`id`, `title`, `images`, `date_start`, `date_end`, `date`, `user`) VALUES
-	(4, '公司高能广告', '/uploads/images/20180531\\0f0f3f02d381afb62c2abfe2a968a181.jpg', 1527696000, 1527955199, 1527749153, 1);
+	(5, '11111111111111111111111', '/uploads/images/20180612\\6346bc9047f4434f4f34cdf4dcdeb6db.jpg', 1528732800, 1530374399, 1528789785, 1),
+	(6, '111111111111', '/uploads/images/20180612\\85c402ea85951cda7a52ddb3cf46705e.jpg', 1528732800, 1530374399, 1528789808, 1),
+	(7, '11222212', '/uploads/images/20180612\\840540c2e9c94240bf8fa1498677e089.jpg', 1528732800, 1530374399, 1528790713, 1);
 /*!40000 ALTER TABLE `mc_silder` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_sources_info 结构

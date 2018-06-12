@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528440717;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528792663;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +16,34 @@
     <h1 class="mui-title">首页</h1>
 </header>
 <!-- 图片轮播 -->
-<div id="slider" class="mui-slider" >
+<div id="slider" class="mui-slider" style="margin-top: 52px;">
     <div class="mui-slider-group mui-slider-loop">
-
+        <?php if(is_array($silders) || $silders instanceof \think\Collection || $silders instanceof \think\Paginator): if( count($silders)==0 ) : echo "" ;else: foreach($silders as $key=>$val): ?>
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="<?php echo $val['images']; ?>" height="220">
+            </a>
+        </div>
+        <?php endforeach; endif; else: echo "" ;endif; if(is_array($silders) || $silders instanceof \think\Collection || $silders instanceof \think\Paginator): if( count($silders)==0 ) : echo "" ;else: foreach($silders as $key=>$val): if($key == $count): ?>
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="<?php echo $val['images']; ?>" height="220">
+                    </a>
+                </div>
+                <?php else: ?>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="<?php echo $val['images']; ?>" height="220">
+                    </a>
+                </div>
+            <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+        </div>
     </div>
 </div>
-<div class="mui-content">
+<div class="mui-content" style="padding-top: 0;">
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/notice/index.html">
@@ -74,6 +96,10 @@
 <script src="/static/admin/js/otcms.js"></script>
 <script>
     mui.init();
+    var slider = mui("#slider");
+    slider.slider({
+        interval: 3000
+    });
 </script>
 </body>
 </html>

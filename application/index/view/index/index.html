@@ -5,12 +5,37 @@
     <h1 class="mui-title">首页</h1>
 </header>
 <!-- 图片轮播 -->
-<div id="slider" class="mui-slider" >
+<div id="slider" class="mui-slider" style="margin-top: 52px;">
     <div class="mui-slider-group mui-slider-loop">
-
+        {foreach name="silders" item="val"}
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="{$val['images']}" height="220">
+            </a>
+        </div>
+        {/foreach}
+        {foreach name="silders" item="val"}
+            {eq name="key" value="$count"}
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="{$val['images']}" height="220">
+                    </a>
+                </div>
+                {else /}
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="{$val['images']}" height="220">
+                    </a>
+                </div>
+            {/eq}
+        {/foreach}
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+        </div>
     </div>
 </div>
-<div class="mui-content">
+<div class="mui-content" style="padding-top: 0;">
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/notice/index.html">
@@ -59,6 +84,10 @@
 {include file="public/_footer" /}
 <script>
     mui.init();
+    var slider = mui("#slider");
+    slider.slider({
+        interval: 3000
+    });
 </script>
 </body>
 </html>

@@ -34,7 +34,7 @@ class LMember
      */
     public function check($id) {
         $member = $this->agencyModel->where('id',$id)->find();
-        $type = $this->atModel->where('id',$member['id'])->find();
+        $type = $this->atModel->where('id',$member['type'])->find();
         $params = $this->paramsModel->_get();
         //根据当前客户类型设置返还的基数
         $amount = $type['money'];
@@ -52,7 +52,8 @@ class LMember
                 $money = $amount * $params['return_004'] / 100;
                 break;
         }
-        $last_money = $amount * $params['return_all'] / 100 - $money;
+        $money = round($money,2);
+        $last_money = round($amount * $params['return_all'] / 100 - $money,2);
         $insert = [
             'member_id' => $id,
             'type' => 'return',
@@ -62,13 +63,19 @@ class LMember
             'date' => time()
         ];
         $this->memberMoneylogModel->insertGetId($insert);
+        $update = [
+            'money' => $money,
+            'commission' => $money
+        ];
+        Db::name('agency_info')->where('member',$id)->update($update);
         //增加可提现金额和总的佣金
-        if(empty($member['pid'])){
+        if(empty($member['is_pid'])) {
             $where = [
                 'type' => 1,
                 'province' => $member['province'],
                 'city' => $member['city'],
-                'id' => ['neq',$id]
+                'status' => 1,
+                'date_end' => ['gt',time()]
             ];
             $member_1 = $this->agencyModel->where($where)->find();
             if(isset($member_1)) {
@@ -82,14 +89,23 @@ class LMember
                     'date' => time()
                 ];
                 $this->memberMoneylogModel->insertGetId($data);
+
+                $info = Db::name('agency_info')->where('member',$member_1['id'])->find();
+                $update = [
+                    'money' => $info['money'] + $money,
+                    'commission' => $info['commission'] + $money
+                ];
+                Db::name('agency_info')->where('member',$member_1['id'])->update($update);
             }
         }else {
+            //推荐人
             $member_2 = $this->agencyModel->where('id',$member['pid'])->find();
             $where = [
                 'type' => 1,
                 'province' => $member_2['province'],
                 'city' => $member_2['city'],
-                'id' => ['neq',$id]
+                'status' => 1,
+                'date_end' => ['gt',time()]
             ];
             $member_1 = $this->agencyModel->where($where)->find();
             if(isset($member_1)) {
@@ -103,6 +119,12 @@ class LMember
                     'date' => time()
                 ];
                 $this->memberMoneylogModel->insertGetId($data);
+                $info = Db::name('agency_info')->where('member',$member_1['id'])->find();
+                $update = [
+                    'money' => $info['money'] + $money,
+                    'commission' => $info['commission'] + $money
+                ];
+                Db::name('agency_info')->where('member',$member_1['id'])->update($update);
             }
         }
     }
