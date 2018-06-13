@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 294, '127.0.0.1', 1528766447, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 295, '127.0.0.1', 1528855530, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
   PRIMARY KEY (`member`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理的可提现金额，累计佣金，累计业绩，累计积分表';
 
--- 正在导出表  db_mc.mc_agency_info 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_agency_info 的数据：~2 rows (大约)
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
@@ -17042,9 +17042,9 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=156 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：48 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：49 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17095,7 +17095,8 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(151, 'admin/member/uncheck', '待审核代理', 1, 1, '', '', 134, 50, 1526541728, 1526541779),
 	(152, 'admin/money/index', '奖金管理', 1, 1, '', '', 136, 50, 1526887339, 1526887339),
 	(153, 'admin/score/index', '积分管理', 1, 1, '', '', 136, 50, 1526887376, 1526887376),
-	(154, 'admin/silder/index', '图片轮播', 1, 1, '', '', 1, 50, 1527748812, 1527748812);
+	(154, 'admin/silder/index', '图片轮播', 1, 1, '', '', 1, 50, 1527748812, 1527748812),
+	(155, 'admin/conversion/index', '兑换记录', 1, 1, '', '', 137, 50, 1528855564, 1528855564);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17195,9 +17196,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3847 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3849 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：46 rows
+-- 正在导出表  db_mc.mc_log 的数据：48 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17246,7 +17247,9 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3843, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528254088),
 	(3844, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528423390),
 	(3845, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528684384),
-	(3846, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528766447);
+	(3846, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528766447),
+	(3847, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528855530),
+	(3848, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1528855564);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17278,7 +17281,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
--- 正在导出表  db_mc.mc_member_moneylog 的数据：~6 rows (大约)
+-- 正在导出表  db_mc.mc_member_moneylog 的数据：~7 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
@@ -17310,7 +17313,7 @@ INSERT INTO `mc_member_product` (`id`, `member`, `product`, `state`, `date`) VAL
 	(5, 1, 2, 0, 1528363669),
 	(6, 1, 2, 0, 1528364584),
 	(7, 1, 2, 0, 1528424883),
-	(8, 1, 3, 0, 1528425004),
+	(8, 1, 3, 1, 1528855590),
 	(9, 1, 3, 1, 1528789228);
 /*!40000 ALTER TABLE `mc_member_product` ENABLE KEYS */;
 
@@ -17458,7 +17461,7 @@ CREATE TABLE IF NOT EXISTS `mc_silder` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='图片轮播';
 
--- 正在导出表  db_mc.mc_silder 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_silder 的数据：~3 rows (大约)
 DELETE FROM `mc_silder`;
 /*!40000 ALTER TABLE `mc_silder` DISABLE KEYS */;
 INSERT INTO `mc_silder` (`id`, `title`, `images`, `date_start`, `date_end`, `date`, `user`) VALUES
