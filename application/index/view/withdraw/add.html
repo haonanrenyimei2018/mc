@@ -1,0 +1,36 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">提现</h1>
+</header>
+<div class="mui-content" style="margin-top: 10px;">
+    <div class="mui-content-padded">
+        <form name="addForm" id="addForm" method="post" action="add" >
+            <h5>提现金额</h5>
+            <div class="mui-input-row mui-password">
+                <input type="number" name="amount" id="amount" class="mui-input-password" data-input-password="5">
+                <span style="color: #9e9e9e;background-color: #ffffff;">
+                    <span style="float: left;font-size: 16px">可用余额:{$info['money']}</span>
+                    <span style="float: right;color: #0e9aef;">
+                        全部提现
+                    </span>
+                </span>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" onclick="" class="mui-btn mui-btn-primary mui-btn-block">提现</button>
+            </div>
+        </form>
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    var money = "{$info['moeny']}";
+    function checkAll() {
+        
+    }
+
+
+</script>
+</body>
+</html>

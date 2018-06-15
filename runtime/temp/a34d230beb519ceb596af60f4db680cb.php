@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528792663;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/index\view\index\index.html";i:1528964288;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +21,19 @@
         <?php if(is_array($silders) || $silders instanceof \think\Collection || $silders instanceof \think\Paginator): if( count($silders)==0 ) : echo "" ;else: foreach($silders as $key=>$val): ?>
         <div class="mui-slider-item">
             <a href="#">
-                <img src="<?php echo $val['images']; ?>" height="220">
+                <img src="<?php echo $val['images']; ?>" height="200">
             </a>
         </div>
         <?php endforeach; endif; else: echo "" ;endif; if(is_array($silders) || $silders instanceof \think\Collection || $silders instanceof \think\Paginator): if( count($silders)==0 ) : echo "" ;else: foreach($silders as $key=>$val): if($key == $count): ?>
                 <div class="mui-slider-item mui-slider-item-duplicate">
                     <a href="#">
-                        <img src="<?php echo $val['images']; ?>" height="220">
+                        <img src="<?php echo $val['images']; ?>" height="200">
                     </a>
                 </div>
                 <?php else: ?>
                 <div class="mui-slider-item">
                     <a href="#">
-                        <img src="<?php echo $val['images']; ?>" height="220">
+                        <img src="<?php echo $val['images']; ?>" height="200">
                     </a>
                 </div>
             <?php endif; endforeach; endif; else: echo "" ;endif; ?>
@@ -47,43 +47,49 @@
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/notice/index.html">
-                <img src="/static/index/images/notice.png" width="64px" height="64px">
+                <img src="/static/index/images/notice.png" width="48" height="48">
                 <div class="mui-media-body">公司公告</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/course/index.html">
-                <img src="/static/index/images/cursor.png" width="64px" height="64px">
+                <img src="/static/index/images/cursor.png" width="48" height="48">
                 <div class="mui-media-body">培训课程</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/ad/index.html">
-                <img src="/static/index/images/ad.png" width="64px" height="64px">
+                <img src="/static/index/images/ad.png" width="48" height="48">
                 <div class="mui-media-body">我的广告</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/finance/index.html">
-                <img src="/static/index/images/caiwu.png" width="64px" height="64px">
+                <img src="/static/index/images/caiwu.png" width="48" height="48">
                 <div class="mui-media-body">财务管理</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/money/index.html">
-                <img src="/static/index/images/zijin2.png" width="64px" height="64px">
+                <img src="/static/index/images/zijin2.png" width="48" height="48">
                 <div class="mui-media-body">资金记录</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
             <a href="/index/shop/index.html">
-                <img src="/static/index/images/shop.png" width="64px" height="64px">
+                <img src="/static/index/images/shop.png" width="48" height="48">
                 <div class="mui-media-body">积分商城</div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+            <a href="/index/personal/index.html">
+                <img src="/static/index/images/personal.png" width="48" height="48">
+                <div class="mui-media-body">个人中心</div>
             </a>
         </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="float: right;">
             <a href="/index/login/loginout.html">
-                <img src="/static/index/images/quite.png" width="64px" height="64px">
+                <img src="/static/index/images/quite.png" width="48" height="48">
                 <div class="mui-media-body">退出系统</div>
             </a>
         </li>

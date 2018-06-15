@@ -1,0 +1,80 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">个人信息</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+    <form name="addForm" id="addForm" method="post" action="info">
+        <h5>姓名</h5>
+        <div class="mui-input-row mui-password">
+            <input type="text" class="mui-input-password" data-input-password="5" id="name" name="name" value="{$user['name']}" >
+        </div>
+        <h5>手机号</h5>
+        <div class="mui-input-row mui-password">
+            <input type="number" class="mui-input-password" data-input-password="5" id="phone" name="phone" value="{$user['phone']}" >
+        </div>
+        <h5>身份证号</h5>
+        <div class="mui-input-row mui-password">
+            <input type="text" class="mui-input-password" data-input-password="5" id="idn" name="idn" value="{$user['idn']}" >
+        </div>
+        <h5>微信号</h5>
+        <div class="mui-input-row mui-password">
+            <input type="text" class="mui-input-password" data-input-password="5" id="wechat" name="wechat" value="{$user['wechat']}" >
+        </div>
+        <h5>密码</h5>
+        <div class="mui-input-row mui-password">
+            <input type="password" class="mui-input-password" data-input-password="5" id="password" name="password" value="" >
+        </div>
+        <div class="mui-button-row">
+            <button type="submit" class="mui-btn mui-btn-primary">确认</button>&nbsp;&nbsp;
+            <button type="button" class="mui-btn mui-action-back mui-btn-danger">取消</button>
+        </div>
+        <input type="hidden" name="id" value="{$user['id']}">
+    </form>
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    $(document).ready(function () {
+        $('#addForm').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+
+    function checkForm() {
+        var name = $('#name').val(),
+            phone = $('#phone').val(),
+            idn = $('#idn').val(),
+            wechat = $('#wechat').val();
+        if(name == ''){
+            mui.toast('姓名不能为空!');
+            return false;
+        }
+        if(phone == ''){
+            mui.toast('手机号不能为空!');
+            return false;
+        }
+        if(idn == ''){
+            mui.toast('身份证号不能为空!');
+            return false;
+        }
+        if(wechat == '') {
+            mui.toast('微信号不能为空!');
+            return false;
+        }
+    }
+
+    function complete(res) {
+        if (res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+</script>
+</body>
+</html>

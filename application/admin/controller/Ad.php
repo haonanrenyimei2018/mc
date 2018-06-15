@@ -62,6 +62,14 @@ class Ad extends Base
             if($state == 1){
                 $res = LAd::adCheck($id);
                 if($res['code'] == 1) {
+                    //审核成功
+                    $where = array(
+                        'ad' => $id
+                    );
+                    $update = array(
+                        'status' => 1
+                    );
+                    Db::name('ad_member')->where($where)->update($update);
                     $res['url'] = url('index');
                     return json($res);
                 }else {

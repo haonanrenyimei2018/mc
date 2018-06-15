@@ -1,0 +1,228 @@
+[ 2018-06-15T14:43:56+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.021000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `username` = 'user_1'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:43:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:46:19+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `username` = 'user_1'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:46:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:46:38+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:48:40+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `mc_agency`  SET `name`='张三1',`phone`='12345678901',`idn`='37232119861030001X',`wechat`='12345678901',`id`=1  WHERE  `id` = 1 [ RunTime:0.011000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:49:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `username` = 'user_1'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:49:23+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:57:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T14:57:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `mc_agency`  SET `name`='张三112121',`phone`='12345678901',`idn`='37232119861030001X',`wechat`='12345678901',`id`=1  WHERE  `id` = 1 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:03:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_mc.mc_without' doesn't exist
+
+---------------------------------------------------------------
+[ 2018-06-15T16:04:14+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_mc.mc_withdraw' doesn't exist
+
+---------------------------------------------------------------
+[ 2018-06-15T16:04:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_withdraw` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_withdraw` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_withdraw` WHERE  `member` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:05:25+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_withdraw` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_withdraw` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_withdraw` WHERE  `member` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:06:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_withdraw` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_withdraw` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_withdraw` WHERE  `member` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:13+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:25+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_withdraw` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_withdraw` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_withdraw` WHERE  `member` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:07:28+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:10:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:11:16+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:11:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:12:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:12:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:17:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:20:51+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:21:01+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:21:02+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:22:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:23:02+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:23:14+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:23:27+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:23:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:02+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:25+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:24:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:26:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:27:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:27:09+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-15T16:27:28+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------

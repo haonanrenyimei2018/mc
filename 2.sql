@@ -52,8 +52,25 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 295, '127.0.0.1', 1528855530, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 296, '127.0.0.1', 1528969265, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
+
+-- 导出  表 db_mc.mc_ad_member 结构
+DROP TABLE IF EXISTS `mc_ad_member`;
+CREATE TABLE IF NOT EXISTS `mc_ad_member` (
+  `member` int(11) DEFAULT NULL,
+  `ad` int(11) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  `date_begin` int(11) DEFAULT NULL,
+  `date_end` int(11) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '0',
+  `date` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理接广告的期限表';
+
+-- 正在导出表  db_mc.mc_ad_member 的数据：~0 rows (大约)
+DELETE FROM `mc_ad_member`;
+/*!40000 ALTER TABLE `mc_ad_member` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mc_ad_member` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_type 结构
 DROP TABLE IF EXISTS `mc_ad_type`;
@@ -101,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency` (
 DELETE FROM `mc_agency`;
 /*!40000 ALTER TABLE `mc_agency` DISABLE KEYS */;
 INSERT INTO `mc_agency` (`id`, `username`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
-	(1, 'user_1', 'e10adc3949ba59abbe56e057f20f883e', '张三', '37232119861030001X', '12345678901', '12345678901', 1, 1, 0, '37', '3703', '0', '0', '1558443501', '0', 1),
+	(1, 'user_1', 'e10adc3949ba59abbe56e057f20f883e', '张三112121', '37232119861030001X', '12345678901', '12345678901', 1, 1, 0, '37', '3703', '0', '0', '1558443501', '0', 1),
 	(2, 'user_2', 'e10adc3949ba59abbe56e057f20f883e', 'zhangsan', '37232119861030001X', '13615460020', '235235', 2, 0, 0, '37', '3703', '370302', '0', '1560332432', '1527674034', 1);
 /*!40000 ALTER TABLE `mc_agency` ENABLE KEYS */;
 
@@ -17196,9 +17213,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3849 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3850 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：48 rows
+-- 正在导出表  db_mc.mc_log 的数据：49 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17249,7 +17266,8 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3845, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528684384),
 	(3846, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528766447),
 	(3847, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528855530),
-	(3848, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1528855564);
+	(3848, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1528855564),
+	(3849, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528969265);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17497,6 +17515,20 @@ INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`,
 	(12, 1, '2', 250, '兑换产品:卫生巾', 0, 1528425004),
 	(13, 1, '2', 250, '兑换产品:卫生巾', 0, 1528425029);
 /*!40000 ALTER TABLE `mc_sources_info` ENABLE KEYS */;
+
+-- 导出  表 db_mc.mc_withdraw 结构
+DROP TABLE IF EXISTS `mc_withdraw`;
+CREATE TABLE IF NOT EXISTS `mc_withdraw` (
+  `member` int(11) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `date` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理提现记录表';
+
+-- 正在导出表  db_mc.mc_withdraw 的数据：~0 rows (大约)
+DELETE FROM `mc_withdraw`;
+/*!40000 ALTER TABLE `mc_withdraw` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mc_withdraw` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

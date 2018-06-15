@@ -12,6 +12,7 @@ namespace app\index\controller;
 
 use app\model\AdModel;
 use app\model\AdTypeModel;
+use think\Db;
 use Think\Exception;
 
 class Ad extends Base
@@ -64,12 +65,31 @@ class Ad extends Base
     public function add() {
         if(request()->isAjax()){
             $data = input('post.');
+            //检测是否可以接广告
+            $where = array(
+                'member' => $this->user['id'],
+                'type' => $data['type'],
+                'date_end' => ['gt',time()]
+            );
+            $count = Db::name('ad_member')->where($where)->count();
+            if($count > 0) {
+                return json(['code' => -3,'msg' => '该类型的广告正在合同期,不能发布!']);
+            }
             $data['date'] = time();
             $data['mid'] = $this->user['id'];
             $data['status'] = 0;
             try {
                 $res = $this->adModel->insertGetId($data);
                 if($res !== false){
+                    $adMember = array(
+                        'member' => $this->user['id'],
+                        'ad' => $res,
+                        'type' => $data['type'],
+                        'date_begin' => time(),
+                        'date_end' => time() + $data['months'] * 24 * 60* 60,
+                        'date' => time()
+                    );
+                    Db::name('ad_member')->insert($adMember);
                     return json(['code' => 1,'msg' => '操作成功','url' => url('index')]);
                 }else {
                     return json(['code' => -1,'msg' => '操作失败,请联系管理员']);

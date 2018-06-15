@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1528425025;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/index\view\shop\index.html";i:1528426945;s:58:"E:\workplace\mc/application/index\view\public\_header.html";i:1527832634;s:58:"E:\workplace\mc/application/index\view\public\_footer.html";i:1527832640;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +83,8 @@
                 html += '</div>';
                 html += '</div>';
                 html += '<div class="mui-card-footer">';
-                html += '<a href="detail.html?id='+res[i].id+'" class="mui-card-link"></a><a class="mui-card-link">查看详情</a>';
+                html += '<a class="mui-card-link" onclick="doAction('+res[i].id+')">立即兑换</a>';
+                html += '<a href="detail.html?id='+res[i].id+'" class="mui-card-link">查看详情</a>';
                 html += '</div>';
                 html += '</div>';
             }
