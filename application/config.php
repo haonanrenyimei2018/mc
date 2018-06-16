@@ -117,7 +117,8 @@ return [
         'p_add' => '新增绩效',
         'c_add' => '新增佣金',
         'p_reduce' => '减少绩效',
-        'c_reduce' => '减少佣金'
+        'c_reduce' => '减少佣金',
+        'withdraw' => '代理提现'
     )
 
 ];

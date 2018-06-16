@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 296, '127.0.0.1', 1528969265, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 297, '127.0.0.1', 1529083479, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_member 结构
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='广告类型';
 
--- 正在导出表  db_mc.mc_ad_type 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_ad_type 的数据：~2 rows (大约)
 DELETE FROM `mc_ad_type`;
 /*!40000 ALTER TABLE `mc_ad_type` DISABLE KEYS */;
 INSERT INTO `mc_ad_type` (`id`, `name`, `del_flag`, `date`, `user`) VALUES
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='代理表';
 
--- 正在导出表  db_mc.mc_agency 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_agency 的数据：~2 rows (大约)
 DELETE FROM `mc_agency`;
 /*!40000 ALTER TABLE `mc_agency` DISABLE KEYS */;
 INSERT INTO `mc_agency` (`id`, `username`, `password`, `name`, `idn`, `phone`, `wechat`, `type`, `is_pid`, `pid`, `province`, `city`, `county`, `area`, `date_end`, `date`, `status`) VALUES
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 740, 740, 60, 0, 1526907501),
+	(1, 0, 740, 60, 0, 1526907501),
 	(2, 400, 400, 0, 0, 1528795163);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
@@ -17059,9 +17059,9 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=156 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=157 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：49 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：50 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17113,7 +17113,8 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(152, 'admin/money/index', '奖金管理', 1, 1, '', '', 136, 50, 1526887339, 1526887339),
 	(153, 'admin/score/index', '积分管理', 1, 1, '', '', 136, 50, 1526887376, 1526887376),
 	(154, 'admin/silder/index', '图片轮播', 1, 1, '', '', 1, 50, 1527748812, 1527748812),
-	(155, 'admin/conversion/index', '兑换记录', 1, 1, '', '', 137, 50, 1528855564, 1528855564);
+	(155, 'admin/conversion/index', '兑换记录', 1, 1, '', '', 137, 50, 1528855564, 1528855564),
+	(156, 'admin/withdraw/index', '提现申请', 1, 1, '', '', 136, 50, 1529086169, 1529086169);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17173,7 +17174,7 @@ CREATE TABLE IF NOT EXISTS `mc_course` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程表';
 
--- 正在导出表  db_mc.mc_course 的数据：~2 rows (大约)
+-- 正在导出表  db_mc.mc_course 的数据：~3 rows (大约)
 DELETE FROM `mc_course`;
 /*!40000 ALTER TABLE `mc_course` DISABLE KEYS */;
 INSERT INTO `mc_course` (`id`, `title`, `content`, `times`, `date`, `user`) VALUES
@@ -17193,7 +17194,7 @@ CREATE TABLE IF NOT EXISTS `mc_course_member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='培训课程分配表';
 
--- 正在导出表  db_mc.mc_course_member 的数据：~2 rows (大约)
+-- 正在导出表  db_mc.mc_course_member 的数据：~3 rows (大约)
 DELETE FROM `mc_course_member`;
 /*!40000 ALTER TABLE `mc_course_member` DISABLE KEYS */;
 INSERT INTO `mc_course_member` (`id`, `cid`, `mid`, `state`, `date`) VALUES
@@ -17213,9 +17214,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3850 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3852 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：49 rows
+-- 正在导出表  db_mc.mc_log 的数据：51 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17267,7 +17268,9 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3846, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528766447),
 	(3847, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528855530),
 	(3848, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1528855564),
-	(3849, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528969265);
+	(3849, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1528969265),
+	(3850, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529083479),
+	(3851, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1529086169);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_adtype 结构
@@ -17297,9 +17300,9 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   `summary` varchar(500) DEFAULT NULL COMMENT '备注',
   `date` int(11) DEFAULT NULL COMMENT '发生时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
--- 正在导出表  db_mc.mc_member_moneylog 的数据：~7 rows (大约)
+-- 正在导出表  db_mc.mc_member_moneylog 的数据：~8 rows (大约)
 DELETE FROM `mc_member_moneylog`;
 /*!40000 ALTER TABLE `mc_member_moneylog` DISABLE KEYS */;
 INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, `summary`, `date`) VALUES
@@ -17310,7 +17313,8 @@ INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, 
 	(26, 1, 'return_1', '1', 240, '广告接单返还', 1528711021),
 	(27, 1, 'return_2', '1', 60, '广告接单绩效', 1528711021),
 	(37, 2, 'return', '1', 400, '代理返还', 1528796432),
-	(38, 1, 'return', '1', 240, '代理返还,来自代理zhangsan', 1528796432);
+	(38, 1, 'return', '1', 240, '代理返还,来自代理zhangsan', 1528796432),
+	(39, 1, 'withdraw', '2', 740, '代理提现', 1529089372);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_product 结构
@@ -17411,7 +17415,7 @@ CREATE TABLE IF NOT EXISTS `mc_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='积分商城里的产品';
 
--- 正在导出表  db_mc.mc_product 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_product 的数据：~2 rows (大约)
 DELETE FROM `mc_product`;
 /*!40000 ALTER TABLE `mc_product` DISABLE KEYS */;
 INSERT INTO `mc_product` (`id`, `name`, `intro`, `images`, `content`, `sources`, `amount`, `state`, `date`, `user`) VALUES
@@ -17501,7 +17505,7 @@ CREATE TABLE IF NOT EXISTS `mc_sources_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='积分管理';
 
--- 正在导出表  db_mc.mc_sources_info 的数据：~8 rows (大约)
+-- 正在导出表  db_mc.mc_sources_info 的数据：~9 rows (大约)
 DELETE FROM `mc_sources_info`;
 /*!40000 ALTER TABLE `mc_sources_info` DISABLE KEYS */;
 INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`, `date`) VALUES
@@ -17519,15 +17523,19 @@ INSERT INTO `mc_sources_info` (`id`, `mid`, `type`, `amount`, `summary`, `user`,
 -- 导出  表 db_mc.mc_withdraw 结构
 DROP TABLE IF EXISTS `mc_withdraw`;
 CREATE TABLE IF NOT EXISTS `mc_withdraw` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `member` int(11) DEFAULT NULL,
   `amount` decimal(10,0) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL,
-  `date` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理提现记录表';
+  `date` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='代理提现记录表';
 
--- 正在导出表  db_mc.mc_withdraw 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_withdraw 的数据：~1 rows (大约)
 DELETE FROM `mc_withdraw`;
 /*!40000 ALTER TABLE `mc_withdraw` DISABLE KEYS */;
+INSERT INTO `mc_withdraw` (`id`, `member`, `amount`, `status`, `date`) VALUES
+	(1, 1, 740, 1, 1529076671);
 /*!40000 ALTER TABLE `mc_withdraw` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
