@@ -24,6 +24,7 @@
                             <th style="width: 5%">ID</th>
                             <th style="width: 10%;text-align: left;">时间</th>
                             <th style="width: 10%;text-align: left;">类型</th>
+                            <th style="width: 10%;text-align: left;">规则</th>
                             <th style="width: 10%;text-align: right;">积分</th>
                             <th style="width: 15%;">备注</th>
                         </tr>
@@ -39,6 +40,9 @@
                                 {{# }else { }}
                                     扣除
                                 {{# }  }}
+                                </td>
+                                <td style="width: 10%;text-align: left;">
+                                    {{d[i].roles_name}}
                                 </td>
                                 <td style="width: 10%;text-align: right;">{{d[i].amount}}</td>
                                 <td>{{d[i].summary}}</td>

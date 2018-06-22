@@ -43,7 +43,7 @@ class Score extends Base
         $count = $this->agencyModel->where($where)->count();//计算总页面
         $allpage = intval(ceil($count / $limits));
         if(input('get.page')){
-            $lists = $this->agencyModel->where($where)->page($Nowpage, $limits)->select();
+            $lists = $this->agencyModel->where($where)->page($Nowpage, $limits)->order('date desc')->select();
             $agencyType = $this->agencyTypeModel->column('id,name');
             foreach ($lists as &$val) {
                 $val['type_name'] = $agencyType[$val['type']];
@@ -68,8 +68,14 @@ class Score extends Base
         $count = $this->scoreInfoModel->where($where)->count();//计算总页面
         $allpage = intval(ceil($count / $limits));
         if(input('get.page')){
-            $lists = $this->scoreInfoModel->where($where)->page($Nowpage, $limits)->select();
+            $roles = Db::name('score_roles')->column('id,title');
+            $lists = $this->scoreInfoModel->where($where)->page($Nowpage, $limits)->order('date desc')->select();
             foreach ($lists as &$val) {
+                if($val['roles'] > 0) {
+                    $val['roles_name'] = $roles[$val['roles']];
+                }else {
+                    $val['roles_name'] = '';
+                }
                 $val['date'] = date('Y-m-d H:i:s',$val['date']);
             }
             return json($lists);
@@ -93,7 +99,7 @@ class Score extends Base
                     'member' => $params['mid']
                 ];
                 $agencyInfo = $this->agencyInfoModel->where($where)->find();
-                if($agencyInfo['score'] < $params['amount']) {
+                if($params['type'] == 2 && $agencyInfo['score'] < $params['amount']) {
                     return json(['code' => -3,'msg' => '积分不足!']);
                 }
                 if($params['type'] == 1) {
@@ -112,9 +118,11 @@ class Score extends Base
             }
         }
         $id = input('id');
+        $this->assign('model',config('model'));
         $this->assign('id',$id);
         return $this->view->fetch();
     }
+
 
 
 

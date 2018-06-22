@@ -22,9 +22,12 @@ class Member extends Base
      */
     public function index() {
         $key = input('key');
-        $where = [];
+        $where = [
+            'status' => 1,
+            'date_end' => ['gt',time()]
+        ];
         if(!empty($key)){
-            $where['name'] = ['like','%'.$key.'%'];
+            $where['name|nick_name'] = ['like','%'.$key.'%'];
         }
         $Nowpage = input('get.page') ? input('get.page'):1;
         $limits = 10;// 获取总条数
@@ -35,6 +38,9 @@ class Member extends Base
             $agencyType = Db::name('agencyType')->column('id,name');
             foreach ($lists as &$val) {
                 $val['type_name'] = $agencyType[$val['type']];
+                if($val['date_end'] - time() <= 30 * 24 * 60 * 60) {
+                    $val['name'] = '<span style="color: red;">'.$val['name'].'</span>';
+                }
             }
             return json($lists);
         }

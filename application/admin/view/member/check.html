@@ -17,6 +17,13 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">昵称</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="nick_name" id="nick_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">手机号</label>
                             <div class="input-group col-sm-4">
                                 <span class="form-control">{$member['phone']}</span>
@@ -192,7 +199,14 @@
             province = $('#province').val(),
             city = $('#city').val(),
             county = $('#county').val(),
-            area = $('#area').val();
+            area = $('#area').val(),
+            nick_name = $('#nick_name').val();
+
+        if(nick_name == '') {
+            otcms.error('昵称必须填写!');
+            return false;
+        }
+
         if(type == 0) {
             otcms.error('请选择代理的代理类型!');
             return false;

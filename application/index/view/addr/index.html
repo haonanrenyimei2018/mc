@@ -1,0 +1,84 @@
+{include file="public/_header" /}
+<body class="gray-bg">
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">我的收货地址</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <form name="addForm" id="addForm" method="post" action="index">
+            {notempty name="data"}
+                <p>收货地址</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="addr" name="addr" data-input-password="5" value="{$data['addr']}">
+                </div>
+                <p>联系电话</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="phone" name="phone" data-input-password="5" value="{$data['phone']}">
+                </div>
+                <p>衣服号码</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="size" name="size" data-input-password="5" value="{$data['size']}">
+                </div>
+                <input type="hidden" name="id" value="{$data['id']}">
+            {else }
+                <p>收货地址</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="addr" name="addr" data-input-password="5">
+                </div>
+                <p>联系电话</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="phone" name="phone" data-input-password="5">
+                </div>
+                <p>衣服号码</p>
+                <div class="mui-input-row mui-password">
+                    <input type="text" class="mui-input-password" id="size" name="size" data-input-password="5">
+                </div>
+                <input type="hidden" name="id" value="0">
+            {/notempty}
+
+            <div class="mui-button-row">
+                <button type="submit" class="mui-btn mui-btn-primary">确认</button>&nbsp;&nbsp;
+                <button type="button" class="mui-btn mui-action-back mui-btn-danger">取消</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+    $(document).ready(function () {
+        $('#addForm').ajaxForm({
+            beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+            success: complete, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+    function checkForm() {
+        var addr = $('#addr').val(),
+            phone = $('#phone').val(),
+            size = $('#size').val();
+
+        if(addr == '') {
+            mui.toast('请输入收货地址');
+            return false;
+        }
+        if(phone == '') {
+            mui.toast('请输入联系电话');
+            return false;
+        }
+    }
+
+    function complete(res) {
+        if(res.code == 1) {
+            otcms.success(res.msg,res.url);
+        }else {
+            otcms.error(res.msg);
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

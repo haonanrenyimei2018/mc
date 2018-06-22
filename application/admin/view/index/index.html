@@ -11,52 +11,52 @@
 <script>
 <!--此处为：通过上述CNZZ数据统计代码，得到相应字段进行元素赋值-->
 window.onload=function(){
-	var num = $("#cnzz_stat_icon_1253472858").html();
-	var data = /([^\[\]]+)(?=\])/g;
-	data = num.match(data);
-	
-	var add = "<span style=\"font-size:14px\"> IP</span>"
-	var dayip = data[0];
-	var dayip2 = data[2];
-	$("#dayip").html(dayip+add);
-	$("#dayip2").html(dayip2+"IP");
-	dayip = parseInt(dayip);
-	dayip2 = parseInt(dayip2);
-	if(dayip>dayip2){
-			var daysum = dayip-dayip2;
-			$("#dayip3").html("+"+daysum);
-			$("#dayipclass").attr("class","fa fa-level-up");
-		}else{
-			var daysum = dayip2-dayip;
-			$("#dayip3").html("-"+daysum);
-			$("#dayipclass").attr("class","fa fa-level-down");
-	}
-	
-	var add2 = "<span style=\"font-size:14px\"> PV</span>"
-	var daypv = data[1];
-	var daypv2 = data[3];
-	$("#daypv").html(daypv+add2);
-	$("#daypv2").html(daypv2+"PV");
-	daypv = parseInt(daypv);
-	daypv2 = parseInt(daypv2);
-	if(daypv>daypv2){
-			var daysum2 = daypv-daypv2;
-			$("#daypv3").html("+ "+daysum2);
-			$("#daypvclass").attr("class","fa fa-level-up");
-		}else{
-			var daysum2 = daypv2-daypv;
-			$("#daypv3").html("- "+daysum2);
-			$("#daypvclass").attr("class","fa fa-level-down");
-	}
-	
-	var add3 = "<span style=\"font-size:14px\"> 人</span>"
-	var online = data[4];
-	$("#online").html(online+add3);
-
-	
-	
-
-	}
+	// var num = $("#cnzz_stat_icon_1253472858").html();
+	// var data = /([^\[\]]+)(?=\])/g;
+	// data = num.match(data);
+	//
+	// var add = "<span style=\"font-size:14px\"> IP</span>"
+	// var dayip = data[0];
+	// var dayip2 = data[2];
+	// $("#dayip").html(dayip+add);
+	// $("#dayip2").html(dayip2+"IP");
+	// dayip = parseInt(dayip);
+	// dayip2 = parseInt(dayip2);
+	// if(dayip>dayip2){
+	// 		var daysum = dayip-dayip2;
+	// 		$("#dayip3").html("+"+daysum);
+	// 		$("#dayipclass").attr("class","fa fa-level-up");
+	// 	}else{
+	// 		var daysum = dayip2-dayip;
+	// 		$("#dayip3").html("-"+daysum);
+	// 		$("#dayipclass").attr("class","fa fa-level-down");
+	// }
+	//
+	// var add2 = "<span style=\"font-size:14px\"> PV</span>"
+	// var daypv = data[1];
+	// var daypv2 = data[3];
+	// $("#daypv").html(daypv+add2);
+	// $("#daypv2").html(daypv2+"PV");
+	// daypv = parseInt(daypv);
+	// daypv2 = parseInt(daypv2);
+	// if(daypv>daypv2){
+	// 		var daysum2 = daypv-daypv2;
+	// 		$("#daypv3").html("+ "+daysum2);
+	// 		$("#daypvclass").attr("class","fa fa-level-up");
+	// 	}else{
+	// 		var daysum2 = daypv2-daypv;
+	// 		$("#daypv3").html("- "+daysum2);
+	// 		$("#daypvclass").attr("class","fa fa-level-down");
+	// }
+	//
+	// var add3 = "<span style=\"font-size:14px\"> 人</span>"
+	// var online = data[4];
+	// $("#online").html(online+add3);
+    //
+	//
+	//
+    //
+	// }
 
 </script>
 
@@ -71,42 +71,37 @@ window.onload=function(){
         <div class="col-sm-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-success pull-right">今日</span>
-                        <h5>当前在线</h5>
+                        <span class="label label-success pull-right">总计</span>
+                        <h5>未申广告</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"><span id="online">0<span style="font-size:14px"> 人</span></span></h1>
+                        <h1 class="no-margins"><span id="online">{$ad_count}<span style="font-size:14px"> 个</span></span></h1>
                         <div class="stat-percent font-bold text-success"><i class="fa fa-bolt"></i>
                         </div>
-                        <small>在线人数统计</small>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">今日</span>
-                        <h5>浏览次数（PV）</h5>
+                        <span class="label label-info pull-right">总计</span>
+                        <h5>未申会员（PV）</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"><span id="daypv">0<span style="font-size:14px"> PV</span></span></h1>
+                        <h1 class="no-margins"><span id="daypv">0<span style="font-size:14px"> 人</span></span></h1>
                         <div class="stat-percent font-bold text-info">相比昨日 <span id="daypv3">0</span>PV <i class="fa" id="daypvclass"></i>
                         </div>
-                        <small>昨日 <span id="daypv2">0PV</span></small>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-danger pull-right">今日</span>
-                        <h5>IP访问</h5>
+                        <span class="label label-danger pull-right">总计</span>
+                        <h5>总广告费</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"><span id="dayip">0<span style="font-size:14px"> IP</span></span></h1>
-                        <div class="stat-percent font-bold text-danger">相比昨日 <span id="dayip3">0</span>IP <i class="fa" id="dayipclass"></i>
-                        </div>
-                        <small>昨日 <span id="dayip2">0IP</span></small>
+                        <h1 class="no-margins"><span id="dayip">{$amount}<span style="font-size:14px"> 元</span></span></h1>
                     </div>
                 </div>
             </div>
@@ -142,7 +137,7 @@ window.onload=function(){
                                             <td class="text-navy"> <i class="fa fa-level-up"></i> {$vo.views}</td>
                                         </tr>
                                   	{/volist}
-                                      
+
                                     </tbody>
                                 </table>
                             </div>

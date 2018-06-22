@@ -1,0 +1,27 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+    <h1 class="mui-title">我的广告</h1>
+</header>
+<div class="mui-content">
+    {notempty name="data"}
+    <div class="mui-card" style="margin-bottom: 15px;">
+        <ul class="mui-table-view" id="lists">
+            {foreach name="data" item="val"}
+            <li class="mui-table-view-cell">
+                <a href="#" class="mui-navigate-right">
+                    <span style="color: #0e9aef;">[{$type[$val['type']]}]</span>{$val['name']}
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    {else}
+    <p style="text-align: center;margin-top: 20px;font-size: 1.5em;">--暂无数据--</p>
+    {/notempty}
+</div>
+</div>
+{include file="public/_footer" /}
+</body>
+</html>

@@ -12,6 +12,26 @@
                 <div class="ibox-content">
                     <form class="form-horizontal" name="add" id="add" method="post" action="edit">
                         <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">去向</label>
+                            <div class="input-group col-sm-4">
+                                {foreach name="target" item="val"}
+                                <label><input type="checkbox" name="target[]" id="target_{$key}" value="{$key}">{$val}</label>
+                                {/foreach}
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">类型</label>
+                            <div class="input-group col-sm-4">
+                                <select name="type" id="type" class="form-control">
+                                    {foreach name="types" item="val"}
+                                    <option value="{$key}" {eq name="data['type']" value="$key"}selected {/eq} >{$val}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">标题</label>
                             <div class="input-group col-sm-4">
                                 <input type="text" name="title" id="title" class="form-control" value="{$data['title']}">
@@ -46,17 +66,29 @@
 </div>
 {include file="public/footer" /}
 <script>
+    var targets = "{$data['target']}";
     $(function () {
         $('#add').ajaxForm({
             beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
             success: complete, // 这是提交后的方法
             dataType: 'json'
         });
+        var arr = targets.split(',');
+
+        for(var i=0;i<arr.length;++i) {
+            $('#target_'+arr[i]).attr('checked',true);
+        }
     });
 
     function checkForm() {
         var title = $('#title').val(),
-            content = UE.getEditor('content').getContent();
+            content = UE.getEditor('content').getContent(),
+            targets = $('input[name="target[]"]:checked');
+
+        if(targets.length == 0) {
+            otcms.error('请选择去向');
+            return false;
+        }
 
         if(title == '') {
             otcms.error('标题不能为空!');

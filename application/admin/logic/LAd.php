@@ -20,6 +20,7 @@ class LAd
      */
     public static function adCheck($id) {
         //获取配置文件信息
+        $user = session('user');
         $params = new ParamsModel();
         $config = $params->_get();
         try {
@@ -95,6 +96,25 @@ class LAd
             }else {
                 $res3 = 1;
             }
+            //增加积分
+            $where = [
+                'begin' => ['elt',$ad['amount']],
+                'end' => ['egt',$ad['amount']]
+            ];
+            $c = Db::name('score_money')->where($where)->order('begin ASC')->find();
+            if(isset($c)) {
+                $addData = [
+                    'mid' => $ad['mid'],
+                    'type' => 1,
+                    'amount' => $c['score'],
+                    'user' => $user['id'],
+                    'summary' => '',
+                    'date' => time()
+                ];
+                Db::name('sources_info')->insertGetId($addData);
+            }
+
+
             if($res1 !== false && $res2 !== false && $res3 !== false) {
                 Db::commit();
                 return ['code' => 1,'msg' => '操作成功'];

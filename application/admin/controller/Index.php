@@ -24,24 +24,30 @@ class Index extends Base
             'phpversion' => phpversion(),
         );
         $this->assign('info',$info);
-		
-//		$article_list=Db::name('article')->where("") -> limit(5) ->order('views desc')->select();
-		$this -> assign('article_list', []);
+        //未申广告数量
+        $where = [
+            'status' => 0
+        ];
+        $ad_count = Db::name('ad')->where($where)->count();
+        $where = [
+            'status' => 1
+        ];
+        $amount = Db::name('ad')->where($where)->sum('amount');
+        //未申代理的数量
+        $where = [
+            'status' => 0
+        ];
+        $ag_count = Db::name('agency')->where($where)->count();
 
-
-		$log_list=Db::name('log')->where("") -> limit(10)->order('log_id desc')->select();
-		foreach($log_list as $k=>$v){
-            $log_list[$k]['add_time']=date('Y-m-d H:i:s',$v['add_time']);
-        }  
-		$this -> assign('log_list', $log_list);
-		
-		
-		
-		
+        $this->assign([
+            'ad_count' => $ad_count,
+            'ag_count' => $ag_count,
+            'amount' => $amount,
+            'article_list' => [],
+            'log_list' => []
+        ]);
         return $this->fetch('index');
     }
-
-
     /**
      * 清除缓存
      */

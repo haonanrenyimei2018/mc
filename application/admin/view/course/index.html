@@ -32,7 +32,9 @@
                         <thead>
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
-                            <th style="width: 60%;text-align: left;">标题</th>
+                            <th style="width: 10%;text-align: left;">标题</th>
+                            <th style="width: 10%;text-align: left;">类型</th>
+                            <th style="width: 10%;text-align: left;">去向</th>
                             <th style="width: 10%;text-align: right;">浏览量</th>
                             <th style="width: 15%;">操作</th>
                         </tr>
@@ -41,7 +43,9 @@
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="width: 60%;text-align: left;">{{d[i].title}}</td>
+                                <td style="width: 10%;text-align: left;">{{d[i].title}}</td>
+                                <td style="width: 10%;text-align: left;">{{d[i].type_name}}</td>
+                                <td style="width: 40%;text-align: left;">{{d[i].target}}</td>
                                 <td style="width: 10%;text-align: right;">
                                     {{d[i].times}}
                                 </td>

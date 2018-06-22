@@ -17,6 +17,9 @@ class Base extends Controller
         if(is_null(session('member'))) {
             $this->redirect(url('login/index'));
         }
+        $this->assign([
+            'type' => $this->user['type']
+        ]);
     }
 
 

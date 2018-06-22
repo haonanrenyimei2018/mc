@@ -48,6 +48,9 @@ class AgencyType extends Base
             $params = input('post.');
             $params['date'] = time();
             $params['user'] = $this->user['id'];
+            if(!isset($params['status'])) {
+                $params['status'] = 0;
+            }
             try {
                 $where = [
                     'id' => $params['id']

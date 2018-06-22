@@ -13,8 +13,19 @@
                             <label class="col-sm-3 control-label" style="text-align: right">类型</label>
                             <div class="input-group col-sm-4">
                                 <select name="type" id="type" class="form-control">
-                                    <option value="1">增加</option>
-                                    <option value="2">扣除</option>
+                                    <option value="0">--请选择--</option>
+                                    {foreach name="model" item="val"}
+                                        <option value="{$key}">{$val}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">规则</label>
+                            <div class="input-group col-sm-4">
+                                <select name="roles" id="roles" class="form-control">
+                                    <option value="0">--请选择--</option>
                                 </select>
                             </div>
                         </div>
@@ -48,11 +59,38 @@
 </div>
 {include file="public/footer" /}
 <script>
+    var roles = {};
     $(function () {
         $('#add').ajaxForm({
             beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
             success: complete, // 这是提交后的方法
             dataType: 'json'
+        });
+        $('#type').change(function () {
+            $('#roles').html('');
+            var data = {
+                'model' : $(this).val()
+            };
+            $.post('/admin/score_roles/getroles.html',data,function (res) {
+                var html = '',
+                amount = 0;
+                for(var i=0;i<res.length;++i) {
+                    if(i == 0) {
+                        amount = res[i].amount;
+                    }
+                    roles[res[i].id] = res[i].amount;
+                    html += '<option value="'+res[i].id+'">'+res[i].title+'</option>';
+                }
+                $('#amount').val(amount);
+                $('#roles').html(html);
+            },'JSON');
+        });
+        $('#roles').change(function () {
+            var id = $('#roles').val();
+            if(id > 0) {
+                var amount = roles[id];
+                $('#amount').val(amount);
+            }
         });
     });
     function checkForm() {

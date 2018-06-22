@@ -46,7 +46,7 @@ class Course extends Base
             $str_no = implode(',',$data_no);
         }
         if(!empty($str_no)) {
-            $SQL .= "SELECT *,1 AS type from mc_course where id in (".$str_no.") ";
+            $SQL .= "SELECT *,1 AS model from mc_course where id in (".$str_no.") and target like '%2%' ";
         }
         $where = array(
             'state' => 1,
@@ -62,6 +62,10 @@ class Course extends Base
         }
         $SQL .= ' order by type ASC,date desc limit '.$this->pageSize;
         $datas = Db::query($SQL);
+        $types = Db::name('course_cate')->column('id,name');
+        foreach ($datas as &$val) {
+            $val['type_name'] = $types[$val['type']];
+        }
         $this->assign('data',$datas);
         $this->assign('pageCount',$pageCount);
         return $this->view->fetch();
@@ -94,11 +98,15 @@ class Course extends Base
             if(!empty($str_no) && !empty($str_read)) {
                 $SQL .= ' UNION ';
             }
-            $SQL .= " SELECT *,2 AS type from mc_course where id in (".$str_read.") ";
+            $SQL .= " SELECT *,2 AS type from mc_course where id in (".$str_read.") and target like '%2%' ";
         }
         $offset = ($page - 1) * $this->pageSize;
         $SQL .= ' order by type ASC,date desc limit '.$offset.','.$this->pageSize;
         $datas = Db::query($SQL);
+        $types = Db::name('course_cate')->column('id,name');
+        foreach ($datas as &$val) {
+            $val['type_name'] = $types[$val['type']];
+        }
         return json($datas);
     }
     /**

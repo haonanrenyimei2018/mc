@@ -1,0 +1,359 @@
+[ 2018-06-22T00:27:09+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `username` = 'user_1'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:11+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.008001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:27+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:29+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_type` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_ad_type` WHERE  `del_flag` = 0 [ RunTime:0.002001s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_member` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad_member` WHERE  `member` = 1  AND `type` = 2  AND `date_end` > 1529598459 LIMIT 1 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] INSERT INTO `mc_ad` (`title` , `type` , `amount` , `months` , `date` , `mid` , `status`) VALUES ('111' , 2 , 300 , 30 , 1529598459 , 1 , 0) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `mc_ad_member` (`member` , `ad` , `type` , `date_begin` , `date_end` , `date`) VALUES (1 , 2 , 2 , 1529598459 , 1532190459 , 1529598459) [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:41+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.002001s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:49+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` LIMIT 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:27:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` LIMIT 1 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` ORDER BY field(status,0,1,2) LIMIT 0,10 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_type` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_ad_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency` [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:28:03+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_type` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `mc_ad_type` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001001s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:28:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.009000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_score_money` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_score_money` ORDER BY begin ASC [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:28:18+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_score_money` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_score_money` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:28:25+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_score_money` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `mc_score_money`  SET `begin`=201,`end`=300,`score`=30,`id`=3,`date`=1529598505  WHERE  `id` = 3 [ RunTime:0.004000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:28:27+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.009000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_score_money` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_score_money` ORDER BY begin ASC [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:29:13+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.008000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_params` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `mc_params` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] UPDATE `mc_ad`  SET `status`=1  WHERE  `id` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_moneylog` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] INSERT INTO `mc_member_moneylog` (`member_id` , `type` , `amount` , `summary` , `model` , `date`) SELECT 1,'return_1',240,'广告接单返还',1,1529598553 UNION ALL SELECT 1,'return_2',60,'广告接单绩效',1,1529598553 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_info` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency_info` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.005001s ]
+[ sql ] [ SQL ] UPDATE `mc_agency_info`  SET `money`=240,`commission`=980,`performance`=120  WHERE  `member` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_score_money` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_score_money` WHERE  `begin` <= 300  AND `end` >= 300 ORDER BY begin ASC LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_sources_info` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] INSERT INTO `mc_sources_info` (`mid` , `type` , `amount` , `user` , `date`) VALUES (1 , '1' , 30 , 1 , 1529598553) [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_member` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] UPDATE `mc_ad_member`  SET `status`=1  WHERE  `ad` = 2 [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:29:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.008000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` LIMIT 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T00:29:16+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` ORDER BY field(status,0,1,2) LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_type` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_ad_type` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency` [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:03:40+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad_type` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_ad_type` WHERE  `del_flag` = 0 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:03:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:03:43+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:03:47+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.002001s ]
+[ error ] [0]模板文件不存在:F:\workplace\mc/application/index\view\public\header.html
+
+---------------------------------------------------------------
+[ 2018-06-22T01:04:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:04:44+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.002000s ]
+[ error ] [8]未定义数组索引: addr
+
+---------------------------------------------------------------
+[ 2018-06-22T01:06:40+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:08:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:08:16+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:12:18+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:13:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_mc.mc_addr' doesn't exist
+
+---------------------------------------------------------------
+[ 2018-06-22T01:14:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_mc.mc_addr' doesn't exist
+
+---------------------------------------------------------------
+[ 2018-06-22T01:14:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] INSERT INTO `mc_member_addr` (`addr` , `phone` , `size` , `id` , `member` , `date`) VALUES ('山东省淄博市张店区傅家镇小徐村' , '13335329596' , '3XL' , 0 , 1 , 1529601282) [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:14:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_member_addr` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_member_addr` WHERE  `member` = 1 LIMIT 1 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:14:52+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:18:51+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.016001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:18:56+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:21:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.000000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'type' in order clause is ambiguous
+
+---------------------------------------------------------------
+[ 2018-06-22T01:22:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:22:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_ad` WHERE  `mid` = 1 ORDER BY date DESC LIMIT 0,15 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:23:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:23:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:23:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:23:56+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1 ORDER BY date desc [ RunTime:0.003000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:24:33+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1 ORDER BY date desc [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:25:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1  AND `type` <> 1 ORDER BY date desc [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:26:42+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1  AND `type` <> 1 ORDER BY date desc [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.001001s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:26:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:26:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'type' in order clause is ambiguous
+
+---------------------------------------------------------------
+[ 2018-06-22T01:27:46+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS model from mc_course where id in (4,1)  UNION  SELECT *,2 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.010000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:28:02+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS model from mc_course where id in (4,1)  UNION  SELECT *,2 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.006000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:32:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.000000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'target' in 'where clause'
+
+---------------------------------------------------------------
+[ 2018-06-22T01:33:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'target' in 'where clause'
+
+---------------------------------------------------------------
+[ 2018-06-22T01:33:38+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.001000s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'target' in 'where clause'
+
+---------------------------------------------------------------
+[ 2018-06-22T01:34:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_member` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course_member` WHERE  `mid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 0  AND `mid` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `cid` FROM `mc_course_member` WHERE  `state` = 1  AND `mid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT *,1 AS model from mc_course where id in (4,1) and target like '%2%'  UNION  SELECT *,2 AS type from mc_course where id in (1,2,3)  order by type ASC,date desc limit 15 [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:34:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:34:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1  AND `type` <> 1 ORDER BY date desc [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:34:17+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_silder` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_silder` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-06-22T01:35:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `province` = '37'  AND `city` = '3703'  AND `status` = 1  AND `type` <> 1 ORDER BY date desc [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
