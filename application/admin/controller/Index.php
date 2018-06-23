@@ -58,5 +58,4 @@ class Index extends Base
             return json(['code' => 0, 'msg' => '清除缓存失败']);
         }
     }
-
 }

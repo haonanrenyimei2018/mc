@@ -19,7 +19,20 @@
     $(function () {
         $('button[name=types]').click(function () {
             var type = $(this).val();
-            window.location.href = '/index/login/register_1.html?type=' + type;
+            var btnArray = ['取消', '确定'];
+            mui.prompt('请输入邀请码:', '', '提示', btnArray, function(e) {
+                if (e.index == 1) {
+                    var code = e.value;
+                    $.getJSON('/index/login/checkCode.html',{'code' : code},function (res) {
+                        if(res.code == 1) {
+                            window.location.href = '/index/login/register_1.html?type=' + type;
+                        }else {
+                            otcms.error(res.msg);
+                            return false;
+                        }
+                    });
+                }
+            })
         });
     });
 </script>

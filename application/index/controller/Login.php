@@ -13,6 +13,7 @@ namespace app\index\controller;
 use app\model\AgencyModel;
 use app\model\AgencyTypeModel;
 use think\Controller;
+use think\Db;
 use Think\Exception;
 
 class Login extends Controller
@@ -74,7 +75,7 @@ class Login extends Controller
      */
     public function register() {
         //代理类型
-        $agencyTypes = $this->agencyTypeModel->select();
+        $agencyTypes = $this->agencyTypeModel->where('status',1)->select();
         $this->assign('types',$agencyTypes);
         return $this->fetch();
     }
@@ -115,6 +116,26 @@ class Login extends Controller
         $type = input('type');
         $this->assign('type',$type);
         return $this->view->fetch();
+    }
+    /**
+     * 检测邀请码是否正确
+     */
+    public function checkCode() {
+        $code = input('code');
+        $where = [
+            'code' => $code,
+            'status' => 0
+        ];
+        $count = Db::name('invite_code')->where($where)->count();
+        if($count == 1){
+            $data = [
+                'status' => 1
+            ];
+            Db::name('invite_code')->where($where)->update($data);
+            return json(['code' => 1]);
+        }else{
+            return json(['code' => -99,'msg' => '邀请码不正确']);
+        }
     }
 
 
