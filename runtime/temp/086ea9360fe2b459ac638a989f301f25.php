@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1529715104;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1530003499;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,12 +95,10 @@ window.onload=function(){
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <span class="label label-success pull-right">总计</span>
-                        <h5>未申广告</h5>
+                        <h5>未审广告</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins"><span id="online"><?php echo $ad_count; ?><span style="font-size:14px"> 个</span></span></h1>
-                        <div class="stat-percent font-bold text-success"><i class="fa fa-bolt"></i>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -108,12 +106,10 @@ window.onload=function(){
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <span class="label label-info pull-right">总计</span>
-                        <h5>未申会员（PV）</h5>
+                        <h5>未审会员</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins"><span id="daypv">0<span style="font-size:14px"> 人</span></span></h1>
-                        <div class="stat-percent font-bold text-info">相比昨日 <span id="daypv3">0</span>PV <i class="fa" id="daypvclass"></i>
-                        </div>
                     </div>
                 </div>
             </div>

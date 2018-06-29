@@ -89,10 +89,11 @@ class Money extends Base
         $count = $this->memberMoneyLogModel->where($where)->count();//计算总页面
         $allpage = intval(ceil($count / $limits));
         if(input('get.page')){
-            $lists = $this->memberMoneyLogModel->where($where)->page($Nowpage, $limits)->select();
+            $lists = $this->memberMoneyLogModel->where($where)->order('date desc')->page($Nowpage, $limits)->select();
+            $types = config('return_type');
             foreach ($lists as &$val) {
                 $val['date'] = date('Y-m-d H:i:s',$val['date']);
-                $val['type_name'] = $this->type[$val['type']];
+                $val['type_name'] = $types[$val['type']];
             }
             return json($lists);
         }
@@ -137,6 +138,10 @@ class Money extends Base
                         }
                         break;
                 }
+                if($params['model'] == 2) {
+                    $params['amount'] = 0 - $params['amount'];
+                }
+
                 $this->memberMoneyLogModel->insert($params);
                 $this->agencyInfoModel->where('member',$params['member_id'])->update($data);
                 //新增绩效要给自己所属的城市总代一部分佣金
