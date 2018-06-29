@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 303, '127.0.0.1', 1529591995, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 306, '127.0.0.1', 1530170760, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_member 结构
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `mc_agency_info` (
 DELETE FROM `mc_agency_info`;
 /*!40000 ALTER TABLE `mc_agency_info` DISABLE KEYS */;
 INSERT INTO `mc_agency_info` (`member`, `money`, `commission`, `performance`, `score`, `date`) VALUES
-	(1, 240, 980, 120, 70, 1526907501),
+	(1, 240, 980, 109, 70, 1526907501),
 	(2, 400, 400, 0, 0, 1528795163);
 /*!40000 ALTER TABLE `mc_agency_info` ENABLE KEYS */;
 
@@ -17066,7 +17066,7 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_auth_rule 的数据：53 rows
+-- 正在导出表  db_mc.mc_auth_rule 的数据：54 rows
 DELETE FROM `mc_auth_rule`;
 /*!40000 ALTER TABLE `mc_auth_rule` DISABLE KEYS */;
 INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
@@ -17244,7 +17244,7 @@ CREATE TABLE IF NOT EXISTS `mc_invite_code` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='邀请码';
 
--- 正在导出表  db_mc.mc_invite_code 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_invite_code 的数据：~1 rows (大约)
 DELETE FROM `mc_invite_code`;
 /*!40000 ALTER TABLE `mc_invite_code` DISABLE KEYS */;
 INSERT INTO `mc_invite_code` (`id`, `code`, `status`, `date`) VALUES
@@ -17263,9 +17263,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3862 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3865 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：60 rows
+-- 正在导出表  db_mc.mc_log 的数据：64 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17329,7 +17329,10 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3858, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529504861),
 	(3859, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1529509814),
 	(3860, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529591995),
-	(3861, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1529724833);
+	(3861, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1529724833),
+	(3862, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529887590),
+	(3863, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529975575),
+	(3864, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1530170760);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_addr 结构
@@ -17378,7 +17381,7 @@ CREATE TABLE IF NOT EXISTS `mc_member_moneylog` (
   `summary` varchar(500) DEFAULT NULL COMMENT '备注',
   `date` int(11) DEFAULT NULL COMMENT '发生时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='代理资金日志';
 
 -- 正在导出表  db_mc.mc_member_moneylog 的数据：~11 rows (大约)
 DELETE FROM `mc_member_moneylog`;
@@ -17387,14 +17390,16 @@ INSERT INTO `mc_member_moneylog` (`id`, `member_id`, `type`, `model`, `amount`, 
 	(11, 1, 'return', '1', 1280, '代理返还', 1526907501),
 	(14, 1, 'p_add', '1', 100, '新增绩效', 1527046349),
 	(15, 1, 'c_add', '1', 200, '新增佣金', 1528274544),
-	(16, 1, 'c_reduce', '2', 100, '减少佣金', 1528274560),
+	(16, 1, 'c_reduce', '2', -100, '减少佣金', 1528274560),
 	(26, 1, 'return_1', '1', 240, '广告接单返还', 1528711021),
 	(27, 1, 'return_2', '1', 60, '广告接单绩效', 1528711021),
 	(37, 2, 'return', '1', 400, '代理返还', 1528796432),
 	(38, 1, 'return', '1', 240, '代理返还,来自代理zhangsan', 1528796432),
-	(39, 1, 'withdraw', '2', 740, '代理提现', 1529089372),
+	(39, 1, 'withdraw', '2', -740, '代理提现', 1529089372),
 	(40, 1, 'return_1', '1', 240, '广告接单返还', 1529598553),
-	(41, 1, 'return_2', '1', 60, '广告接单绩效', 1529598553);
+	(41, 1, 'return_2', '1', 60, '广告接单绩效', 1529598553),
+	(42, 1, 'p_reduce', '2', -10, '减少绩效', 1529917210),
+	(43, 1, 'p_reduce', '2', -1, '减少绩效', 1529975610);
 /*!40000 ALTER TABLE `mc_member_moneylog` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_product 结构
