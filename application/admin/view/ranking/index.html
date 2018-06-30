@@ -8,30 +8,69 @@
         <div class="ibox-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <form name="admin_list_sea" class="form-search" method="post" action="{:url('index')}">
-                        <div class="col-sm-3">
+                    <form id="search" name="search" class="form-search" method="post" action="{:url('index')}">
+                        <div class="col-sm-12">
                             <div class="input-group">
-                                <input type="text" id="key" class="form-control" name="key" value="{$val}" placeholder="输入需查询的用户名" />
+                                <label class="col-sm-3 control-label">开始时间:<input type="text" id="start_time" class="form-control" readonly onclick="laydate()" name="start_time" value="{$startTime}" placeholder="请选择开始时间" /></label>
+                                <label class="col-sm-3 control-label">结束时间:<input type="text" id="end_time" readonly class="form-control" onclick="laydate()" name="end_time" value="{$endTime}" placeholder="请选择结束时间" /></label>
+                                <label class="col-sm-3 control-label">前:<input type="text" id="limits" class="form-control" name="limits" value="{$limits}" placeholder="输入位数" /></label>
+
                                 <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
+                                    <button type="button" onclick="static()" class="btn btn-primary"><i class="fa fa-search"></i> 统计</button>
                                 </span>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
+            {eq name="isQuery" value="1"}
             <div class="hr-line-dashed"></div>
-
-
-
-
+            <div class="example-wrap">
+                <div class="example">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="long-tr">
+                            <th style="width: 5%">代理姓名</th>
+                            <th style="width: 10%;text-align: left;">佣金(元)</th>
+                        </tr>
+                        </thead>
+                        <tbody id="list-content">
+                        {notempty name="data"}
+                            {foreach name="data" item="val"}
+                            <tr class="long-td">
+                                <td style="width: 5%">{$val['member']}</td>
+                                <td style="text-align: left;">{$val['amount']}</td>
+                            </tr>
+                            {/foreach}
+                        {else }
+                            <td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>
+                        {/notempty}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {/eq}
         </div>
     </div>
 </div>
-
-
-
-
 {include file="public/footer" /}
+<script>
+    $(function () {
+    });
+    function static() {
+        var startTime = $('#start_time').val(),
+            endTime = $('#endTime').val();
+        if(startTime == '') {
+            otcms.error('请输入开始时间!');
+            return false;
+        }
+        if(endTime == '') {
+            otcms.error('请选择结束时间!');
+            return false;
+        }
+        $('#search').submit();
+    }
+</script>
 </body>
 </html>

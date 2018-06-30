@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 306, '127.0.0.1', 1530170760, '超级管理员', 1, 1);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 307, '127.0.0.1', 1530321650, '超级管理员', 1, 1);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_member 结构
@@ -17064,7 +17064,7 @@ CREATE TABLE IF NOT EXISTS `mc_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  db_mc.mc_auth_rule 的数据：54 rows
 DELETE FROM `mc_auth_rule`;
@@ -17123,7 +17123,8 @@ INSERT INTO `mc_auth_rule` (`id`, `name`, `title`, `type`, `status`, `css`, `con
 	(157, 'admin/course/index_cat', '课程分类', 1, 1, '', '', 139, 50, 1529247437, 1529247437),
 	(158, 'admin/score_roles/index', '积分规则', 1, 1, '', '', 137, 50, 1529323345, 1529323345),
 	(159, 'admin/ad_score/index', '广告积分设置', 1, 1, '', '', 1, 50, 1529509814, 1529509814),
-	(160, 'admin/invite_code/index', '邀请码', 1, 1, '', '', 134, 50, 1529724833, 1529724833);
+	(160, 'admin/invite_code/index', '邀请码', 1, 1, '', '', 134, 50, 1529724833, 1529724833),
+	(161, 'admin/ranking/index', '佣金排行', 1, 1, '', '', 1, 50, 1530326673, 1530326673);
 /*!40000 ALTER TABLE `mc_auth_rule` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_config 结构
@@ -17263,9 +17264,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3865 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3867 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：64 rows
+-- 正在导出表  db_mc.mc_log 的数据：65 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17332,7 +17333,9 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3861, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1529724833),
 	(3862, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529887590),
 	(3863, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1529975575),
-	(3864, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1530170760);
+	(3864, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1530170760),
+	(3865, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1530321650),
+	(3866, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1530326673);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_addr 结构
