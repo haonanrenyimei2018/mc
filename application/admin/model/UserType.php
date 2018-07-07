@@ -40,7 +40,7 @@ class UserType extends Model
     public function insertRole($param)
     {
         try{
-            $result =  $this->validate('RoleValidate')->save($param);
+            $result =  $this->save($param);
             if(false === $result){               
                 return ['code' => -1, 'data' => '', 'msg' => $this->getError()];
             }else{
@@ -60,7 +60,7 @@ class UserType extends Model
     public function editRole($param)
     {
         try{
-            $result =  $this->validate('RoleValidate')->save($param, ['id' => $param['id']]);
+            $result =  $this->save($param, ['id' => $param['id']]);
             if(false === $result){
                 return ['code' => 0, 'data' => '', 'msg' => $this->getError()];
             }else{
@@ -97,8 +97,6 @@ class UserType extends Model
             return ['code' => 0, 'data' => '', 'msg' => $e->getMessage()];
         }
     }
-
-
 
     /**
      * [getRole 获取所有的角色信息]
