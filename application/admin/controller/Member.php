@@ -41,6 +41,7 @@ class Member extends Base
                 if($val['date_end'] - time() <= 30 * 24 * 60 * 60) {
                     $val['name'] = '<span style="color: red;">'.$val['name'].'</span>';
                 }
+                $val['date_end'] = date('Y-m-d H:i',$val['date_end']);
             }
             return json($lists);
         }
@@ -149,7 +150,11 @@ class Member extends Base
         }
         $agencyType = Db::name('agencyType')->column('id,name');
         //所有已审核过的代理
-        $members = Db::name('agency')->where('status',1)->column('id,name');
+        $where = [
+            'status' => 1,
+            'date_end' => ['gt',time()]
+        ];
+        $members = Db::name('agency')->where($where)->column('id,nick_name');
         $this->assign([
             'member' => $member,
             'provinceData' => $provinceData,
@@ -214,13 +219,26 @@ class Member extends Base
         ]);
         return $this->fetch();
     }
+    //续费
+    public function repay() {
+        $id = input('id');
+        $where = [
+            'id' => $id
+        ];
+        $user = Db::name('agency')->where($where)->find();
+        $data = [
+            'date_end' => $user['date_end'] + 365 * 24 * 60 * 60
+        ];
+        try {
+            $res = Db::name('agency')->where($where)->update($data);
+            return json(['code' => 1,'msg' => '操作成功']);
+        }catch (Exception $e) {
+            return json(['code' => -99,'msg' => $e->getMessage()]);
+        }
+    }
     //
     public function aa() {
         $res = date('Y-m-d H:i:s',strtotime("+1 year"));
         dump($res);
-
     }
-
-
-
 }

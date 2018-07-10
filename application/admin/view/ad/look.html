@@ -1,9 +1,9 @@
 {include file="public/header" /}
-<body  class="gray-bg">
+<body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>所有代理</h5>
+            <h5>广告列表</h5>
         </div>
         <div class="ibox-content">
             <div class="row">
@@ -11,7 +11,7 @@
                     <form name="admin_list_sea" class="form-search" method="post" action="{:url('index')}">
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <input type="text" id="key" class="form-control" name="key" value="{$val}" placeholder="输入需查询的用户名" />
+                                <input type="text" id="key" class="form-control" name="key" value="{$val}" placeholder="输入关键词" />
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
                                 </span>
@@ -27,40 +27,27 @@
                         <thead>
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
-                            <th style="text-align: left;">用户名</th>
-                            <th style="text-align: left;">姓名</th>
-                            <th style="text-align: left;">昵称</th>
-                            <th style="text-align: left;">手机号</th>
-                            <th style="text-align: left;">微信号</th>
-                            <th style="text-align: left;">代理类型</th>
-                            <th style="text-align: left;">到期时间</th>
-                            <th style="text-align: left;">状态</th>
-                            <th style="width: 20%;">操作</th>
+                            <th style="text-align: left;">广告类型</th>
+                            <th style="text-align: left;">标题</th>
+                            <th style="text-align: left;">金额</th>
+                            <th style="text-align: left;">时间</th>
+                            <th style="text-align: left;">操作</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="text-align: left;">{{d[i].username}}</td>
-                                <td style="text-align: left;">{{d[i].name}}</td>
-                                <td style="text-align: left;">{{d[i].nick_name}}</td>
-                                <td style="text-align: left;">{{d[i].phone}}</td>
-                                <td style="text-align: left;">{{d[i].wechat}}</td>
                                 <td style="text-align: left;">{{d[i].type_name}}</td>
-                                <td style="text-align: left;">{{d[i].date_end}}</td>
-                                <td style="text-align: left;">
-                                    {{# if(d[i].status == 0) { }}
-                                    未审核
-                                    {{# }else { }}
-                                    已审核
-                                    {{# } }}
-                                </td>
+                                <td style="text-align: left;">{{d[i].title}}</td>
+                                <td style="text-align: left;">{{d[i].amount}}</td>
+                                <td style="text-align: left;">{{d[i].months}}</td>
                                 <td>
-                                    <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-trash-o"></i> 删除</a>
+                                    {{# if(d[i].status == 0) { }}
+                                    <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i>审核
+                                    </a>
+                                    {{# } }}
                                 </td>
                             </tr>
                             {{# } }}
@@ -74,12 +61,14 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="member" data-content-id="member" value="{$member}">
 {include file="public/footer" /}
 <script>
     Ajaxpage();
     function Ajaxpage(curr){
-        var key=$('#key').val();
-        $.getJSON('{:url("member/index")}', {page: curr || 1,key:key}, function(data){
+        var key=$('#key').val(),
+            member = $('#member').val();
+        $.getJSON('{:url("ad/look")}', {page: curr || 1,key:key,member : member}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
@@ -105,16 +94,11 @@
             }
         });
     }
-    function edit(id) {
-        window.location = 'edit.html?id=' + id;
-    }
-
+    /**
+     * 审核
+     */
     function check(id) {
-        window.location = 'check.html?id=' + id;
-    }
-
-    function del(id) {
-        otcms.confirm(id,'del.html');
+        window.location.href = 'check.html?id=' + id;
     }
 </script>
 </body>

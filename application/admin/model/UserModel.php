@@ -33,7 +33,7 @@ class UserModel extends Model
     public function insertUser($param)
     {
         try{
-            $result = $this->validate('UserValidate')->allowField(true)->save($param);
+            $result = $this->allowField(true)->save($param);
             if(false === $result){            
                 return ['code' => -1, 'data' => '', 'msg' => $this->getError()];
             }else{
@@ -52,7 +52,7 @@ class UserModel extends Model
     public function editUser($param)
     {
         try{
-            $result =  $this->validate('UserValidate')->allowField(true)->save($param, ['id' => $param['id']]);
+            $result = $this->save($param, ['id' => $param['id']]);
             if(false === $result){            
                 return ['code' => 0, 'data' => '', 'msg' => $this->getError()];
             }else{
