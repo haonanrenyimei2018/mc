@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\score\index.html";i:1528274310;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\score\index.html";i:1531274969;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +51,7 @@
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
                             <th style="text-align: left;">用户名</th>
+                            <th style="text-align: left;">昵称</th>
                             <th style="text-align: left;">姓名</th>
                             <th style="text-align: left;">手机号</th>
                             <th style="text-align: left;">微信号</th>
@@ -63,6 +64,7 @@
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
                                 <td style="text-align: left;">{{d[i].username}}</td>
+                                <td style="text-align: left;">{{d[i].nick_name}}</td>
                                 <td style="text-align: left;">{{d[i].name}}</td>
                                 <td style="text-align: left;">{{d[i].phone}}</td>
                                 <td style="text-align: left;">{{d[i].wechat}}</td>

@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `mc_ad` (
 DELETE FROM `mc_ad`;
 /*!40000 ALTER TABLE `mc_ad` DISABLE KEYS */;
 INSERT INTO `mc_ad` (`id`, `type`, `title`, `amount`, `months`, `status`, `date`, `mid`) VALUES
-	(1, 2, '淘宝推广-一个月', 300, 1, 1, 1528255418, 1),
+	(1, 1, '淘宝推广-一个月', 300, 1, 0, 1528255418, 1),
 	(2, 2, '111', 300, 30, 1, 1529598459, 1);
 /*!40000 ALTER TABLE `mc_ad` ENABLE KEYS */;
 
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', 'http://www.mc.cc/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 308, '127.0.0.1', 1531190624, '超级管理员', 1, 1),
-	(16, 'admin1', '218dbb225911693af03a713581a7227f', '/uploads/face/20180710\\434093154aece22dfc99e2b08a91b2db.jpg', 0, '', 0, '123456', 1, 2);
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', '/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 310, '127.0.0.1', 1531378065, '超级管理员', 1, 1),
+	(16, 'admin1', '218dbb225911693af03a713581a7227f', '/uploads/face/20180711\\506f1621a831ad83c43129dfecbe6b5b.jpg', 0, '', 0, '123456', 1, 2);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_ad_member 结构
@@ -17166,6 +17166,7 @@ INSERT INTO `mc_config` (`id`, `name`, `type`, `title`, `group`, `extra`, `remar
 -- 导出  表 db_mc.mc_course 结构
 CREATE TABLE IF NOT EXISTS `mc_course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `model` tinyint(4) NOT NULL DEFAULT '0',
   `type` int(11) NOT NULL DEFAULT '0',
   `target` varchar(50) NOT NULL DEFAULT '0',
   `title` varchar(50) DEFAULT '0',
@@ -17176,11 +17177,11 @@ CREATE TABLE IF NOT EXISTS `mc_course` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='培训课程表';
 
--- 正在导出表  db_mc.mc_course 的数据：~0 rows (大约)
+-- 正在导出表  db_mc.mc_course 的数据：~1 rows (大约)
 DELETE FROM `mc_course`;
 /*!40000 ALTER TABLE `mc_course` DISABLE KEYS */;
-INSERT INTO `mc_course` (`id`, `type`, `target`, `title`, `content`, `times`, `date`, `user`) VALUES
-	(1, 3, '1,2', '11212', '<p>222222222222222222211111111111111111111111111111111</p>', 0, 1529290716, 1);
+INSERT INTO `mc_course` (`id`, `model`, `type`, `target`, `title`, `content`, `times`, `date`, `user`) VALUES
+	(1, 1, 3, '1,2', '11212', '<p>222222222222222222211111111111111111111111111111111</p>', 0, 1529290716, 1);
 /*!40000 ALTER TABLE `mc_course` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_course_cate 结构
@@ -17199,6 +17200,22 @@ INSERT INTO `mc_course_cate` (`id`, `name`, `status`, `date`) VALUES
 	(2, '教育', 1, 1529289969),
 	(3, '咨询', 1, 1529289977);
 /*!40000 ALTER TABLE `mc_course_cate` ENABLE KEYS */;
+
+-- 导出  表 db_mc.mc_course_images 结构
+CREATE TABLE IF NOT EXISTS `mc_course_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course` int(11) NOT NULL DEFAULT '0',
+  `images` varchar(100) NOT NULL DEFAULT '0',
+  `title` varchar(100) NOT NULL DEFAULT '0',
+  `date` int(11) NOT NULL DEFAULT '0',
+  `user` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='培训课程图片';
+
+-- 正在导出表  db_mc.mc_course_images 的数据：~0 rows (大约)
+DELETE FROM `mc_course_images`;
+/*!40000 ALTER TABLE `mc_course_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mc_course_images` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_course_member 结构
 CREATE TABLE IF NOT EXISTS `mc_course_member` (
@@ -17250,9 +17267,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3870 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3876 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：69 rows
+-- 正在导出表  db_mc.mc_log 的数据：75 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17324,7 +17341,13 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3866, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1530326673),
 	(3867, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531190624),
 	(3868, 1, 'admins', '用户【admin1】添加成功', '127.0.0.1', 1, 1531208739),
-	(3869, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1531214074);
+	(3869, 1, 'admins', '用户【admins】添加菜单成功', '127.0.0.1', 1, 1531214074),
+	(3870, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531274798),
+	(3871, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531301327),
+	(3872, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531301380),
+	(3873, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531301770),
+	(3874, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531302142),
+	(3875, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531378065);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_addr 结构

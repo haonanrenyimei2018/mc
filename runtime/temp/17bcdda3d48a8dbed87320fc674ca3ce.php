@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:51:"E:\workplace\mc/application/admin\view\ad\look.html";i:1531209043;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:51:"E:\workplace\mc/application/admin\view\ad\look.html";i:1531294357;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +67,15 @@
                                 <td style="text-align: left;">{{d[i].months}}</td>
                                 <td>
                                     {{# if(d[i].status == 0) { }}
-                                    <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
-                                        <i class="fa fa-paste"></i>审核
-                                    </a>
+                                        <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-paste"></i>编辑
+                                        </a>
+                                        <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-paste"></i>审核
+                                        </a>
+                                        <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-trash-o"></i>删除
+                                        </a>
                                     {{# } }}
                                 </td>
                             </tr>
@@ -136,6 +142,18 @@
      */
     function check(id) {
         window.location.href = 'check.html?id=' + id;
+    }
+    /**
+     * 编辑
+     */
+    function edit(id) {
+        window.location.href = 'edit.html?id=' + id;
+    }
+    /**
+     * 删除
+     */
+    function del(id) {
+        otcms.confirm(id,'del.html')
     }
 </script>
 </body>

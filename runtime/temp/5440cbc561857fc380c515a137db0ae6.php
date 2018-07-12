@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"E:\workplace\mc/application/admin\view\ad\index.html";i:1531294784;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:58:"E:\workplace\mc/application/admin\view\withdraw\index.html";i:1529715104;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,62 +26,41 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>广告列表</h5>
+            <h5>提现申请列表</h5>
         </div>
         <div class="ibox-content">
-            <div class="row">
-                <div class="col-sm-12">
-                    <form name="admin_list_sea" class="form-search" method="post" action="<?php echo url('index'); ?>">
-                        <div class="col-sm-3">
-                            <div class="input-group">
-                                <input type="text" id="key" class="form-control" name="key" value="<?php echo $val; ?>" placeholder="输入关键词" />
-                                <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="hr-line-dashed"></div>
             <div class="example-wrap">
                 <div class="example">
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr class="long-tr">
-                            <th style="width: 5%">ID</th>
-                            <th style="text-align: left;">广告类型</th>
-                            <th style="text-align: left;">标题</th>
-                            <th style="text-align: left;">金额</th>
-                            <th style="text-align: left;">时间</th>
-                            <th style="text-align: left;">审核状态</th>
-                            <th style="text-align: left;">代理名称</th>
-                            <th style="text-align: left;">操作</th>
+                            <th>ID</th>
+                            <th>申请代理</th>
+                            <th>提现金额</th>
+                            <th>申请时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
                             {{# for(var i=0;i<d.length;i++){  }}
+
                             <tr class="long-td">
-                                <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="text-align: left;">{{d[i].type_name}}</td>
-                                <td style="text-align: left;">{{d[i].title}}</td>
-                                <td style="text-align: left;">{{d[i].amount}}</td>
-                                <td style="text-align: left;">{{d[i].months}}</td>
-                                <td style="text-align: left;">
-                                    {{d[i].state}}
-                                </td>
-                                <td style="text-align: left;"><a href="/admin/ad/look.html?member={{d[i].mid}}">{{d[i].member_name}}</a></td>
+                                <td>{{d[i].id}}</td>
+                                <td>{{d[i].member}}</td>
+                                <td>{{d[i].amount}}</td>
+                                <td>{{d[i].date}}</td>
                                 <td>
-                                    {{# if(d[i].status == 0) { }}
-                                        <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
-                                            <i class="fa fa-paste"></i>编辑
-                                        </a>
-                                        <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
-                                            <i class="fa fa-paste"></i>审核
-                                        </a>
-                                        <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-danger btn-xs">
-                                            <i class="fa fa-trash-o"></i>删除
-                                        </a>
+                                    {{# if(d[i].status == 1) { }}
+                                        已处理
+                                    {{# }else { }}
+                                        未处理
+                                    {{# } }}
+                                </td>
+                                <td>
+                                    {{# if(d[i].status !==1){ }}
+                                    <a href="javascript:;" onclick="deal({{d[i].id}})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i> 处理</a>&nbsp;&nbsp;
                                     {{# } }}
                                 </td>
                             </tr>
@@ -94,6 +73,14 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- 加载动画 -->
+<div class="spiner-example">
+    <div class="sk-spinner sk-spinner-three-bounce">
+        <div class="sk-bounce1"></div>
+        <div class="sk-bounce2"></div>
+        <div class="sk-bounce3"></div>
     </div>
 </div>
 <script src="__JS__/jquery.min.js?v=2.1.4"></script>
@@ -115,7 +102,7 @@
     Ajaxpage();
     function Ajaxpage(curr){
         var key=$('#key').val();
-        $.getJSON('<?php echo url("ad/index"); ?>', {page: curr || 1,key:key}, function(data){
+        $.getJSON('<?php echo url("withdraw/index"); ?>', {page: curr || 1,key:key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
@@ -141,28 +128,20 @@
             }
         });
     }
-    /**
-     * 审核
-     */
-    function check(id) {
-        window.location.href = 'check.html?id=' + id;
+
+    function deal(id) {
+        layer.confirm('确定要执行此操作吗?', {icon: 3, title:'提示'}, function(index){
+            $.getJSON('deal.html', {'id' : id}, function(res){
+                if(res.code == 1){
+                    layer.msg(res.msg,{icon:1,time:1500,shade: 0.1});
+                    Ajaxpage()
+                }else{
+                    layer.msg(res.msg,{icon:0,time:1500,shade: 0.1});
+                }
+            });
+            layer.close(index);
+        });
     }
-
-    /**
-     * 编辑
-     */
-    function edit(id) {
-        window.location.href = 'edit.html?id=' + id;
-    }
-
-    /**
-     * 删除
-     */
-    function del(id) {
-        otcms.confirm(id,'del.html')
-    }
-
-
 </script>
 </body>
 </html>

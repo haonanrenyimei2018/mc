@@ -52,7 +52,7 @@ class UserModel extends Model
     public function editUser($param)
     {
         try{
-            $result = $this->save($param, ['id' => $param['id']]);
+            $result = $this->allowField(true)->save($param, ['id' => $param['id']]);
             if(false === $result){            
                 return ['code' => 0, 'data' => '', 'msg' => $this->getError()];
             }else{

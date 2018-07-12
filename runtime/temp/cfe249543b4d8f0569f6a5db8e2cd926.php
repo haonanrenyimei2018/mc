@@ -1,4 +1,27 @@
-{include file="public/header" /}
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531378039;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo config('WEB_SITE_TITLE'); ?></title>
+    <link href="/static/admin/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/admin/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/admin/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style type="text/css">
+    .long-tr th{
+        text-align: center
+    }
+    .long-td td{
+        text-align: center
+    }
+    </style>
+</head>
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
 <body class="gray-bg">
@@ -14,9 +37,9 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">去向</label>
                             <div class="input-group col-sm-4">
-                                {foreach name="target" item="val"}
-                                <label><input type="checkbox" name="target[]" id="target_{$key}" value="{$key}">{$val}</label>
-                                {/foreach}
+                                <?php if(is_array($target) || $target instanceof \think\Collection || $target instanceof \think\Paginator): if( count($target)==0 ) : echo "" ;else: foreach($target as $key=>$val): ?>
+                                <label><input type="checkbox" name="target[]" id="target_<?php echo $key; ?>" value="<?php echo $key; ?>"><?php echo $val; ?></label>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -41,34 +64,24 @@
                             <label class="col-sm-3 control-label" style="text-align: right">类型</label>
                             <div class="input-group col-sm-4">
                                 <select name="type" id="type" class="form-control">
-                                    {foreach name="types" item="val"}
-                                        <option value="{$key}">{$val}</option>
-                                    {/foreach}
+                                    <?php if(is_array($types) || $types instanceof \think\Collection || $types instanceof \think\Paginator): if( count($types)==0 ) : echo "" ;else: foreach($types as $key=>$val): ?>
+                                        <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </select>
                             </div>
                         </div>
-                        <div id="rich">
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" style="text-align: right">内容</label>
-                                <div class="input-group col-sm-8">
-                                    <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
-                                    <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
-                                    <textarea name="content" id="content"></textarea>
-                                    <script type="text/javascript">
-                                        var editor = new UE.ui.Editor();
-                                        editor.render("content");
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pic" style="display: none;">
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" style="text-align: right">上传图片</label>
-                                <div class="input-group col-sm-8">
 
-                                </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                            <div class="input-group col-sm-8">
+                                <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
+                                <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
+                                <textarea name="content" id="content"></textarea>
+                                <script type="text/javascript">
+                                    var editor = new UE.ui.Editor();
+                                    editor.render("content");
+                                </script>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -84,7 +97,21 @@
         </div>
     </div>
 </div>
-{include file="public/footer" /}
+<script src="__JS__/jquery.min.js?v=2.1.4"></script>
+<script src="__JS__/bootstrap.min.js?v=3.3.6"></script>
+<script src="__JS__/content.min.js?v=1.0.0"></script>
+<script src="__JS__/plugins/chosen/chosen.jquery.js"></script>
+<script src="__JS__/plugins/iCheck/icheck.min.js"></script>
+<script src="__JS__/plugins/layer/laydate/laydate.js"></script>
+<script src="__JS__/plugins/switchery/switchery.js"></script><!--IOS开关样式-->
+<script src="__JS__/jquery.form.js"></script>
+<script src="__JS__/layer/layer.js"></script>
+<script src="__JS__/laypage/laypage.js"></script>
+<script src="__JS__/laytpl/laytpl.js"></script>
+<script src="__JS__/otcms.js"></script>
+<script>
+    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+</script>
 <script>
     $(function () {
         $('#add').ajaxForm({

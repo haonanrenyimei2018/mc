@@ -57,7 +57,7 @@ class Money extends Base
             'status' => 1
         ];
         if(!empty($key)){
-            $where['name'] = ['like','%'.$key.'%'];
+            $where['name|nick_name|username'] = ['like','%'.$key.'%'];
         }
         $Nowpage = input('get.page') ? input('get.page'):1;
         $limits = 10;// 获取总条数

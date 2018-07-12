@@ -29,7 +29,7 @@ class Conversion extends Base
         $this->assign('allpage', $pageCount); //总页数
         if(input('get.page')){
             $data_product = Db::name('product')->column('id,name');
-            $data_a = Db::name('agency')->column('id,name');
+            $data_a = Db::name('agency')->column('id,nick_name');
             $lists = Db::name('member_product')->where($where)->order('field(state,0,1),date desc')->page($Nowpage,$this->pageSize)->select();
             foreach ($lists as &$val){
                 $val['product'] = $data_product[$val['product']];

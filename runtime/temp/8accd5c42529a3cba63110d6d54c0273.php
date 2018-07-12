@@ -1,4 +1,27 @@
-{include file="public/header" /}
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"E:\workplace\mc/application/admin\view\user\useredit.html";i:1531301372;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo config('WEB_SITE_TITLE'); ?></title>
+    <link href="/static/admin/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/admin/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/admin/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <style type="text/css">
+    .long-tr th{
+        text-align: center
+    }
+    .long-td td{
+        text-align: center
+    }
+    </style>
+</head>
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
 <style>
@@ -26,12 +49,12 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="userEdit" id="userEdit" method="post" action="{:url('userEdit')}">
-                        <input type="hidden" name="id" value="{$user.id}">
+                    <form class="form-horizontal" name="userEdit" id="userEdit" method="post" action="<?php echo url('userEdit'); ?>">
+                        <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">管理员名称：</label>
                             <div class="input-group col-sm-4">
-                                <input id="username" type="text" class="form-control" name="username" required="" aria-required="true" value="{$user.username}">
+                                <input id="username" type="text" class="form-control" name="username" required="" aria-required="true" value="<?php echo $user['username']; ?>">
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -40,11 +63,9 @@
                             <div class="input-group col-sm-4">
                                 <select class="form-control m-b chosen-select" name="groupid" id="groupid">
                                     <option value="">==请选择角色==</option>
-                                    {if !empty($role)}
-                                        {foreach name="role" item="vo"}
-                                            <option value="{$vo.id}" {if condition="$user['groupid'] eq $vo['id']"}selected{/if}>{$vo.title}</option>
-                                        {/foreach}
-                                    {/if}
+                                    <?php if(!empty($role)): if(is_array($role) || $role instanceof \think\Collection || $role instanceof \think\Paginator): if( count($role)==0 ) : echo "" ;else: foreach($role as $key=>$vo): ?>
+                                            <option value="<?php echo $vo['id']; ?>" <?php if($user['groupid'] == $vo['id']): ?>selected<?php endif; ?>><?php echo $vo['title']; ?></option>
+                                        <?php endforeach; endif; else: echo "" ;endif; endif; ?>
                                 </select>
                             </div>
                         </div>
@@ -52,10 +73,10 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">头像：</label>
                             <div class="input-group col-sm-4">
-                                <input type="hidden" id="data_photo" name="portrait" value="{$user.portrait}" />
+                                <input type="hidden" id="data_photo" name="portrait" value="<?php echo $user['portrait']; ?>" />
                                 <div id="fileList" class="uploader-list" style="float:right"></div>
                                 <div id="imgPicker" style="float:left">选择头像</div>
-                                <img id="img_data" class="img-circle" height="80px" width="80px" style="float:left;margin-left: 50px;margin-top: -10px;" src="/uploads/face/{$user.portrait}" onerror="this.src='/static/admin/images/head_default.gif'"/>
+                                <img id="img_data" class="img-circle" height="80px" width="80px" style="float:left;margin-left: 50px;margin-top: -10px;" src="/uploads/face/<?php echo $user['portrait']; ?>" onerror="this.src='/static/admin/images/head_default.gif'"/>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -69,7 +90,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">真实姓名：</label>
                             <div class="input-group col-sm-4">
-                                <input id="real_name" type="text" class="form-control" name="real_name" required="" aria-required="true" value="{$user.real_name}">
+                                <input id="real_name" type="text" class="form-control" name="real_name" required="" aria-required="true" value="<?php echo $user['real_name']; ?>">
 
                             </div>
                         </div>
@@ -78,7 +99,7 @@
                             <label class="col-sm-3 control-label">状&nbsp;态：</label>
                             <div class="col-sm-6">
                                 <div class="radio ">                                        
-                                    <input type="checkbox" name='status' value="1" class="js-switch" {if condition="$user['status'] eq 1"}checked{/if}/>&nbsp;&nbsp;默认开启                                     
+                                    <input type="checkbox" name='status' value="1" class="js-switch" <?php if($user['status'] == 1): ?>checked<?php endif; ?>/>&nbsp;&nbsp;默认开启                                     
                                 </div>
                             </div>
                         </div>
@@ -96,7 +117,21 @@
         </div>
     </div>
 </div>
-{include file="public/footer" /}
+<script src="__JS__/jquery.min.js?v=2.1.4"></script>
+<script src="__JS__/bootstrap.min.js?v=3.3.6"></script>
+<script src="__JS__/content.min.js?v=1.0.0"></script>
+<script src="__JS__/plugins/chosen/chosen.jquery.js"></script>
+<script src="__JS__/plugins/iCheck/icheck.min.js"></script>
+<script src="__JS__/plugins/layer/laydate/laydate.js"></script>
+<script src="__JS__/plugins/switchery/switchery.js"></script><!--IOS开关样式-->
+<script src="__JS__/jquery.form.js"></script>
+<script src="__JS__/layer/layer.js"></script>
+<script src="__JS__/laypage/laypage.js"></script>
+<script src="__JS__/laytpl/laytpl.js"></script>
+<script src="__JS__/otcms.js"></script>
+<script>
+    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+</script>
 <script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script type="text/javascript">
     var $list = $('#fileList');
@@ -105,7 +140,7 @@
      
         auto: true,// 选完文件后，是否自动上传。   
         swf: '/static/admin/webupload/Uploader.swf',// swf文件路径 
-        server: "{:url('Upload/uploadface')}",// 文件接收服务端。
+        server: "<?php echo url('Upload/uploadface'); ?>",// 文件接收服务端。
         duplicate :true,// 重复上传图片，true为可重复false为不可重复
         pick: '#imgPicker',// 选择文件的按钮。可选。
 
@@ -173,7 +208,7 @@
         function complete(data){
             if(data.code==1){
                 layer.msg(data.msg, {icon: 6,time:1500,shade: 0.1}, function(index){
-                    window.location.href="{:url('user/index')}";
+                    window.location.href="<?php echo url('user/index'); ?>";
                 });
             }else{
                 layer.msg(data.msg, {icon: 5,time:1500,shade: 0.1});

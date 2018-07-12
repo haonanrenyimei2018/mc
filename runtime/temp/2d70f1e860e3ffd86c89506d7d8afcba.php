@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:52:"E:\workplace\mc/application/admin\view\ad\index.html";i:1531294784;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"E:\workplace\mc/application/admin\view\ad_type\index.html";i:1526289637;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +26,20 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>广告列表</h5>
+            <h5>广告类型</h5>
         </div>
         <div class="ibox-content">
             <div class="row">
                 <div class="col-sm-12">
+                    <div  class="col-sm-2" style="width: 120px">
+                        <div class="input-group" >
+                            <a class="btn btn-outline btn-primary" href="<?php echo url('add'); ?>">添加广告类型</a>
+                        </div>
+                    </div>
                     <form name="admin_list_sea" class="form-search" method="post" action="<?php echo url('index'); ?>">
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <input type="text" id="key" class="form-control" name="key" value="<?php echo $val; ?>" placeholder="输入关键词" />
+                                <input type="text" id="key" class="form-control" name="key" value="<?php echo $val; ?>" placeholder="输入需查询的用户名" />
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
                                 </span>
@@ -51,38 +56,19 @@
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
                             <th style="text-align: left;">广告类型</th>
-                            <th style="text-align: left;">标题</th>
-                            <th style="text-align: left;">金额</th>
-                            <th style="text-align: left;">时间</th>
-                            <th style="text-align: left;">审核状态</th>
-                            <th style="text-align: left;">代理名称</th>
-                            <th style="text-align: left;">操作</th>
+                            <th style="width: 15%;">操作</th>
                         </tr>
                         </thead>
                         <script id="list-template" type="text/html">
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="text-align: left;">{{d[i].type_name}}</td>
-                                <td style="text-align: left;">{{d[i].title}}</td>
-                                <td style="text-align: left;">{{d[i].amount}}</td>
-                                <td style="text-align: left;">{{d[i].months}}</td>
-                                <td style="text-align: left;">
-                                    {{d[i].state}}
-                                </td>
-                                <td style="text-align: left;"><a href="/admin/ad/look.html?member={{d[i].mid}}">{{d[i].member_name}}</a></td>
+                                <td style="text-align: left;">{{d[i].name}}</td>
                                 <td>
-                                    {{# if(d[i].status == 0) { }}
-                                        <a href="javascript:;" onclick="edit({{d[i].id}})" class="btn btn-primary btn-xs">
-                                            <i class="fa fa-paste"></i>编辑
-                                        </a>
-                                        <a href="javascript:;" onclick="check({{d[i].id}})" class="btn btn-primary btn-xs">
-                                            <i class="fa fa-paste"></i>审核
-                                        </a>
-                                        <a href="javascript:;" onclick="del({{d[i].id}})" class="btn btn-danger btn-xs">
-                                            <i class="fa fa-trash-o"></i>删除
-                                        </a>
-                                    {{# } }}
+                                    <a href="javascript:;" onclick="userEdit({{d[i].id}})" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                    <a href="javascript:;" onclick="userDel({{d[i].id}})" class="btn btn-danger btn-xs">
+                                        <i class="fa fa-trash-o"></i> 删除</a>
                                 </td>
                             </tr>
                             {{# } }}
@@ -115,7 +101,7 @@
     Ajaxpage();
     function Ajaxpage(curr){
         var key=$('#key').val();
-        $.getJSON('<?php echo url("ad/index"); ?>', {page: curr || 1,key:key}, function(data){
+        $.getJSON('<?php echo url("ad_type/index"); ?>', {page: curr || 1,key:key}, function(data){
             $(".spiner-example").css('display','none'); //数据加载完关闭动画
             if(data==''){
                 $("#list-content").html('<td colspan="20" style="padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center">暂无数据</td>');
@@ -141,28 +127,17 @@
             }
         });
     }
-    /**
-     * 审核
-     */
-    function check(id) {
-        window.location.href = 'check.html?id=' + id;
+
+    function userEdit(id) {
+        window.location = 'edit.html?id=' + id;
     }
 
-    /**
-     * 编辑
-     */
-    function edit(id) {
-        window.location.href = 'edit.html?id=' + id;
-    }
-
-    /**
-     * 删除
-     */
-    function del(id) {
-        otcms.confirm(id,'del.html')
+    function userDel(id) {
+        otcms.confirm(id,'del.html');
     }
 
 
 </script>
+
 </body>
 </html>
