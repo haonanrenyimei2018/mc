@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531378039;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531727570;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +24,11 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
+<style>
+    .file-item{float: left; position: relative; width: 110px;height: 110px; margin: 0 20px 20px 0; padding: 4px;}
+    .file-item .info{overflow: hidden;}
+    .uploader-list{width: 100%; overflow: hidden;}
+</style>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
@@ -70,18 +75,31 @@
                                 </select>
                             </div>
                         </div>
+                        <div id="rich" style="display: none;">
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                                <div class="input-group col-sm-8">
+                                    <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
+                                    <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
+                                    <textarea name="content" id="content"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = new UE.ui.Editor();
+                                        editor.render("content");
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pic">
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" style="text-align: right">上传图片</label>
+                                <div class="input-group col-sm-9">
+                                    <div id="imgPicker" style="float:left">选择图片</div>
+                                    <div class="col-sm-12" id="loans_images">
 
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
-                            <div class="input-group col-sm-8">
-                                <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
-                                <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
-                                <textarea name="content" id="content"></textarea>
-                                <script type="text/javascript">
-                                    var editor = new UE.ui.Editor();
-                                    editor.render("content");
-                                </script>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -112,12 +130,41 @@
 <script>
     $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
 </script>
+<script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script>
+    var images = [];
     $(function () {
+        WebUploader.create({
+            auto: true, //选完文件后，是否自动上传。
+            swf: '/static/admin/webupload/Uploader.swf',// swf文件路径
+            server: "<?php echo url('Upload/upload'); ?>",// 文件接收服务端。
+            duplicate :true,//重复上传图片，true为可重复false为不可重复
+            pick: '#imgPicker',// 选择文件的按钮。可选。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/jpg,image/jpeg,image/png'
+            },
+            'onUploadSuccess': function(file, data, response) {
+                $('#loans_images').append('<span style="width: 100px;height: 100px;display: block;float: left;margin-left: 10px;position:relative;"><a style="color:red;font-weight: bold;z-index: 9999;left: 90px; position:relative;top:0px;position: absolute;" onclick="delImg(this)">X</a><img src="'+data._raw+'" width="100px" height="100px" style="margin-right: 10px;" /></span>');
+                images.push(data._raw);
+            }
+        });
         $('#add').ajaxForm({
             beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
             success: complete, // 这是提交后的方法
             dataType: 'json'
+        });
+        //上传图片
+        $('#model').change(function (){
+            var model = $('#model').val();
+            if(model == 1){
+                $('#rich').show();
+                $('#pic').hide();
+            }else {
+                $('#rich').hide();
+                $('#pic').show();
+            }
         });
     });
 
@@ -145,6 +192,18 @@
         }else {
             otcms.error(res.msg);
         }
+    }
+    function delImg(obj) {
+        layer.confirm('确认删除吗?', {icon: 3, title:'提示'}, function(index){
+            var src = $(obj).next().attr('src');
+            for(var i=0;i<images.length;++i) {
+                if(src == images[i]) {
+                    delete images[i];
+                }
+            }
+            $(obj).parent().remove();
+            layer.close(index);
+        });
     }
 </script>
 </body>

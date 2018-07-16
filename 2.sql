@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `mc_admin` (
 DELETE FROM `mc_admin`;
 /*!40000 ALTER TABLE `mc_admin` DISABLE KEYS */;
 INSERT INTO `mc_admin` (`id`, `username`, `password`, `portrait`, `loginnum`, `last_login_ip`, `last_login_time`, `real_name`, `status`, `groupid`) VALUES
-	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', '/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 310, '127.0.0.1', 1531378065, '超级管理员', 1, 1),
+	(1, 'admins', 'd8875489915237eaf976d8b72d64febc', '/uploads/face/20180504\\b9ef5e08594df0075866156919c1fbe1.jpg', 311, '127.0.0.1', 1531722957, '超级管理员', 1, 1),
 	(16, 'admin1', '218dbb225911693af03a713581a7227f', '/uploads/face/20180711\\506f1621a831ad83c43129dfecbe6b5b.jpg', 0, '', 0, '123456', 1, 2);
 /*!40000 ALTER TABLE `mc_admin` ENABLE KEYS */;
 
@@ -17267,9 +17267,9 @@ CREATE TABLE IF NOT EXISTS `mc_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3876 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3877 DEFAULT CHARSET=utf8;
 
--- 正在导出表  db_mc.mc_log 的数据：75 rows
+-- 正在导出表  db_mc.mc_log 的数据：76 rows
 DELETE FROM `mc_log`;
 /*!40000 ALTER TABLE `mc_log` DISABLE KEYS */;
 INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `status`, `add_time`) VALUES
@@ -17347,7 +17347,8 @@ INSERT INTO `mc_log` (`log_id`, `admin_id`, `admin_name`, `description`, `ip`, `
 	(3872, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531301380),
 	(3873, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531301770),
 	(3874, 1, 'admins', '用户【admin1】编辑成功', '127.0.0.1', 1, 1531302142),
-	(3875, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531378065);
+	(3875, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531378065),
+	(3876, 1, 'admins', '用户【admins】登录成功', '127.0.0.1', 1, 1531722957);
 /*!40000 ALTER TABLE `mc_log` ENABLE KEYS */;
 
 -- 导出  表 db_mc.mc_member_addr 结构

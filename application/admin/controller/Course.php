@@ -61,7 +61,13 @@ class Course extends Base
             $params['user'] = $this->user['id'];
             $params['target'] = implode(',',$params['target']);
             try {
+                if($params['model'] == 2){
+
+                }
                 $id = Db::name('course')->insertGetId($params);
+
+
+
                 $members = Db::name('agency')->where('status',1)->column('id,name');
                 $datas = [];
                 foreach ($members as $key => $val) {
