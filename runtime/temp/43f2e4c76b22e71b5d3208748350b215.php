@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531747409;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\course\edit.html";i:1531752320;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +35,10 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>添加培训课程</h5>
+                    <h5>编辑培训课程</h5>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="add" id="add" method="post" action="add">
+                    <form class="form-horizontal" name="add" id="add" method="post" action="edit">
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">去向</label>
                             <div class="input-group col-sm-4">
@@ -49,18 +49,11 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label" style="text-align: right">标题</label>
-                            <div class="input-group col-sm-4">
-                                <input type="text" name="title" id="title" class="form-control">
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
                             <label class="col-sm-3 control-label" style="text-align: right">类别</label>
                             <div class="input-group col-sm-4">
                                 <select name="model" id="model" class="form-control">
-                                    <option value="2">图片分页</option>
-                                    <option value="1">图文</option>
+                                    <option value="2" <?php if($data['model'] == '2'): ?> selected <?php endif; ?>>图片分页</option>
+                                    <option value="1" <?php if($data['model'] == '1'): ?> selected <?php endif; ?>>图文</option>
                                 </select>
                             </div>
                         </div>
@@ -70,34 +63,54 @@
                             <div class="input-group col-sm-4">
                                 <select name="type" id="type" class="form-control">
                                     <?php if(is_array($types) || $types instanceof \think\Collection || $types instanceof \think\Paginator): if( count($types)==0 ) : echo "" ;else: foreach($types as $key=>$val): ?>
-                                        <option value="<?php echo $key; ?>"><?php echo $val; ?></option>
+                                    <option value="<?php echo $key; ?>" <?php if($data['type'] == $key): ?>selected <?php endif; ?> ><?php echo $val; ?></option>
                                     <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </select>
                             </div>
                         </div>
-                        <div id="rich" style="display: none;">
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label" style="text-align: right">内容</label>
-                                <div class="input-group col-sm-8">
-                                    <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
-                                    <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
-                                    <textarea name="content" id="content"></textarea>
-                                    <script type="text/javascript">
-                                        var editor = new UE.ui.Editor();
-                                        editor.render("content");
-                                    </script>
-                                </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">标题</label>
+                            <div class="input-group col-sm-4">
+                                <input type="text" name="title" id="title" class="form-control" value="<?php echo $data['title']; ?>">
                             </div>
                         </div>
+                        <div id="rich" style="display: none;">
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                            <div class="input-group col-sm-8">
+                                <script src="/static/admin/ueditor/ueditor.config.js" type="text/javascript"></script>
+                                <script src="/static/admin/ueditor/ueditor.all.js" type="text/javascript"></script>
+                                <textarea name="content" id="content"><?php echo $data['content']; ?></textarea>
+                                <script type="text/javascript">
+                                    var editor = new UE.ui.Editor();
+                                    editor.render("content");
+                                </script>
+                            </div>
+                        </div>
+                        </div>
                         <div id="pic">
+                            <script>
+                                var images = [],
+                                    nums = 0;
+                            </script>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" style="text-align: right">上传图片</label>
                                 <div class="input-group col-sm-9">
                                     <div id="imgPicker" style="float:left">选择图片</div>
                                     <div class="col-sm-12" id="loans_images">
-
+                                        <?php if(is_array($images) || $images instanceof \think\Collection || $images instanceof \think\Paginator): if( count($images)==0 ) : echo "" ;else: foreach($images as $key=>$val): ?>
+                                            <span style="width: 100px;height: 100px;display: block;float: left;margin-left: 10px;position:relative;">
+                                                <a style="color:red;font-weight: bold;z-index: 9999;left: 90px; position:relative;top:0px;position: absolute;" onclick="delImg(this)">X</a>
+                                                <img src="<?php echo $val['images']; ?>" width="100px" height="100px" style="margin-right: 10px;" />
+                                            </span>
+                                            <script>
+                                                images.push("<?php echo $val['images']; ?>");
+                                                nums++;
+                                            </script>
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +122,8 @@
                                 <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                             </div>
                         </div>
-                        <input type="hidden" name="images" value="">
+                        <input type="hidden" name="images" id="images" value="">
+                        <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                     </form>
                 </div>
             </div>
@@ -133,9 +147,10 @@
 </script>
 <script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script>
-    var images = [],
-        nums = 0;
+    var targets = "<?php echo $data['target']; ?>",
+        model = "<?php echo $data['model']; ?>";
     $(function () {
+
         WebUploader.create({
             auto: true, //选完文件后，是否自动上传。
             swf: '/static/admin/webupload/Uploader.swf',// swf文件路径
@@ -151,13 +166,26 @@
                 $('#loans_images').append('<span style="width: 100px;height: 100px;display: block;float: left;margin-left: 10px;position:relative;"><a style="color:red;font-weight: bold;z-index: 9999;left: 90px; position:relative;top:0px;position: absolute;" onclick="delImg(this)">X</a><img src="'+data._raw+'" width="100px" height="100px" style="margin-right: 10px;" /></span>');
                 images.push(data._raw);
                 ++nums;
+                $('#images').val(images.join('|'));
             }
         });
+
+        if(model == 1){
+            $('#rich').show();
+            $('#pic').hide();
+        }else {
+            $('#rich').hide();
+            $('#pic').show();
+        }
         $('#add').ajaxForm({
             beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
             success: complete, // 这是提交后的方法
             dataType: 'json'
         });
+        var arr = targets.split(',');
+        for(var i=0;i<arr.length;++i) {
+            $('#target_'+arr[i]).attr('checked',true);
+        }
         //上传图片
         $('#model').change(function (){
             var model = $('#model').val();
@@ -170,7 +198,6 @@
             }
         });
     });
-
     function checkForm() {
         var title = $('#title').val(),
             model = $('#model').val(),
@@ -196,7 +223,6 @@
                 return false;
             }
         }
-        $('input[name="images"]').val(images.join('|'));
     }
     function complete(res) {
         if(res.code == 1) {
@@ -214,6 +240,7 @@
                 }
             }
             --nums;
+            $('#images').val(images.join('|'));
             $(obj).parent().remove();
             layer.close(index);
         });

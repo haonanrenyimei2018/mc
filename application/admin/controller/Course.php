@@ -56,18 +56,29 @@ class Course extends Base
     public function add() {
         if($this->request->isAjax()){
             $params = input('post.');
+            unset($params['file']);
             $params['times'] = 0;
             $params['date'] = time();
             $params['user'] = $this->user['id'];
             $params['target'] = implode(',',$params['target']);
             try {
-                if($params['model'] == 2){
-
-                }
+                $images = $params['images'];
+                unset($params['images']);
                 $id = Db::name('course')->insertGetId($params);
-
-
-
+                if($params['model'] == '2'){
+                    $arr = explode('|',$images);
+                    $data = [];
+                    for($i=0;$i<count($arr);++$i){
+                        if(empty($arr[$i])) continue;
+                        $data[] = [
+                            'course' => $id,
+                            'images' => $arr[$i],
+                            'date' => time(),
+                            'user' => $this->user['id']
+                        ];
+                    }
+                    Db::name('course_images')->insertAll($data);
+                }
                 $members = Db::name('agency')->where('status',1)->column('id,name');
                 $datas = [];
                 foreach ($members as $key => $val) {
@@ -102,8 +113,29 @@ class Course extends Base
             $params = input('post.');
             $params['date'] = time();
             $params['target'] = implode(',',$params['target']);
+            unset($params['file']);
             try {
+                $images = $params['images'];
+                unset($params['images']);
                 Db::name('course')->where('id',$params['id'])->update($params);
+                if($params['model'] == '2'){
+                    $where = [
+                        'course' => $params['id']
+                    ];
+                    Db::name('course_images')->where($where)->delete();
+                    $arr = explode('|',$images);
+                    $data = [];
+                    for($i=0;$i<count($arr);++$i){
+                        if(empty($arr[$i])) continue;
+                        $data[] = [
+                            'course' => $params['id'],
+                            'images' => $arr[$i],
+                            'date' => time(),
+                            'user' => $this->user['id']
+                        ];
+                    }
+                    Db::name('course_images')->insertAll($data);
+                }
                 return json(['code' => 1,'msg' => '修改成功!','url' => url('index')]);
             }catch (Exception $e) {
                 return json(['code' => -99,'msg' => $e->getMessage()]);
@@ -111,6 +143,16 @@ class Course extends Base
         }
         $id = input('id');
         $data = Db::name('course')->where('id',$id)->find();
+        if($data['model'] == '2'){
+            $where = [
+                'course' => $id
+            ];
+            $images = Db::name('course_images')->where($where)->select();
+//            $data
+            $this->assign('images',$images);
+        }else {
+            $this->assign('images',[]);
+        }
         $this->assign('data',$data);
         //教育培训类别
         $types = Db::name('course_cate')->column('id,name');
