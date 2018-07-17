@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1531839930;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,13 +131,10 @@ window.onload=function(){
                     <div class="col-sm-6">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>热门文章</h5>
+                                <h5>待审核会员</h5>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                    <a class="close-link">
-                                        <i class="fa fa-times"></i>
                                     </a>
                                 </div>
                             </div>
@@ -145,15 +142,15 @@ window.onload=function(){
                                 <table class="table table-hover no-margins">
                                     <thead>
                                         <tr>
-                                            <th>标题</th>
-                                            <th>点击数</th>
+                                            <th>姓名</th>
+                                            <th>申请时间</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     <?php if(is_array($article_list) || $article_list instanceof \think\Collection || $article_list instanceof \think\Paginator): $i = 0; $__LIST__ = $article_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                     <?php if(is_array($members) || $members instanceof \think\Collection || $members instanceof \think\Paginator): $i = 0; $__LIST__ = $members;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                         <tr>
-                                            <td style="verflow:hidden;"><?php echo $vo['title']; ?><p style="color:#bbb"><i class="fa fa-clock-o"></i> <?php echo date('m-d',$vo['create_time']); ?></p></td>
-                                            <td class="text-navy"> <i class="fa fa-level-up"></i> <?php echo $vo['views']; ?></td>
+                                            <td style="verflow:hidden;"><?php echo $vo['name']; ?></td>
+                                            <td class="text-navy"> <?php echo date('Y-m-d',$vo['date']); ?></td>
                                         </tr>
                                   	<?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -165,26 +162,31 @@ window.onload=function(){
                     <div class="col-sm-6">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>行为日志</h5>
-                                
+                                <h5>即将到期会员</h5>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                    <a class="close-link">
-                                        <i class="fa fa-times"></i>
                                     </a>
                                 </div>
                             </div>
                            
                             <div class="ibox-content">
-                                <ul class="todo-list small-list ui-sortable">
-                                  	<?php if(is_array($log_list) || $log_list instanceof \think\Collection || $log_list instanceof \think\Paginator): $i = 0; $__LIST__ = $log_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                                    <li>
-                                        <?php echo $vo['description']; ?><span class="stat-percent"><?php echo $vo['add_time']; ?></span>
-                                    </li>
-                                   <?php endforeach; endif; else: echo "" ;endif; ?>
-                                </ul>
+                                <table class="table table-hover no-margins">
+                                    <thead>
+                                    <tr>
+                                        <th style="verflow:hidden;">姓名</th>
+                                        <th style="verflow:hidden;">到期时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php if(is_array($members_1) || $members_1 instanceof \think\Collection || $members_1 instanceof \think\Paginator): $i = 0; $__LIST__ = $members_1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                    <tr>
+                                        <td style="verflow:hidden;"><?php echo $vo['nick_name']; ?></td>
+                                        <td class="text-navy"> <?php echo date('Y-m-d',$vo['date_end']); ?></td>
+                                    </tr>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

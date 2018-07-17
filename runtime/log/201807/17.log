@@ -1,0 +1,326 @@
+[ 2018-07-17T22:37:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.004177s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_admin` [ RunTime:0.007864s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_admin` WHERE  `username` = 'admins' LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_group` [ RunTime:0.001513s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001360s ]
+[ sql ] [ SQL ] SELECT `name` FROM `mc_auth_rule` [ RunTime:0.000456s ]
+[ sql ] [ SQL ] UPDATE `mc_admin`  SET `loginnum`=313,`last_login_ip`='127.0.0.1',`last_login_time`=1531838279  WHERE  `id` = 1 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_log` [ RunTime:0.001286s ]
+[ sql ] [ SQL ] INSERT INTO `mc_log` (`admin_id` , `admin_name` , `description` , `status` , `ip` , `add_time`) VALUES (1 , 'admins' , '用户【admins】登录成功' , 1 , '127.0.0.1' , 1531838279) [ RunTime:0.000587s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:38:01+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001489s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001071s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000527s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:38:01+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002982s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001682s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.003658s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.003975s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.001823s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:38:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012858s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001665s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002542s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838301' LIMIT 1 [ RunTime:0.000359s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:38:21+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011332s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001571s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001680s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838301' LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838301' LIMIT 0,10 [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.007454s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.000435s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:47:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001638s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001749s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838865' LIMIT 1 [ RunTime:0.000282s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:47:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002534s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001443s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002038s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838865' LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838865' LIMIT 0,10 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001942s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.000242s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:47:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012466s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002233s ]
+[ sql ] [ SQL ] UPDATE `mc_agency`  SET `password`='21218cca77804d2ba1922c33e0151105'  WHERE  `id` = 1 [ RunTime:0.006569s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:47:50+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011707s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.002982s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838870' LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 1  AND `date_end` > '1531838870' LIMIT 0,10 [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency_type` [ RunTime:0.001629s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_agency_type` [ RunTime:0.000234s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:49:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011363s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001006s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000488s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:49:45+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001598s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001116s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.002899s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002053s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000672s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:56:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001473s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001010s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000477s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:56:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001648s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.001889s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002104s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000248s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:56:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001256s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000496s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:56:54+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011630s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.001994s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002339s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000215s ]
+[ error ] [8]未定义数组索引: create_time
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011522s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000458s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:10+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010934s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000390s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001423s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000383s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:20+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010298s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.002022s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000357s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:31+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011283s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000390s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:57:31+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011779s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.002074s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000283s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:59:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011693s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000513s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T22:59:48+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001615s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.001823s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000342s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:02:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011024s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000432s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:02:07+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001418s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001995s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] select * from mc_agency where date_end < 1534431727 [ RunTime:0.000250s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:02:46+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011286s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000460s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:02:46+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.009975s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000149s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] select * from mc_agency where date_end < 1534431766 [ RunTime:0.000170s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:03:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011150s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000418s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:03:24+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001557s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000299s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:17+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011062s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000440s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:17+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002314s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001038s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.001257s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.002291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000281s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:37+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001249s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000352s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:37+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001346s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000298s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:52+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011432s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000449s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:04:52+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002521s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001116s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000270s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:05:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001222s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000349s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:05:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001581s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001804s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000181s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000145s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000164s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:05:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001407s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000471s ]
+
+---------------------------------------------------------------
+[ 2018-07-17T23:05:32+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001922s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.000929s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] select * from mc_agency [ RunTime:0.000238s ]
+
+---------------------------------------------------------------

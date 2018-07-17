@@ -236,6 +236,24 @@ class Member extends Base
             return json(['code' => -99,'msg' => $e->getMessage()]);
         }
     }
+    /**
+     * 重置密码
+     */
+    public function resetpwd(){
+        $id = input('id');
+        $where = [
+            'id'  => $id
+        ];
+        $data = [
+            'password' => md5('888888')
+        ];
+        try {
+            Db::name('agency')->where($where)->update($data);
+            return json(['code' => 1,'msg' => '密码重置成功!']);
+        }catch (Exception $e) {
+            return json(['code' => -99,'msg' => $e->getMessage()]);
+        }
+    }
     //
     public function aa() {
         $res = date('Y-m-d H:i:s',strtotime("+1 year"));

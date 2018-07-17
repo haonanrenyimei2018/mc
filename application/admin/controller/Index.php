@@ -38,13 +38,23 @@ class Index extends Base
             'status' => 0
         ];
         $ag_count = Db::name('agency')->where($where)->count();
-
+        //待审核会员的信息
+        $where = [
+            'status' => 0
+        ];
+        $members = Db::name('agency')->where($where)->page(1,10)->select();
+        //到期的会员的数量
+//        $SQL = 'select * from mc_agency where status = 1 and date_end < '.(time() + 30 * 60 * 60 * 24);
+        $SQL = 'select * from mc_agency';
+        $members_1 = Db::query($SQL);
         $this->assign([
             'ad_count' => $ad_count,
             'ag_count' => $ag_count,
             'amount' => $amount,
             'article_list' => [],
-            'log_list' => []
+            'log_list' => [],
+            'members' => $members,
+            'members_1' => $members_1
         ]);
         return $this->fetch('index');
     }
