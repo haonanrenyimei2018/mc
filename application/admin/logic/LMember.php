@@ -54,22 +54,10 @@ class LMember
         }
         $money = round($money,2);
         $last_money = round($amount * $params['return_all'] / 100 - $money,2);
-        $insert = [
-            'member_id' => $id,
-            'type' => 'return',
-            'model' => '1',
-            'amount' => $money,
-            'summary' => '代理返还',
-            'date' => time()
-        ];
-        $this->memberMoneylogModel->insertGetId($insert);
-        $update = [
-            'money' => $money,
-            'commission' => $money
-        ];
-        Db::name('agency_info')->where('member',$id)->update($update);
         //增加可提现金额和总的佣金
         if(empty($member['is_pid'])) {
+            //没有推荐人
+            //获取当前代理的市总代
             $where = [
                 'type' => 1,
                 'province' => $member['province'],
@@ -99,32 +87,69 @@ class LMember
             }
         }else {
             //推荐人
+
+            //推荐人的信息
             $member_2 = $this->agencyModel->where('id',$member['pid'])->find();
-            $where = [
-                'type' => 1,
-                'province' => $member_2['province'],
-                'city' => $member_2['city'],
-                'status' => 1,
-                'date_end' => ['gt',time()]
-            ];
-            $member_1 = $this->agencyModel->where($where)->find();
-            if(isset($member_1)) {
-                //总代存在
-                $data = [
-                    'member_id' => $member_1['id'],
+            //如果推荐人是市总代，就把40%全给他
+            if($member_2['type'] == 1){
+                //推荐人增加资金记录
+                $insert = [
+                    'member_id' => $member['pid'],
                     'type' => 'return',
                     'model' => '1',
-                    'amount' => $last_money,
-                    'summary' => '代理返还,来自代理'.$member['name'],
+                    'amount' => $money + $last_money ,
+                    'summary' => '代理返还',
                     'date' => time()
                 ];
-                $this->memberMoneylogModel->insertGetId($data);
-                $info = Db::name('agency_info')->where('member',$member_1['id'])->find();
+                $this->memberMoneylogModel->insertGetId($insert);
                 $update = [
-                    'money' => $info['money'] + $money,
-                    'commission' => $info['commission'] + $money
+                    'money' => $money + $last_money,
+                    'commission' => $money + $last_money
                 ];
-                Db::name('agency_info')->where('member',$member_1['id'])->update($update);
+                Db::name('agency_info')->where('member',$id)->update($update);
+            }else {
+                //推荐人增加资金记录
+                $insert = [
+                    'member_id' => $member['pid'],
+                    'type' => 'return',
+                    'model' => '1',
+                    'amount' => $money ,
+                    'summary' => '代理返还',
+                    'date' => time()
+                ];
+                $this->memberMoneylogModel->insertGetId($insert);
+                $update = [
+                    'money' => $money,
+                    'commission' => $money
+                ];
+                Db::name('agency_info')->where('member',$id)->update($update);
+                //推荐人的市总代
+                $where = [
+                    'type' => 1,
+                    'province' => $member_2['province'],
+                    'city' => $member_2['city'],
+                    'status' => 1,
+                    'date_end' => ['gt',time()]
+                ];
+                $member_1 = $this->agencyModel->where($where)->find();
+                if(isset($member_1)) {
+                    //总代存在
+                    $data = [
+                        'member_id' => $member_1['id'],
+                        'type' => 'return',
+                        'model' => '1',
+                        'amount' => $last_money,
+                        'summary' => '代理返还,来自代理'.$member['name'],
+                        'date' => time()
+                    ];
+                    $this->memberMoneylogModel->insertGetId($data);
+                    $info = Db::name('agency_info')->where('member',$member_1['id'])->find();
+                    $update = [
+                        'money' => $info['money'] + $money,
+                        'commission' => $info['commission'] + $money
+                    ];
+                    Db::name('agency_info')->where('member',$member_1['id'])->update($update);
+                }
             }
         }
     }

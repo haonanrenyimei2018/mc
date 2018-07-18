@@ -115,6 +115,15 @@ class Course extends Base
     public function detail() {
         $id = input('id');
         $info = $this->courseModel->where('id',$id)->find();
+        if($info['model'] == 2){
+            $where = [
+                'course' => $id
+            ];
+            $images = Db::name('course_images')->where($where)->select();
+            $this->assign('images',$images);
+        }else {
+            $this->assign('images',[]);
+        }
         //更新查看次数
         $update = array(
             'times' => $info['times'] + 1

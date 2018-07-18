@@ -77,8 +77,25 @@ class Login extends Controller
         //代理类型
         $agencyTypes = $this->agencyTypeModel->where('status',1)->select();
         $this->assign('types',$agencyTypes);
+        //邀请码的开关
+        $switchs = Db::name('switchs')->column('name,values');
+        if(isset($switchs['yaoqing']) && $switchs['yaoqing'] == 1){
+            $this->assign('yaoqing',1);
+        }else {
+            $this->assign('yaoqing',0);
+        }
         return $this->fetch();
     }
+    /**
+     * 输入邀请码
+     */
+    public function jump(){
+        $this->assign('type',input('type'));
+        return $this->fetch();
+    }
+
+
+
     /**
      * 注册第二步，同意协议
      */

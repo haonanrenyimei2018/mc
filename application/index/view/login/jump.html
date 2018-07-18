@@ -1,0 +1,46 @@
+{include file="public/_header" /}
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">输入邀请码</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>邀请码</label>
+                <input type="text" name="code" id="code" placeholder="请输入邀请码">
+            </div>
+        </div>
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="check()" style="margin-top: 10px;">确定</button>
+        <input type="hidden" name="type" id="type" value="{$type}">
+    </div>
+</div>
+{include file="public/_footer" /}
+<script>
+function check(){
+    var code = $('#code').val();
+    if(code == ''){
+        mui.toast('请输入邀请码');
+        return false;
+    }
+    $.getJSON('/index/login/checkCode.html',{'code' : code},function (res) {
+        var type = $('#type').val();
+        if(res.code == 1) {
+            window.location.href = '/index/login/register_1.html?type=' + type;
+        }else {
+            otcms.error(res.msg);
+            return false;
+        }
+    });
+}
+function btn_cancle(){
+    window.history.back(-1);
+}
+
+
+
+
+</script>
+</body>
+</html>
