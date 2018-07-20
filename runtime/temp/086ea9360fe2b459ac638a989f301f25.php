@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1531839930;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"E:\workplace\mc/application/admin\view\index\index.html";i:1531986627;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,7 +88,6 @@ window.onload=function(){
         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
         <div>尊敬的会员<span id="weather"></span></div>
     </div>-->
-
     <!-- 上方tab -->
     <div class="row">
         <div class="col-sm-3">
@@ -109,7 +108,18 @@ window.onload=function(){
                         <h5>未审会员</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"><span id="daypv">0<span style="font-size:14px"> 人</span></span></h1>
+                        <h1 class="no-margins"><span><?php echo $ag_count; ?><span style="font-size:14px"> 人</span></span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">总计</span>
+                        <h5>即将到期会员</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins"><span><?php echo $member_end; ?><span style="font-size:14px"> 人</span></span></h1>
                     </div>
                 </div>
             </div>

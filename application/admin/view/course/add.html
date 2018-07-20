@@ -114,6 +114,7 @@
                 $('#loans_images').append('<span style="width: 100px;height: 100px;display: block;float: left;margin-left: 10px;position:relative;"><a style="color:red;font-weight: bold;z-index: 9999;left: 90px; position:relative;top:0px;position: absolute;" onclick="delImg(this)">X</a><img src="'+data._raw+'" width="100px" height="100px" style="margin-right: 10px;" /></span>');
                 images.push(data._raw);
                 ++nums;
+                $('input[name="images"]').val(images.join('|'));
             }
         });
         $('#add').ajaxForm({
@@ -177,6 +178,7 @@
                 }
             }
             --nums;
+            $('input[name="images"]').val(images.join('|'));
             $(obj).parent().remove();
             layer.close(index);
         });

@@ -13,14 +13,42 @@
 </header>
 <div class="mui-content">
     <div class="mui-content-padded">
+        {eq name="info['model']" value="1"}
         <h4>{$info['title']}</h4>
         <h5>作者: {$members[$info['user']]}&nbsp;发布时间:{$info['date']|date='Y-m-d',###}&nbsp;</h5>
         <div class="content">
             {$info['content']}
         </div>
         <h5>人气:{$info['times']}</h5>
+        {else}
+            {foreach name="images" item="val"}
+                {eq name="key" value="0"}
+                    <span style="display: block;margin: 10px;" name="images" id="image_{$key}">
+                        <img width="100%" height="100%"  src="{$val['images']}" >
+                    </span>
+                    {else}
+                    <span style="display: none;margin: 10px;" name="images" id="image_{$key}">
+                        <img width="100%" height="100%"  src="{$val['images']}" >
+                    </span>
+                {/eq}
+            {/foreach}
+            <span style="margin-bottom: 10px;text-align: center;width: 100%">
+                <select style="width: 40px;margin-left: 40%" id="pages" onchange="change()">
+                    {foreach name="images" item="val"}
+                        <option value="{$key}">{$key + 1}</option>
+                    {/foreach}
+                </select>
+            </span>
+        {/eq}
     </div>
 </div>
 {include file="public/_footer" /}
+<script>
+    function change() {
+        $('span[name="images"]').hide();
+        var id = $('#pages').val();
+        $('#image_' + id).show();
+    }
+</script>
 </body>
 </html>

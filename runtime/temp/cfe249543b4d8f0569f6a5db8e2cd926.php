@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531747409;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:54:"E:\workplace\mc/application/admin\view\course\add.html";i:1531982485;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
