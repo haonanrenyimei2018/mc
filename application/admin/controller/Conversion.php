@@ -33,7 +33,7 @@ class Conversion extends Base
             $lists = Db::name('member_product')->where($where)->order('field(state,0,1),date desc')->page($Nowpage,$this->pageSize)->select();
             foreach ($lists as &$val){
                 $val['product'] = $data_product[$val['product']];
-                $val['member'] = $data_a[$val['member']];
+                $val['member_name'] = $data_a[$val['member']];
                 $val['date'] = date('Y-m-d H:i',$val['date']);
             }
             return json($lists);
@@ -66,4 +66,29 @@ class Conversion extends Base
             }
         }
     }
+    /**
+     * 获取代理的信息
+     */
+    public function info() {
+        $member = input('member');
+        $where = [
+            'member' => $member
+        ];
+        $info = Db::name('member_addr')->where($where)->find();
+        $member = Db::name('agency')->where('id',$member)->find();
+        $data = [
+            'name' => $member['name'],
+            'nick_name' => $member['nick_name'],
+        ];
+        if(isset($info)) {
+            $data['address'] = $info['addr'];
+            $data['phone'] = $info['phone'];
+            $data['size'] = $info['size'];
+        }
+        return json($data);
+    }
+
+
+
+
 }

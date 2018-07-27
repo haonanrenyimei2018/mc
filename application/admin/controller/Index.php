@@ -21,7 +21,7 @@ class Index extends Base
             'web_server' => $_SERVER['SERVER_SOFTWARE'],
             'onload'     => ini_get('upload_max_filesize'),
             'think_v'    => THINK_VERSION,
-            'phpversion' => phpversion(),
+            'phpversion' => phpversion()
         );
         $this->assign('info',$info);
         //未申广告数量

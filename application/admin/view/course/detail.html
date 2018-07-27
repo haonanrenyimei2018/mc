@@ -1,0 +1,72 @@
+{include file="public/header" /}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>课程详情</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">标题</label>
+                            <div class="input-group col-sm-4">
+                                <span class="form-control">{$info['title']}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" style="text-align: right">类型</label>
+                        <div class="input-group col-sm-4">
+                            <span class="form-control">
+                                {eq name="info['model']" value="1"}
+                                    图文
+                                {else /}
+                                    图片
+                                {/eq}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" style="text-align: right">分类</label>
+                        <div class="input-group col-sm-4">
+                            <span class="form-control">{$types[$info['type']]}</span>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    {eq name="info['model']" value="1"}
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">内容</label>
+                            <div class="input-group col-sm-6">
+                                <span class="form-control">{$types[$info['type']]}</span>
+                            </div>
+                        </div>
+                    {else }
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="text-align: right">图片</label>
+                            <div class="input-group col-sm-9" id="loans_images">
+                                {foreach name="images" item="val"}
+                                <span style="width: 100px;height: 100px;display: block;float: left;margin-left: 10px;position:relative;">
+                                    <img src="{$val['images']}" width="100px" height="100px" style="margin-right: 10px;" />
+                                </span>
+                                {/foreach}
+                            </div>
+                        </div>
+                    {/eq}
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <div class="input-group col-sm-4 col-sm-offset-3">
+                            <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+</body>
+</html>

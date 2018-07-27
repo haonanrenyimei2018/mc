@@ -1,0 +1,192 @@
+[ 2018-07-25T09:20:55+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_admin` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_admin` WHERE  `username` = 'admins' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_group` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `mc_admin`  SET `loginnum`=316,`last_login_ip`='127.0.0.1',`last_login_time`=1532481655  WHERE  `id` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_log` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `mc_log` (`admin_id` , `admin_name` , `description` , `status` , `ip` , `add_time`) VALUES (1 , 'admins' , '用户【admins】登录成功' , 1 , '127.0.0.1' , 1532481655) [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:20:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:20:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_ad` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_ad` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT SUM(amount) AS tp_sum FROM `mc_ad` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_agency` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_agency` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_agency` WHERE  `status` = 0 LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select * from mc_agency where status = 1 and date_end < 1535073657 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select count(*) AS count  from mc_agency where status = 1 and date_end < 1535073657 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:21:04+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:21:04+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:22:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:22:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` LIMIT 0,10 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:22:23+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:28:12+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:56:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:57:29+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T09:58:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:04:09+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:04:19+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_images` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course_images` WHERE  `course` = 2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:04:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:04:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `mc_course` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:04:26+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:05:52+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:06:00+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-07-25T10:06:15+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=db_mc;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_auth_rule` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_auth_rule` WHERE  (  status = 1 ) ORDER BY `sort` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_course` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_course_cate` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `mc_course_cate` [ RunTime:0.000000s ]
+
+---------------------------------------------------------------

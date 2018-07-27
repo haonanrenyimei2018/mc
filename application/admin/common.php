@@ -113,7 +113,7 @@ function parse_config_attr($string) {
             $value[$k]   = $v;
         }
     }else{
-        $value  =   $array;
+        $value  = $array;
     }
     return $value;
 }

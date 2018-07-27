@@ -197,7 +197,7 @@ $(document).ready(function(){
     $("#logout").click(function(){
         layer.confirm('你确定要退出吗？', {icon: 3}, function(index){
             layer.close(index);
-            window.location.href="{:url('otadmins/login/loginOut')}";
+            window.location.href="{:url('admin/login/loginOut')}";
         });
     });
 });

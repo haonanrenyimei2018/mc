@@ -154,7 +154,7 @@ class Member extends Base
             'status' => 1,
             'date_end' => ['gt',time()]
         ];
-        $members = Db::name('agency')->where($where)->column('id,nick_name');
+        $members = Db::name('agency')->where($where)->order('nick_name DESC')->column('id,nick_name');
         $this->assign([
             'member' => $member,
             'provinceData' => $provinceData,

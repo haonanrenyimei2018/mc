@@ -43,7 +43,7 @@ class AdScore extends Base
      * 编辑
      */
     public function edit() {
-        if($this->request->isAjax()){
+        if($this->request->isAjax()) {
             $params = input('post.');
             $params['date'] = time();
             try {
@@ -62,14 +62,5 @@ class AdScore extends Base
      * 删除
      */
     public function del() {
-
-
-
     }
-
-
-
-
-
-
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\course\index.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"E:\workplace\mc/application/admin\view\course\index.html";i:1532481712;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +56,7 @@
                         <tr class="long-tr">
                             <th style="width: 5%">ID</th>
                             <th style="width: 10%;text-align: left;">标题</th>
+                            <th style="width: 10%;text-align: left;">分类</th>
                             <th style="width: 10%;text-align: left;">类型</th>
                             <th style="width: 10%;text-align: left;">去向</th>
                             <th style="width: 10%;text-align: right;">浏览量</th>
@@ -66,7 +67,8 @@
                             {{# for(var i=0;i<d.length;i++){  }}
                             <tr class="long-td">
                                 <td style="width: 5%">{{d[i].id}}</td>
-                                <td style="width: 10%;text-align: left;">{{d[i].title}}</td>
+                                <td style="width: 10%;text-align: left;"><a href="detail.html?id={{d[i].id}}">{{d[i].title}}</a></td>
+                                <td style="width: 10%;text-align: left;">{{d[i].model}}</td>
                                 <td style="width: 10%;text-align: left;">{{d[i].type_name}}</td>
                                 <td style="width: 40%;text-align: left;">{{d[i].target}}</td>
                                 <td style="width: 10%;text-align: right;">

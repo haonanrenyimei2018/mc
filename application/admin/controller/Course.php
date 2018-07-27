@@ -15,6 +15,10 @@ use think\Exception;
 
 class Course extends Base
 {
+    private $model = [
+        1 => '图文',
+        2 => '图片'
+    ];
     /**
      * 培训课程
      */
@@ -42,6 +46,7 @@ class Course extends Base
                     $targets .= $target[$arr[$i]].',';
                 }
                 $val['target'] = $targets;
+                $val['model'] =  $this->model[$val['model']];
             }
             return json($lists);
         }
@@ -176,6 +181,28 @@ class Course extends Base
         }catch (Exception $e) {
             return json(['code' => -99,'msg' => $e->getMessage()]);
         }
+    }
+
+    /**
+     *
+     */
+    public function detail() {
+        $id = input('id');
+        $info = Db::name('course')->where('id',$id)->find();
+        //教育培训类别
+        $types = Db::name('course_cate')->column('id,name');
+        if($info['type'] == 2){
+            $where = [
+                'course' => $id
+            ];
+            $images = Db::name('course_images')->where($where)->select();
+        }else {
+            $images = [];
+        }
+        $this->assign('info',$info);
+        $this->assign('images',$images);
+        $this->assign('types',$types);
+        return $this->fetch();
     }
     //培训课程分类
     /**

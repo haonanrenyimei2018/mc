@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:49:"E:\workplace\mc/application/admin\view\index.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1531230408;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1531230408;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:49:"E:\workplace\mc/application/admin\view\index.html";i:1532309663;s:57:"E:\workplace\mc/application/admin\view\public\header.html";i:1525915507;s:57:"E:\workplace\mc/application/admin\view\public\footer.html";i:1525915507;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -230,7 +230,7 @@ $(document).ready(function(){
     $("#logout").click(function(){
         layer.confirm('你确定要退出吗？', {icon: 3}, function(index){
             layer.close(index);
-            window.location.href="<?php echo url('otadmins/login/loginOut'); ?>";
+            window.location.href="<?php echo url('admin/login/loginOut'); ?>";
         });
     });
 });
